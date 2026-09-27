@@ -7,7 +7,7 @@ into a dated, fingerprinted record an attorney can read in ten minutes, and into
 California domestic violence restraining order (DVRO) packet.
 
 - Sorts what repeats into the six kinds of behavior the CDC measures in its national survey.
-- Marks gaps in the record as missing, never as calm.
+- Flags stretches of time with no messages as missing evidence, so a gap is never read as "nothing happened".
 - Never writes a sentence anyone did not say.
 
 HerProof is not a law firm and does not give legal advice. It gets the record ready for a
