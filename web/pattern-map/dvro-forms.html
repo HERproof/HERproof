@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>California DVRO forms</title>
+<style>
+:root{--ink:#3A3434;--muted:#625B5B;--line:#FCD1D1;--blush:#FEF0F0;--lilac:#F5F0FA;--lilac-line:#E4D9F0;--lilac-ink:#5E5470;--deep:#A8403F}
+body{margin:0;background:#FFF7F5;color:#4A4A4A;font-family:"Plus Jakarta Sans",system-ui,-apple-system,sans-serif;line-height:1.6}
+.wrap{max-width:900px;margin:0 auto;padding:36px 22px 70px}
+h1{font-size:27px;letter-spacing:-.9px;color:var(--ink);margin:0 0 6px;font-weight:800}
+.lede{color:var(--muted);font-size:14.5px;margin:0 0 22px}
+h2{font-size:18px;color:var(--ink);margin:32px 0 6px;font-weight:800}
+.sub{font-size:13.5px;color:var(--muted);margin:0 0 12px}
+.upl{background:#fff;border:2px solid var(--line);border-radius:18px;padding:22px 24px;margin:0 0 24px}
+.upl b.h{display:block;font-size:15px;color:var(--ink);margin-bottom:10px}
+.upl ul{margin:0;padding-left:18px;font-size:13.5px}
+.upl li{margin-bottom:7px}
+table{border-collapse:collapse;width:100%;font-size:13.5px;background:#fff;border-radius:14px;overflow:hidden}
+th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}
+th{background:var(--blush);font-size:11px;text-transform:uppercase;letter-spacing:.4px;color:var(--muted)}
+td a{color:var(--deep);font-weight:700}
+.fill{color:#2F6B52;font-weight:700}
+.hand{color:var(--deep);font-weight:700}
+.note{background:var(--lilac);border:1px solid var(--lilac-line);border-radius:14px;padding:16px 18px;font-size:13.5px;color:var(--lilac-ink);margin:22px 0}
+.foot{font-size:12.5px;color:var(--muted);margin-top:34px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>California DVRO forms</h1>
+  <p class="lede">The Judicial Council forms a domestic violence restraining order is filed on, and exactly which parts get filled from your own record. Every form links to the official PDF on the California Courts site. See the <a href="dvro-fill.html">blank to filled walkthrough</a> for where each line comes from.</p>
+
+  <div class="upl">
+    <b class="h">What this does, and what it refuses to do</b>
+    <ul>
+      <li><b>It does not choose your forms.</b> This is the standard set the California Courts publish. Which ones apply to you is a legal question, and courts have local forms on top of these.</li>
+      <li><b>It does not advise.</b> No opinion on whether to file, what orders to ask for, whether you qualify, or how a judge is likely to rule.</li>
+      <li><b>It does not conclude.</b> No finding that abuse occurred, no risk score, no prediction.</li>
+      <li><b>It transcribes, and shows its work.</b> Every filled field carries the file, line and timestamp it came from, so you and your attorney can check it against the original.</li>
+      <li><b>It leaves gaps as gaps.</b> Anything not in the record stays blank rather than being guessed at.</li>
+      <li><b>You sign it, so you edit it.</b> DV-100 is signed under penalty of perjury. Every word is yours to correct before anyone signs anything.</li>
+      <li><b>Nothing is filed.</b> The packet goes to an attorney or a court self-help center. This software does not file, serve or appear.</li>
+    </ul>
+  </div>
+
+  <h2>The core packet</h2>
+  <p class="sub">What you file to ask for the order.</p>
+  <table>
+    <tr><th>Form</th><th>What it is</th><th>What the record fills</th></tr>
+    <tr>
+      <td><a href="https://www.courts.ca.gov/documents/dv100.pdf">DV-100</a></td>
+      <td>Request for Domestic Violence Restraining Order. Where you tell the judge what happened and why you need the order. Signed under penalty of perjury.</td>
+      <td><span class="fill">Item 5 and the past abuse section</span>, quoted verbatim and dated, each line traceable to a file and a timestamp.</td>
+    </tr>
+    <tr>
+      <td><a href="https://www.courts.ca.gov/documents/clets001.pdf">CLETS-001</a></td>
+      <td>Confidential CLETS Information. Helps police enforce the order. The restrained person never gets a copy.</td>
+      <td><span class="hand">Left blank on purpose.</span> No date of birth, vehicle or description appears in the record, and a guess on a law enforcement form is worse than an empty box.</td>
+    </tr>
+    <tr>
+      <td><a href="https://www.courts.ca.gov/documents/dv109.pdf">DV-109</a></td>
+      <td>Notice of Court Hearing. The court completes most of it.</td>
+      <td><span class="fill">Party names only.</span> The rest is the court's.</td>
+    </tr>
+    <tr>
+      <td><a href="https://www.courts.ca.gov/documents/dv110.pdf">DV-110</a></td>
+      <td>Temporary Restraining Order. The court completes most of it.</td>
+      <td><span class="hand">Nothing.</span> Which orders to request is a legal call, not the software's.</td>
+    </tr>
+    <tr>
+      <td><a href="https://www.courts.ca.gov/documents/dv120.pdf">DV-120</a></td>
+      <td>Response to the request. Goes to the other side blank.</td>
+      <td><span class="hand">Nothing.</span> Served blank, as the court directs.</td>
+    </tr>
+    <tr>
+      <td><a href="https://www.courts.ca.gov/documents/dv200.pdf">DV-200</a></td>
+      <td>Proof of Personal Service. Filled out after service.</td>
+      <td><span class="hand">Nothing.</span> Signed by whoever served the papers.</td>
+    </tr>
+    <tr>
+      <td>MC-025</td>
+      <td>Attached Declaration, for when the box on DV-100 runs out of room.</td>
+      <td><span class="fill">The full chronology, exhibits and thread</span>, page numbered with the file's fingerprint in the footer of every page.</td>
+    </tr>
+    <tr>
+      <td><a href="https://www.courts.ca.gov/documents/fl150.pdf">FL-150</a></td>
+      <td>Income and Expense Declaration. Only if you are asking for support or attorney's fees.</td>
+      <td><span class="hand">Nothing.</span> Financial records are outside what the record holds.</td>
+    </tr>
+  </table>
+
+  <h2>If there are children</h2>
+  <p class="sub">Added when custody, parenting time or support is part of the request.</p>
+  <table>
+    <tr><th>Form</th><th>What it is</th><th>What the record fills</th></tr>
+    <tr><td><a href="https://www.courts.ca.gov/documents/dv105.pdf">DV-105</a></td><td>Request for Child Custody and Visitation Orders.</td><td><span class="hand">Flagged, never filled.</span> Raised only if the record mentions children.</td></tr>
+    <tr><td><a href="https://www.courts.ca.gov/documents/dv140.pdf">DV-140</a></td><td>Child Custody and Visitation Order. Items 1 to 3 are yours, the judge does the rest.</td><td><span class="hand">Nothing.</span></td></tr>
+    <tr><td><a href="https://www.courts.ca.gov/documents/dv108.pdf">DV-108</a></td><td>Request for Orders to Prevent Child Abduction. Optional.</td><td><span class="hand">Flagged</span> where the record shows a threat to take a child.</td></tr>
+    <tr><td><a href="https://www.courts.ca.gov/documents/dv145.pdf">DV-145</a></td><td>Order to Prevent Child Abduction. Items 1 and 2 are yours.</td><td><span class="hand">Nothing.</span></td></tr>
+  </table>
+
+  <h2>Renewing later</h2>
+  <p class="sub">A long-term order can run up to five years, and you can ask to renew before it expires.</p>
+  <table>
+    <tr><th>Form</th><th>What it is</th><th>What the record fills</th></tr>
+    <tr><td><a href="https://www.courts.ca.gov/documents/dv700.pdf">DV-700</a></td><td>Request to Renew Restraining Order.</td><td><span class="fill">Keeps the record current</span> so the reasons are dated and quotable at renewal.</td></tr>
+    <tr><td><a href="https://www.courts.ca.gov/documents/dv710.pdf">DV-710</a></td><td>Notice of Hearing to Renew.</td><td><span class="hand">Nothing.</span></td></tr>
+  </table>
+
+  <div class="note">Courts can have their own local forms on top of these, so the packet goes to an attorney or a court self-help center before it is filed.</div>
+
+  <p class="foot">Form list read from the California Courts Self Help Guide, Domestic violence restraining order forms, September 2026.</p>
+  <p class="foot">HerProof is not a law firm and does not give legal advice. It gets you ready for a lawyer and a therapist, and hands them the record.</p>
+  <p class="foot">You can delete any of it, or all of it, whenever you want. You can talk to her without saving a word. Quick Exit is always one tap away, and leaving takes nothing more than closing the app.</p>
+</div>
+</body>
+</html>

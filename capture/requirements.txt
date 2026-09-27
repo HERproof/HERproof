@@ -1,0 +1,5 @@
+anthropic>=1.0
+pydantic>=2
+requests>=2.31
+pillow>=10
+google-genai>=1.0

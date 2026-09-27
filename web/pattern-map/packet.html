@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Attorney packet, ready to download</title>
+<style>
+:root{--ink:#3A3434;--muted:#625B5B;--line:#FCD1D1;--blush:#FEF0F0;--btn:#CC5157;--deep:#A8403F;--ok:#2F6B52}
+*{box-sizing:border-box}
+body{margin:0;background:#EFECE9;color:#222;font-family:"Plus Jakarta Sans",system-ui,-apple-system,sans-serif;line-height:1.55}
+.bar{position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:12px;padding:13px 22px;background:#fff;border-bottom:1px solid var(--line)}
+.bar b{font-size:15px;color:var(--ink);margin-right:auto}
+.btn{border:none;border-radius:999px;background:var(--btn);color:#fff;font-size:14px;font-weight:700;padding:11px 20px;cursor:pointer;font-family:inherit}
+.btn.ghost{background:#fff;color:var(--ink);border:1px solid #F3C2C2}
+.hint{font-size:12px;color:var(--muted);padding:10px 22px 0;text-align:center}
+.page{width:8.5in;min-height:11in;margin:22px auto;background:#fff;padding:0.7in 0.75in;box-shadow:0 4px 18px rgba(0,0,0,.12);font-family:"Times New Roman",Times,serif;font-size:12pt;color:#111;position:relative}
+.formhead{display:flex;justify-content:space-between;align-items:flex-start;border-bottom:2px solid #111;padding-bottom:6px;margin-bottom:12px}
+.formhead .code{font-weight:700;font-size:13pt;letter-spacing:.5px}
+.formhead .ttl{font-size:11pt;text-transform:uppercase;letter-spacing:.3px;text-align:right;max-width:3.4in}
+.cap{font-family:"Plus Jakarta Sans",sans-serif;font-size:8.5pt;font-weight:800;letter-spacing:.8px;text-transform:uppercase;color:#8A8078;margin-bottom:6px}
+h1{font-size:19pt;margin:0 0 8px;letter-spacing:-.3px}
+h2{font-size:12.5pt;margin:20px 0 8px;border-bottom:1px solid #C9C2BC;padding-bottom:3px}
+p{margin:0 0 9px}
+.item{display:flex;gap:9px;margin-bottom:12px}
+.num{font-weight:700;font-size:11pt;border:1.2px solid #444;width:20px;height:20px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.itemtitle{font-weight:700;font-size:11.5pt;margin-bottom:5px}
+.q{font-size:11pt;margin-bottom:6px;display:flex;align-items:baseline;gap:6px;flex-wrap:wrap}
+.fl{flex:1;min-width:90px;border-bottom:1px solid #6E6862;height:14px}
+.fl.short{flex:none;width:1.6in}
+.ink{border-bottom:1px solid #A89F98;color:#1A3A6B;font-family:"Segoe Script","Bradley Hand",cursive;height:auto;padding:0 3px 1px}
+.written{color:#1A3A6B;font-size:11pt;line-height:22px;border-bottom:1px solid #D7D0CA;margin:0}
+.chk{display:flex;gap:7px;align-items:flex-start;font-size:10pt;margin-top:9px}
+.box{width:12px;height:12px;border:1.2px solid #444;flex-shrink:0;margin-top:3px}
+.box.on{background:#1A3A6B;border-color:#1A3A6B;position:relative}
+.box.on:after{content:"\2713";color:#fff;font-size:10px;position:absolute;top:-4px;left:1px}
+.src{font-family:"Plus Jakarta Sans",sans-serif;font-size:8.5pt;color:#8A8078;font-weight:700;margin-top:5px}
+table{border-collapse:collapse;width:100%;font-size:9.5pt;font-family:"Plus Jakarta Sans",sans-serif}
+th,td{border:1px solid #CFC8C2;padding:5px 7px;text-align:left;vertical-align:top}
+th{background:#F4F1ED;font-size:8pt;text-transform:uppercase;letter-spacing:.4px;color:#6E6862}
+td.d{white-space:nowrap;font-weight:700;color:#333;width:1.15in}
+td.k{white-space:nowrap;color:#6E6862;width:1.05in}
+td.s{white-space:nowrap;color:#8A8078;width:.95in;font-size:8.5pt}
+.gap{background:#FBF4E8}
+.blanknote{font-size:10.5pt;color:#444;background:#F7F4F1;border-left:3px solid #C9C2BC;padding:9px 11px;margin-top:10px}
+.flag{font-size:10.5pt;color:#7A3F3F;background:#FCF0F0;border-left:3px solid #E2A9A9;padding:9px 11px;margin-top:10px}
+.foot{position:absolute;left:.75in;right:.75in;bottom:.45in;display:flex;justify-content:space-between;font-family:"Plus Jakarta Sans",sans-serif;font-size:8pt;color:#8A8078;border-top:1px solid #DDD6D0;padding-top:5px}
+.mono{font-family:"SFMono-Regular",Menlo,Consolas,monospace;font-size:8.5pt;color:#444}
+.summary{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:10px 0 14px;font-family:"Plus Jakarta Sans",sans-serif}
+.summary div{background:#F7F4F1;border-radius:8px;padding:9px 11px}
+.summary b{display:block;font-size:17pt;line-height:1.2}
+.summary span{font-size:8.5pt;color:#6E6862;font-weight:700}
+@media print{
+  body{background:#fff}
+  .bar,.hint{display:none}
+  .page{width:auto;min-height:0;margin:0;padding:0;box-shadow:none;page-break-after:always}
+  .page:last-child{page-break-after:auto}
+  .foot{position:fixed;bottom:.3in}
+  @page{size:letter;margin:.6in}
+}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <b>Attorney packet, 24 pages</b>
+  <button class="btn" onclick="window.print()">Download as PDF</button>
+  <a class="btn ghost" href="app.html">Back to the app</a>
+</div>
+<p class="hint">Print dialog opens. Choose Save as PDF, letter size, and it saves the whole packet: the filled DV-100, the confidential sheet, the flagged forms, the 47 dated incidents and the exhibit list.</p>
+
+<!-- COVER -->
+<div class="page">
+  <div class="cap">Prepared for your attorney</div>
+  <h1>Domestic violence restraining order packet</h1>
+  <p style="font-size:11pt;color:#555">Built from the petitioner's own device. Every line traces to a file with a date, and nothing here was written by anyone who was not in the record.</p>
+
+  <div class="summary">
+    <div><b>47</b><span>dated incidents</span></div>
+    <div><b>19</b><span>months covered</span></div>
+    <div><b>2,184</b><span>messages read</span></div>
+  </div>
+
+  <h2>What is in this packet</h2>
+  <table>
+    <tr><th>Page</th><th>Document</th><th>State</th></tr>
+    <tr><td class="d">2 to 4</td><td>DV-100, Request for Domestic Violence Restraining Order</td><td>Filled from the record</td></tr>
+    <tr><td class="d">5</td><td>CLETS-001, Confidential CLETS Information</td><td>Left blank on purpose</td></tr>
+    <tr><td class="d">6</td><td>DV-109 and DV-110, notice of hearing and temporary order</td><td>Flagged for the attorney</td></tr>
+    <tr><td class="d">7 to 9</td><td>Attachment to DV-100, item 5c: the 47 incidents in date order</td><td>Complete</td></tr>
+    <tr><td class="d">10</td><td>Exhibit list A to J with file fingerprints</td><td>Complete</td></tr>
+    <tr><td class="d">11</td><td>How the record was built, and what was left out</td><td>Complete</td></tr>
+  </table>
+
+  <h2>The record at a glance</h2>
+  <table>
+    <tr><th>What repeats</th><th>Times</th><th>First</th><th>Most recent</th></tr>
+    <tr><td>Checking on her, location and phone</td><td>18</td><td>14 Mar 2025</td><td>19 Sep 2026</td></tr>
+    <tr><td>Money and access to accounts</td><td>9</td><td>30 Apr 2025</td><td>2 Sep 2026</td></tr>
+    <tr><td>Blame and denial after the fact</td><td>8</td><td>3 Jun 2025</td><td>2 Sep 2026</td></tr>
+    <tr><td>Put-downs</td><td>7</td><td>2 Apr 2025</td><td>28 Aug 2026</td></tr>
+    <tr><td>Threats</td><td>3</td><td>5 Dec 2025</td><td>22 Aug 2026</td></tr>
+    <tr><td>Keeping her from other people</td><td>2</td><td>14 Aug 2025</td><td>17 Mar 2026</td></tr>
+    <tr class="gap"><td colspan="4">No records at all between 12 December 2025 and 4 January 2026, 24 days. Shown as missing, not as calm.</td></tr>
+  </table>
+
+  <div class="blanknote">This packet is not legal advice and no document in it has been filed. Which forms this case needs, and what to ask the judge for, is the attorney's call.</div>
+
+  <div class="foot"><span>Packet fingerprint sha256 4f9c2ae1&hellip;</span><span>Page 1 of 11</span></div>
+</div>
+
+<!-- DV-100 page A -->
+<div class="page">
+  <div class="formhead"><span class="code">DV-100</span><span class="ttl">Request for Domestic Violence Restraining Order</span></div>
+
+  <div class="item"><span class="num">1</span><div style="flex:1">
+    <div class="itemtitle">Person asking for protection</div>
+    <div class="q">Name: <span class="fl ink">Ira P.</span></div>
+    <div class="q">Age: <span class="fl short ink">34</span> Address: <span class="fl ink">Withheld, see CLETS-001</span></div>
+    <div class="q">Email: <span class="fl ink">on file with counsel</span></div>
+    <p class="src">From the account she made on her own device. No address was taken from any file.</p>
+  </div></div>
+
+  <div class="item"><span class="num">2</span><div style="flex:1">
+    <div class="itemtitle">Person you want protection from</div>
+    <div class="q">Name: <span class="fl ink">Sam R.</span></div>
+    <div class="q">Description: <span class="fl ink">Not stated in the record</span></div>
+    <div class="q">Date of birth: <span class="fl short"></span> Address: <span class="fl"></span></div>
+    <p class="src">Name as it appears on the message thread, 2,184 messages, 14 Mar 2025 to 20 Sep 2026. Nothing else about him is in the files, so nothing else is filled.</p>
+  </div></div>
+
+  <div class="item"><span class="num">3</span><div style="flex:1">
+    <div class="itemtitle">Your relationship to the person in &#9313;</div>
+    <div class="chk"><span class="box on"></span><span>We live together or used to live together.</span></div>
+    <div class="chk"><span class="box on"></span><span>We are married or were in a relationship.</span></div>
+    <p class="src">Both drawn from the messages themselves: shared rent and a joint checking account appear across 18 bank pages, June to September.</p>
+  </div></div>
+
+  <div class="item"><span class="num">4</span><div style="flex:1">
+    <div class="itemtitle">Other court cases</div>
+    <div class="chk"><span class="box"></span><span>There are other court cases between us.</span></div>
+    <p class="written">Nothing in the record mentions a court case. If one exists, it is not on this</p>
+    <p class="written">phone, so this box is left for the petitioner and her attorney.</p>
+  </div></div>
+
+  <div class="foot"><span>Judicial Council of California, DV-100</span><span>Page 2 of 11</span></div>
+</div>
+
+<!-- DV-100 page B, item 5 -->
+<div class="page">
+  <div class="formhead"><span class="code">DV-100</span><span class="ttl">Item 5, Describe the Most Recent Abuse</span></div>
+
+  <div class="item"><span class="num">5</span><div style="flex:1">
+    <div class="itemtitle">Describe the Most Recent Abuse</div>
+    <div class="q">a. Date of most recent abuse: <span class="fl short ink">September 19, 2026</span></div>
+    <div class="q">b. Who was there? <span class="fl ink">No one else present</span></div>
+    <p style="font-size:11pt;margin:10px 0 6px">c. What did the person in &#9313; do or say that made you afraid?</p>
+    <p class="written">At 11:48 PM on September 19, 2026 he wrote, &ldquo;where are you. I've asked you</p>
+    <p class="written">four times now. Answer me.&rdquo; Three messages in the previous seven minutes</p>
+    <p class="written">had gone unanswered. Seventeen days earlier, at 1:03 AM on September 2, he</p>
+    <p class="written">wrote, &ldquo;I went through your phone again.&rdquo; Two minutes later, at 1:05 AM, he</p>
+    <p class="written">wrote, &ldquo;that never happened.&rdquo; The same pattern appears 18 times across 19</p>
+    <p class="written">months and is set out in full in the attachment to this item.</p>
+    <div class="chk"><span class="box on"></span><span>More space is needed. A sheet titled &ldquo;DV-100, Item 5c&rdquo; is attached, with 47 dated incidents and 10 photographs.</span></div>
+    <p class="src">Lines 61, 56 and 57 of the message export, timestamps taken from the file</p>
+  </div></div>
+
+  <div class="item"><span class="num">6</span><div style="flex:1">
+    <div class="itemtitle">Describe Any Other Recent Abuse</div>
+    <p class="written">On August 22, 2026 at 11:51 PM: &ldquo;if you take this to court you'll regret it.&rdquo;</p>
+    <p class="written">On July 9, 2026 between 1:14 and 1:17 AM: seven messages in three minutes,</p>
+    <p class="written">with three photographs taken at 1:42, 1:44 and 1:45 AM the same night.</p>
+    <p class="written">On May 14, 2026 he threatened to harm himself if she left. Every other dated</p>
+    <p class="written">incident is listed in the attachment.</p>
+    <p class="src">Lines 54 and 44 to 50, and Exhibits G, H and I</p>
+  </div></div>
+
+  <div class="foot"><span>Judicial Council of California, DV-100</span><span>Page 3 of 11</span></div>
+</div>
+
+<!-- DV-100 page C -->
+<div class="page">
+  <div class="formhead"><span class="code">DV-100</span><span class="ttl">Items 7 to 9, Orders Requested</span></div>
+
+  <div class="item"><span class="num">7</span><div style="flex:1">
+    <div class="itemtitle">Personal conduct orders</div>
+    <div class="chk"><span class="box"></span><span>Not to harass, contact, follow, or disturb the peace of the person in &#9312;.</span></div>
+    <div class="chk"><span class="box"></span><span>Not to take any action to get her address or location.</span></div>
+    <div class="flag">Left unchecked. What to ask the judge for is a legal decision, and the record cannot make it. The two boxes above are the ones the record supports, and they are here so the attorney can see them next to the evidence.</div>
+  </div></div>
+
+  <div class="item"><span class="num">8</span><div style="flex:1">
+    <div class="itemtitle">Stay-away order</div>
+    <div class="q">Stay at least <span class="fl short"></span> yards away from: <span class="fl"></span></div>
+    <div class="blanknote">Distances and addresses are not in the record, and a guess on an order the police enforce is worse than a blank.</div>
+  </div></div>
+
+  <div class="item"><span class="num">9</span><div style="flex:1">
+    <div class="itemtitle">Guns and other firearms</div>
+    <div class="chk"><span class="box"></span><span>The person in &#9313; owns or possesses guns or firearms.</span></div>
+    <div class="flag">Flagged, not answered. Nothing in 2,184 messages, 10 photographs or 18 bank pages mentions a weapon. If the petitioner knows of one, this is the box to raise first, because the surrender deadline runs separately from the hearing.</div>
+  </div></div>
+
+  <div class="foot"><span>Judicial Council of California, DV-100</span><span>Page 4 of 11</span></div>
+</div>
+
+<!-- CLETS -->
+<div class="page">
+  <div class="formhead"><span class="code">CLETS-001</span><span class="ttl">Confidential CLETS Information</span></div>
+  <p style="font-size:11pt">The restrained person's details, entered into the statewide law enforcement system. The other side never sees this sheet.</p>
+  <div class="q">Name: <span class="fl ink">Sam R.</span></div>
+  <div class="q">Date of birth: <span class="fl short"></span> Height: <span class="fl short"></span> Weight: <span class="fl short"></span></div>
+  <div class="q">Driver's license number and state: <span class="fl"></span></div>
+  <div class="q">Vehicle make, model, year and plate: <span class="fl"></span></div>
+  <div class="q">Employer and work address: <span class="fl"></span></div>
+  <div class="blanknote">Everything except the name is blank, and that is deliberate. None of it appears anywhere in the files the petitioner gave, and a wrong date of birth or plate on a sheet the police act on is worse than an empty line. The petitioner or her attorney fills this by hand.</div>
+  <div class="foot"><span>Judicial Council of California, CLETS-001</span><span>Page 5 of 11</span></div>
+</div>
+
+<!-- Flagged forms -->
+<div class="page">
+  <div class="formhead"><span class="code">DV-109 / DV-110</span><span class="ttl">Notice of Hearing and Temporary Restraining Order</span></div>
+  <p style="font-size:11pt">Both are in the California packet and neither is filled here.</p>
+  <h2>DV-109, Notice of Court Hearing</h2>
+  <p>Party names only. The hearing date, department and time come from the clerk when the packet is filed.</p>
+  <h2>DV-110, Temporary Restraining Order</h2>
+  <p>Nothing filled. This is the order the judge signs the same day, and what it should say is a legal decision about risk, not a summary of the messages.</p>
+  <h2>DV-105 and DV-140, children</h2>
+  <p>Not started. Nothing in the record establishes custody, and one photograph that includes a child is held back from the exhibits unless the petitioner asks for it.</p>
+  <div class="flag">Three forms are flagged rather than filled, on purpose. The record can tell an attorney what happened and when. It cannot decide what to ask a judge for.</div>
+  <div class="foot"><span>Flagged for counsel</span><span>Page 6 of 11</span></div>
+</div>
+
+<!-- Attachment page 1 -->
+<div class="page">
+  <div class="formhead"><span class="code">Attachment</span><span class="ttl">DV-100, Item 5c: incidents in date order</span></div>
+  <p style="font-size:10.5pt">Every row comes from a file on the petitioner's phone. Times are taken from the file itself, not from the computer that read it.</p>
+  <table>
+    <tr><th>Date and time</th><th>Kind</th><th>What the record shows</th><th>Source</th></tr>
+    <tr><td class="d">14 Mar 2025, 9:12 PM</td><td class="k">Checking</td><td>&ldquo;who were you with. send me a photo of where you are&rdquo;</td><td class="s">line 3</td></tr>
+    <tr><td class="d">2 Apr 2025, 11:31 PM</td><td class="k">Put-down</td><td>&ldquo;nobody else would put up with you&rdquo;</td><td class="s">line 5</td></tr>
+    <tr><td class="d">12 Apr 2025, 7:48 PM</td><td class="k">Checking</td><td>Demand for a photograph to prove where she was. Photo taken 7:48 PM.</td><td class="s">Exhibit A</td></tr>
+    <tr><td class="d">30 Apr 2025, 10:02 PM</td><td class="k">Money</td><td>&ldquo;I moved the rent money. you don't need to see that account&rdquo;</td><td class="s">line 9</td></tr>
+    <tr><td class="d">19 May 2025, 8:20 PM</td><td class="k">Checking</td><td>&ldquo;you read it at 8:04. why are you answering now&rdquo;</td><td class="s">line 12</td></tr>
+    <tr><td class="d">3 Jun 2025, 12:41 AM</td><td class="k">Blame</td><td>&ldquo;you made me do that&rdquo;, after an argument described in her note the same night</td><td class="s">line 14, note 2</td></tr>
+    <tr><td class="d">21 Jun 2025, 6:55 PM</td><td class="k">Money</td><td>Card declined at a pharmacy. Transfer out of the joint account the same afternoon.</td><td class="s">bank p.3</td></tr>
+    <tr><td class="d">9 Jul 2025, 11:02 PM</td><td class="k">Checking</td><td>&ldquo;turn your location on or don't come back&rdquo;</td><td class="s">line 18</td></tr>
+    <tr><td class="d">27 Jul 2025, 1:22 AM</td><td class="k">Put-down</td><td>&ldquo;you're useless without me and you know it&rdquo;</td><td class="s">line 20</td></tr>
+    <tr><td class="d">14 Aug 2025, 9:37 PM</td><td class="k">Isolation</td><td>&ldquo;your sister is poison. block her&rdquo;</td><td class="s">line 22</td></tr>
+    <tr><td class="d">2 Sep 2025, 10:15 PM</td><td class="k">Checking</td><td>Eleven messages in twenty minutes while she was at work</td><td class="s">line 24</td></tr>
+    <tr><td class="d">20 Sep 2025, 11:58 PM</td><td class="k">Blame</td><td>&ldquo;none of this would happen if you just told me things&rdquo;</td><td class="s">line 26</td></tr>
+    <tr><td class="d">8 Oct 2025, 7:03 PM</td><td class="k">Money</td><td>&ldquo;I'll decide what you spend this month&rdquo;</td><td class="s">line 28</td></tr>
+    <tr><td class="d">26 Oct 2025, 12:19 AM</td><td class="k">Checking</td><td>Call log and messages asking who she was with, after midnight</td><td class="s">line 30</td></tr>
+    <tr><td class="d">3 Nov 2025, 8:44 PM</td><td class="k">Put-down</td><td>Photograph of a wall she was told she damaged, with the message &ldquo;look what you did&rdquo;</td><td class="s">Exhibit E</td></tr>
+    <tr><td class="d">21 Nov 2025, 11:47 PM</td><td class="k">Checking</td><td>&ldquo;why is your phone off&rdquo;, four times in nine minutes</td><td class="s">line 34</td></tr>
+    <tr><td class="d">5 Dec 2025, 10:31 PM</td><td class="k">Threat</td><td>&ldquo;if you take the car I'll report it stolen&rdquo;</td><td class="s">line 36</td></tr>
+    <tr><td class="d">11 Dec 2025, 9:08 PM</td><td class="k">Blame</td><td>&ldquo;that's not what happened and you know it&rdquo;</td><td class="s">line 38</td></tr>
+    <tr class="gap"><td class="d">12 Dec 2025 to 4 Jan 2026</td><td class="k">Gap</td><td>No messages, photographs, notes or bank pages of any kind for 24 days. Recorded as missing. Nothing in the record says what happened in this period.</td><td class="s">&mdash;</td></tr>
+    <tr><td class="d">5 Jan 2026, 8:22 PM</td><td class="k">Checking</td><td>&ldquo;new year, new rules. I want to know where you are&rdquo;</td><td class="s">line 39</td></tr>
+    <tr><td class="d">23 Jan 2026, 11:15 PM</td><td class="k">Money</td><td>Her card removed from the joint account, confirmed on the statement</td><td class="s">bank p.7</td></tr>
+    <tr><td class="d">8 Feb 2026, 1:05 AM</td><td class="k">Put-down</td><td>&ldquo;everyone at that office laughs at you&rdquo;</td><td class="s">line 41</td></tr>
+    <tr><td class="d">22 Feb 2026, 10:50 PM</td><td class="k">Checking</td><td>Screenshot of her own location sent back to her as proof he was watching</td><td class="s">Exhibit D</td></tr>
+    <tr><td class="d">17 Mar 2026, 7:26 PM</td><td class="k">Isolation</td><td>&ldquo;you're not going. tell them you're sick&rdquo;, before a family dinner</td><td class="s">line 42</td></tr>
+  </table>
+  <div class="foot"><span>DV-100, Item 5c, continued</span><span>Page 7 of 11</span></div>
+</div>
+
+<!-- Attachment page 2 -->
+<div class="page">
+  <div class="formhead"><span class="code">Attachment</span><span class="ttl">DV-100, Item 5c: incidents in date order, continued</span></div>
+  <table>
+    <tr><th>Date and time</th><th>Kind</th><th>What the record shows</th><th>Source</th></tr>
+    <tr><td class="d">2 Apr 2026, 11:40 PM</td><td class="k">Checking</td><td>&ldquo;who is picking you up&rdquo;, then six follow-ups before she replied</td><td class="s">line 43</td></tr>
+    <tr><td class="d">19 Apr 2026, 9:14 PM</td><td class="k">Money</td><td>Rent paid from her account alone. Her note that night: &ldquo;I have $40 left.&rdquo;</td><td class="s">bank p.11, note 9</td></tr>
+    <tr><td class="d">3 May 2026, 12:02 AM</td><td class="k">Blame</td><td>&ldquo;I only get like this because of you&rdquo;</td><td class="s">note 11</td></tr>
+    <tr><td class="d">14 May 2026, 11:20 PM</td><td class="k">Threat</td><td>Said he would harm himself if she left. Flagged as a safety item for counsel, quoted in full in the message export.</td><td class="s">Exhibit F</td></tr>
+    <tr><td class="d">28 May 2026</td><td class="k">Checking</td><td>Voice memo she recorded in the car, 2 minutes 14 seconds, describing being followed to work</td><td class="s">voice memo</td></tr>
+    <tr><td class="d">6 Jun 2026, 10:44 PM</td><td class="k">Put-down</td><td>&ldquo;look at you. who would believe you&rdquo;</td><td class="s">line 45</td></tr>
+    <tr><td class="d">18 Jun 2026, 8:05 PM</td><td class="k">Money</td><td>Account password changed, she is locked out. Screenshot of the lockout screen.</td><td class="s">Exhibit C</td></tr>
+    <tr><td class="d">28 Jun 2026, 11:33 PM</td><td class="k">Checking</td><td>&ldquo;I can see you were online. answer me&rdquo;</td><td class="s">line 46</td></tr>
+    <tr><td class="d">9 Jul 2026, 1:14 to 1:17 AM</td><td class="k">Checking</td><td>Seven messages in three minutes demanding she come outside</td><td class="s">lines 44 to 50</td></tr>
+    <tr><td class="d">9 Jul 2026, 1:42 to 1:45 AM</td><td class="k">Checking</td><td>Three photographs taken the same night, 1:42, 1:44 and 1:45 AM</td><td class="s">Exhibits G, H, I</td></tr>
+    <tr><td class="d">21 Jul 2026, 9:58 PM</td><td class="k">Blame</td><td>&ldquo;you're the one who started this&rdquo;</td><td class="s">line 51</td></tr>
+    <tr><td class="d">4 Aug 2026, 10:12 PM</td><td class="k">Money</td><td>&ldquo;you don't need your own account&rdquo;</td><td class="s">line 52</td></tr>
+    <tr><td class="d">12 Aug 2026, 11:06 PM</td><td class="k">Checking</td><td>Twenty-two messages between 11:06 PM and midnight</td><td class="s">line 53</td></tr>
+    <tr><td class="d">22 Aug 2026, 11:51 PM</td><td class="k">Threat</td><td>&ldquo;if you take this to court you'll regret it&rdquo;</td><td class="s">line 54</td></tr>
+    <tr><td class="d">28 Aug 2026, 8:33 PM</td><td class="k">Put-down</td><td>&ldquo;you'd be nothing on your own&rdquo;</td><td class="s">line 55</td></tr>
+    <tr><td class="d">2 Sep 2026, 1:03 AM</td><td class="k">Checking</td><td>&ldquo;I went through your phone again&rdquo;</td><td class="s">line 56</td></tr>
+    <tr><td class="d">2 Sep 2026, 1:05 AM</td><td class="k">Blame</td><td>&ldquo;that never happened&rdquo;, two minutes after the message above</td><td class="s">line 57</td></tr>
+    <tr><td class="d">6 Sep 2026, 7:41 PM</td><td class="k">Money</td><td>Transfer of $900 out of the joint account, no message about it</td><td class="s">bank p.16</td></tr>
+    <tr><td class="d">9 Sep 2026, 11:29 PM</td><td class="k">Checking</td><td>&ldquo;send me a photo of the room you're in&rdquo;</td><td class="s">line 58</td></tr>
+    <tr><td class="d">13 Sep 2026, 10:07 PM</td><td class="k">Money</td><td>&ldquo;I'll give you money when you tell me where it goes&rdquo;</td><td class="s">line 59</td></tr>
+    <tr><td class="d">16 Sep 2026, 11:52 PM</td><td class="k">Checking</td><td>&ldquo;why did it take you an hour&rdquo;, with a screenshot of her read receipt</td><td class="s">line 60</td></tr>
+    <tr><td class="d">18 Sep 2026, 9:47 PM</td><td class="k">Blame</td><td>Her note that night: &ldquo;he says I'm imagining it again.&rdquo;</td><td class="s">note 21</td></tr>
+    <tr><td class="d">19 Sep 2026, 11:48 PM</td><td class="k">Checking</td><td>&ldquo;where are you. I've asked you four times now. Answer me.&rdquo; Most recent incident, DV-100 item 5.</td><td class="s">line 61</td></tr>
+  </table>
+  <p style="font-size:9.5pt;color:#6E6862;margin-top:10px;font-family:'Plus Jakarta Sans',sans-serif">47 incidents in total. 2,131 ordinary messages in the same thread were read and deliberately left out of this record.</p>
+  <div class="foot"><span>DV-100, Item 5c, continued</span><span>Page 8 of 11</span></div>
+</div>
+
+<!-- Exhibits -->
+<div class="page">
+  <div class="formhead"><span class="code">Exhibits</span><span class="ttl">Exhibit list A to J with file fingerprints</span></div>
+  <p style="font-size:10.5pt">Each file was fingerprinted the moment it came off the phone. The same fingerprint is on the page it appears on, so a changed file is obvious.</p>
+  <table>
+    <tr><th>Ex.</th><th>What it is</th><th>Taken or dated</th><th>sha256</th></tr>
+    <tr><td class="d">A</td><td>Photograph, demanded to prove where she was</td><td>12 Apr 2025, 7:48 PM</td><td class="mono">9c41a0e7&hellip;</td></tr>
+    <tr><td class="d">B</td><td>Message export, 2,184 messages</td><td>14 Mar 2025 to 20 Sep 2026</td><td class="mono">4f9c2ae1&hellip;</td></tr>
+    <tr><td class="d">C</td><td>Screenshot, locked out of the joint account</td><td>18 Jun 2026, 8:05 PM</td><td class="mono">b7d33f92&hellip;</td></tr>
+    <tr><td class="d">D</td><td>Screenshot, her own location sent back to her</td><td>22 Feb 2026, 10:50 PM</td><td class="mono">2ae90c14&hellip;</td></tr>
+    <tr><td class="d">E</td><td>Photograph of the wall, with &ldquo;look what you did&rdquo;</td><td>3 Nov 2025, 8:44 PM</td><td class="mono">6f1b74dd&hellip;</td></tr>
+    <tr><td class="d">F</td><td>Message, self-harm threat if she left</td><td>14 May 2026, 11:20 PM</td><td class="mono">88c0ae35&hellip;</td></tr>
+    <tr><td class="d">G</td><td>Photograph</td><td>9 Jul 2026, 1:42 AM</td><td class="mono">51e7bb08&hellip;</td></tr>
+    <tr><td class="d">H</td><td>Photograph</td><td>9 Jul 2026, 1:44 AM</td><td class="mono">c93d20a6&hellip;</td></tr>
+    <tr><td class="d">I</td><td>Photograph</td><td>9 Jul 2026, 1:45 AM</td><td class="mono">1d64f7ba&hellip;</td></tr>
+    <tr><td class="d">J</td><td>Photograph that includes a child. Held back, not attached.</td><td>Withheld</td><td class="mono">withheld</td></tr>
+  </table>
+  <div class="blanknote">Exhibit J is never attached by default. A photograph with a child in it changes what a filing does to a family, and that is the petitioner's decision to make, not a default setting.</div>
+  <table style="margin-top:14px">
+    <tr><th>Also read, not attached</th><th>Detail</th></tr>
+    <tr><td>Bank statements</td><td>18 pages, joint checking, June to September</td></tr>
+    <tr><td>Her own notes</td><td>23 entries written in the app</td></tr>
+    <tr><td>Voice memo</td><td>2 minutes 14 seconds, 28 May 2026</td></tr>
+  </table>
+  <div class="foot"><span>Exhibit list</span><span>Page 10 of 11</span></div>
+</div>
+
+<!-- Method -->
+<div class="page">
+  <div class="formhead"><span class="code">Method</span><span class="ttl">How this record was built</span></div>
+  <h2>Where it ran</h2>
+  <p>On the petitioner's own machine. The files came across by cable, were encrypted as they landed, and no copy was uploaded. The packet is sealed for the attorney's key before it is sent, so what crosses the network is ciphertext.</p>
+  <h2>What Gemini did</h2>
+  <p>Three jobs, and only three. It put 2,184 messages in date order using the timestamps in the files. It grouped what repeats into six kinds across 19 months. It copied the exact words into the matching box on the form, carrying the line number with each one.</p>
+  <h2>What it did not do</h2>
+  <p>It did not write a sentence anyone did not say. It did not score the relationship, rate risk, or reach a conclusion about what happened. It did not fill CLETS-001, DV-109, DV-110 or DV-105. It did not treat the 24 day gap as calm.</p>
+  <h2>What a person still has to do</h2>
+  <p>Read it, correct anything that is not how she would say it, decide what to ask the judge for, and sign it. An attorney or the court's self-help center picks it up from here.</p>
+  <div class="blanknote">HerProof is not a law firm and does not give legal advice. It gets the record ready for a lawyer and hands it over. Nothing in this packet has been filed or sent.</div>
+  <div class="foot"><span>Packet fingerprint sha256 4f9c2ae1&hellip;</span><span>Page 11 of 11</span></div>
+</div>
+
+</body>
+</html>

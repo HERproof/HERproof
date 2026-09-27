@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HerProof</title>
+<style>
+:root{--ink:#3A3434;--muted:#625B5B;--ground:#FFF7F5;--blush:#FEF0F0;--line:#FCD1D1;--soft:#F9B4B4;--coral:#E87D7D;--btn:#CC5157;--btn2:#B4444A;--lilac:#F5F0FA;--lilac-line:#E4D9F0;--lilac-ink:#5E5470}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:#4A4A4A;font-family:"Plus Jakarta Sans",system-ui,-apple-system,sans-serif;line-height:1.6}
+.top{display:flex;align-items:center;gap:10px;padding:14px 22px;background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:9}
+.top b{font-size:15px;color:var(--ink);margin-right:auto}
+.mini{border:1px solid var(--soft);background:#fff;color:var(--ink);border-radius:999px;font-size:13px;font-weight:700;padding:8px 15px;cursor:pointer;font-family:inherit}
+.mini.exit{background:#FFECEC;border-color:#F3C2C2;color:#A8403F}
+.wrap{max-width:780px;margin:0 auto;padding:30px 22px 70px}
+.card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:30px;margin-bottom:20px}
+h1{font-size:26px;letter-spacing:-.8px;color:var(--ink);margin:0 0 6px;font-weight:800}
+h2{font-size:18px;color:var(--ink);margin:0 0 10px;font-weight:800}
+p{margin:0 0 14px}
+.lede{color:var(--muted);font-size:14.5px}
+label{display:block;font-size:13px;font-weight:700;color:var(--ink);margin:14px 0 5px}
+input{width:100%;padding:13px 15px;border:1px solid var(--line);border-radius:12px;font-size:15px;font-family:inherit;background:#fff}
+input:focus{outline:2px solid var(--soft);outline-offset:1px}
+.btn{border:none;border-radius:999px;background:var(--btn);color:#fff;font-size:15px;font-weight:700;padding:14px 26px;cursor:pointer;font-family:inherit;margin-top:18px}
+.btn:hover{background:var(--btn2)}
+.btn.ghost{background:#fff;color:var(--ink);border:1px solid var(--soft)}
+.hint{font-size:12.5px;color:var(--muted);margin-top:8px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+.stat{background:var(--blush);border-radius:14px;padding:14px 16px}
+.stat b{display:block;font-size:26px;font-weight:800;color:var(--ink);line-height:1.2}
+.stat span{font-size:12px;font-weight:600;color:var(--muted)}
+.doc{display:flex;gap:14px;align-items:center;border:1px solid var(--line);border-radius:16px;padding:16px 18px;margin-bottom:12px}
+.doc div{flex-grow:1;min-width:0}
+.doc b{display:block;color:var(--ink);font-size:15px}
+.doc small{color:var(--muted);font-size:12.5px}
+.note{background:var(--lilac);border:1px solid var(--lilac-line);border-radius:14px;padding:15px 17px;font-size:13.5px;color:var(--lilac-ink)}
+.steps{display:flex;gap:8px;margin-bottom:22px;font-size:12px;font-weight:700;color:var(--muted);flex-wrap:wrap}
+.steps i{font-style:normal;padding:6px 12px;border-radius:999px;background:#fff;border:1px solid var(--line)}
+.steps i.on{background:var(--btn);color:#fff;border-color:var(--btn)}
+.hide{display:none}
+footer{font-size:12.5px;color:var(--muted);max-width:780px;margin:0 auto;padding:0 22px 60px}
+/* disguise skin */
+body.dg{background:#F4F6F4}
+body.dg .top{background:#fff;border-bottom:1px solid #E2E6E2}
+body.dg .card{border-color:#E2E6E2}
+.recipe{display:flex;gap:14px;align-items:center;border-bottom:1px solid #EDF0ED;padding:14px 0}
+.recipe:last-child{border-bottom:none}
+.thumb{width:52px;height:52px;border-radius:12px;background:#DDE6DC;flex-shrink:0}
+.recipe b{display:block;color:#2C3A2C;font-size:15px}
+.recipe small{color:#6C776C;font-size:12.5px}
+</style>
+</head>
+<body>
+
+<div class="top">
+  <b id="brand">HerProof</b>
+  <button class="mini" id="dgbtn">Disguise mode</button>
+  <button class="mini exit" id="exitbtn">Quick Exit</button>
+</div>
+
+<div class="wrap" id="real">
+
+  <div class="steps">
+    <i id="t1" class="on">1. Your account</i>
+    <i id="t2">2. Dashboard</i>
+    <i id="t3">3. Send to your attorney</i>
+  </div>
+
+  <div class="card" id="s1">
+    <h1>Make your vault</h1>
+    <p class="lede">Your PIN locks it. We cannot open it for you, which also means nobody can make us open it.</p>
+    <label for="nm">What should we call you</label>
+    <input id="nm" placeholder="First name is enough" value="Ira">
+    <label for="em">Email</label>
+    <input id="em" type="email" placeholder="you@example.com" value="ira@example.com">
+    <label for="pin">Choose a 4 digit PIN</label>
+    <input id="pin" inputmode="numeric" maxlength="4" placeholder="••••" value="4821">
+    <p class="hint">Pick something you will remember. There is no reset, because a reset is a door someone else can walk through.</p>
+    <button class="btn" id="go1">Create my vault</button>
+  </div>
+
+  <div class="card hide" id="s2">
+    <h1 id="hi">Welcome back</h1>
+    <p class="lede">Your vault is open. It locks again when you close this window.</p>
+    <div class="stats">
+      <div class="stat"><b>6</b><span>files</span></div>
+      <div class="stat"><b>47</b><span>dated incidents</span></div>
+      <div class="stat"><b>19 mo</b><span>documented</span></div>
+    </div>
+    <h2>Documents ready</h2>
+    <div class="doc"><div><b>For your attorney</b><small>Patterns with the quotes, full thread attached, 24 pages</small></div><a class="mini" href="report.html">Open</a></div>
+    <div class="doc"><div><b>For the police</b><small>Same record, automated notes locked off, 21 pages</small></div><a class="mini" href="report.html">Open</a></div>
+    <div class="doc"><div><b>Just for me</b><small>Gentler wording, nothing you have to show anyone</small></div><a class="mini" href="report.html">Open</a></div>
+    <div class="doc"><div><b>The vault itself</b><small>Every file with its fingerprint and metadata</small></div><a class="mini" href="vault.html">Open</a></div>
+    <button class="btn" id="go2">Send one to my attorney</button>
+  </div>
+
+  <div class="card hide" id="s3">
+    <h1>Send it on</h1>
+    <p class="lede">Nothing leaves this machine until you press send yourself, and you see exactly what goes.</p>
+    <label for="lw">Your attorney's email</label>
+    <input id="lw" type="email" placeholder="name@firm.com">
+    <label for="wh">What to attach</label>
+    <input id="wh" value="Pattern record for an attorney, 24 pages, with the full thread" readonly>
+    <button class="btn" id="go3">Prepare the email</button>
+    <div class="note hide" id="done" style="margin-top:18px"></div>
+  </div>
+
+</div>
+
+<div class="wrap hide" id="fake">
+  <div class="card">
+    <h1>Weeknight recipes</h1>
+    <p class="lede">Saved for later</p>
+    <div class="recipe"><span class="thumb"></span><div><b>Lemon orzo with spinach</b><small>25 minutes &middot; one pan</small></div></div>
+    <div class="recipe"><span class="thumb"></span><div><b>Black bean soup</b><small>40 minutes &middot; freezes well</small></div></div>
+    <div class="recipe"><span class="thumb"></span><div><b>Sheet pan chicken and potatoes</b><small>1 hour &middot; feeds four</small></div></div>
+    <div class="recipe"><span class="thumb"></span><div><b>Peanut noodles</b><small>15 minutes &middot; pantry only</small></div></div>
+    <div class="recipe"><span class="thumb"></span><div><b>Tomato and white bean stew</b><small>35 minutes</small></div></div>
+  </div>
+</div>
+
+<footer>
+  <p>HerProof is not a law firm and does not give legal advice. It gets you ready for a lawyer and a therapist, and hands them the record.</p>
+  <p>You can delete any of it, or all of it, whenever you want. You can talk to her without saving a word. Quick Exit is always one tap away, and leaving takes nothing more than closing the app.</p>
+</footer>
+
+<script>
+function show(id){ document.getElementById(id).classList.remove("hide"); }
+function hide(id){ document.getElementById(id).classList.add("hide"); }
+function step(n){
+  [1,2,3].forEach(function(i){
+    document.getElementById("t"+i).className = (i===n) ? "on" : "";
+    document.getElementById("s"+i).classList.toggle("hide", i!==n);
+  });
+  window.scrollTo(0,0);
+}
+
+document.getElementById("go1").onclick = function(){
+  var n = document.getElementById("nm").value.trim() || "there";
+  document.getElementById("hi").textContent = "Hello " + n;
+  step(2);
+};
+document.getElementById("go2").onclick = function(){ step(3); };
+document.getElementById("go3").onclick = function(){
+  var to = document.getElementById("lw").value.trim();
+  var d = document.getElementById("done");
+  if(!to){ d.textContent = "Put your attorney's email in first."; show("done"); return; }
+  d.innerHTML = "<b>Ready to send to " + to + "</b><br>Attached: herproof-pattern-record.html, 24 pages, fingerprint 4f9c2ae1&hellip;<br>" +
+    "Your name and the file are the only things in it. Nothing has been sent yet. The send button is yours.";
+  show("done");
+};
+
+/* Disguise mode: the whole app becomes something else, and the PIN brings it back. */
+var disguised = false;
+function disguise(on){
+  disguised = on;
+  document.body.classList.toggle("dg", on);
+  document.getElementById("brand").textContent = on ? "Recipes" : "HerProof";
+  document.title = on ? "Recipes" : "HerProof";
+  document.getElementById("real").classList.toggle("hide", on);
+  document.getElementById("fake").classList.toggle("hide", !on);
+  document.getElementById("dgbtn").textContent = on ? "Recipes" : "Disguise mode";
+}
+document.getElementById("dgbtn").onclick = function(){
+  if(!disguised){ disguise(true); return; }
+  var p = prompt("PIN");
+  if(p === "4821"){ disguise(false); }
+};
+/* Press D anywhere to disguise, for when someone walks in. */
+document.addEventListener("keydown", function(e){
+  if(e.key === "d" && !disguised && document.activeElement.tagName !== "INPUT"){ disguise(true); }
+});
+
+/* Quick Exit: wipe what is on screen, then leave. Back button lands on the cover site. */
+document.getElementById("exitbtn").onclick = function(){
+  document.body.innerHTML = "";
+  location.replace("https://weather.com");
+};
+</script>
+</body>
+</html>

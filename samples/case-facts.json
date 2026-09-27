@@ -1,0 +1,66 @@
+{
+  "note": "Mock only. These are the answers the petitioner gives herself in the app, the facts no file can prove. The demo keeps them separate from anything read off her phone, so the form can be painted complete while every value still shows where it came from.",
+  "petitioner": {
+    "first_name": "Ira",
+    "last_name": "P.",
+    "age": 34,
+    "date_of_birth": "1992-02-11",
+    "address_on_form": "Withheld from the public forms, listed on CLETS-001 only",
+    "confidential_address": "1847 Bryant Street, Apt 4, San Francisco, CA 94110",
+    "phone": "(415) 555-0134",
+    "email": "on file with counsel",
+    "lawyer": "None yet, self-represented at filing",
+    "county": "San Francisco",
+    "court": "Superior Court of California, County of San Francisco, 400 McAllister Street",
+    "interpreter_needed": false
+  },
+  "restrained_person": {
+    "first_name": "Sam",
+    "last_name": "R.",
+    "date_of_birth": "1989-07-30",
+    "age": 37,
+    "sex": "M",
+    "height": "6'1\"",
+    "weight": "195 lb",
+    "hair": "Brown",
+    "eyes": "Brown",
+    "race": "White",
+    "drivers_license": "D4482915, CA",
+    "vehicle": "2019 Toyota Tacoma, grey, plate 8XKR412",
+    "employer": "Corwin Mechanical, 2200 Cesar Chavez Street, San Francisco",
+    "address": "1847 Bryant Street, Apt 4, San Francisco, CA 94110, same household until 20 Sep 2026",
+    "source": "she answered these in the app. none of it was read off a file."
+  },
+  "relationship": {
+    "married": true,
+    "married_on": "2016-05-14",
+    "lived_together": true,
+    "moved_out": "not yet, still in the same home as of filing",
+    "children_in_common": true
+  },
+  "children": [
+    { "initials": "M.R.", "age": 7, "lives_with": "both parents" },
+    { "initials": "J.R.", "age": 4, "lives_with": "both parents" }
+  ],
+  "other_court_cases": "None that she knows of",
+  "firearms": {
+    "knows_of_any": true,
+    "detail": "One shotgun kept in the hall closet. She has seen it; there is nothing about it in any file.",
+    "source": "she answered this. the record cannot prove it either way."
+  },
+  "orders_she_is_asking_for": {
+    "personal_conduct": ["no harassment or contact", "no taking action to find her address or location"],
+    "stay_away_yards": 100,
+    "stay_away_from": ["her home", "her workplace at 500 Terry Francois Blvd", "the children's school", "her vehicle"],
+    "move_out_order": true,
+    "custody_and_visitation": "asked for, DV-105 to be completed with counsel",
+    "firearms_surrender": true
+  },
+  "hearing": {
+    "filed_on": "2026-09-25",
+    "hearing_date": "2026-10-09",
+    "time": "8:30 AM",
+    "department": "Dept. 402",
+    "source": "issued by the clerk at filing. blank until then."
+  }
+}

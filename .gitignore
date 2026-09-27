@@ -1,0 +1,16 @@
+.env
+__pycache__/
+*.pyc
+
+# Demo data is committed on purpose. Once real evidence goes through the
+# pipeline, uncomment these so it can never be pushed:
+# samples/
+# entries.json
+# timeline.json
+# packet.html
+
+# browser API keys (see web/pattern-map/config.example.js)
+config.js
+
+# local editor settings
+.claude/

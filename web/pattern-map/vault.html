@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HerProof Vault</title>
+<style>
+:root{--ink:#0F172A;--muted:#475569;--ground:#FFF2EB;--blush:#FFE3D5;--line:#FFD8C6;--coral:#FF5722;--btn:#E11D48;--btn2:#9F1239;--lilac:#F5F0FA;--lilac-ink:#5E5470}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:#3F4756;font-family:"Plus Jakarta Sans",system-ui,-apple-system,sans-serif;line-height:1.6}
+.wrap{max-width:1000px;margin:0 auto;padding:36px 24px 80px}
+h1{font-size:30px;letter-spacing:-1px;color:var(--ink);margin:0 0 6px;font-weight:800}
+.sub{color:var(--muted);font-size:14px;margin:0 0 26px}
+.card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px;margin-bottom:22px}
+h2{font-size:17px;color:var(--ink);margin:0 0 14px;font-weight:800}
+.frow{display:grid;grid-template-columns:minmax(0,2fr) .8fr 1.1fr .5fr 1fr;gap:12px;padding:12px 14px;align-items:center;font-size:13.5px;border-top:1px solid #FBE7DC}
+.frow:first-child{border-top:none;background:var(--blush);font-size:11px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;color:var(--muted);border-radius:12px}
+.frow b{display:block;color:var(--ink)}
+.frow small{display:block;color:var(--muted);font-size:11.5px}
+.pill{display:inline-block;padding:3px 10px;border-radius:999px;background:var(--lilac);color:var(--lilac-ink);font-size:11.5px;font-weight:700}
+.hash{font-family:ui-monospace,Menlo,monospace;font-size:11.5px;color:var(--muted)}
+.btn{display:inline-block;border:none;border-radius:999px;background:var(--btn);color:#fff;font-size:15px;font-weight:700;padding:14px 26px;cursor:pointer;margin:0 10px 10px 0;font-family:inherit}
+.btn:hover{background:var(--btn2)}
+.btn.ghost{background:#fff;color:var(--ink);border:1px solid #FFC4AC}
+.note{font-size:13px;color:var(--muted);margin-top:10px}
+pre{background:#FFF8F4;border:1px solid var(--line);border-radius:14px;padding:16px;font-size:12px;overflow:auto;max-height:280px;color:#3F4756}
+@media(max-width:820px){.frow{grid-template-columns:1fr 1fr}.frow:first-child{display:none}.hash{display:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Vault</h1>
+  <p class="sub">Everything in this record, with the metadata that says where it came from. Nothing here has left this browser.</p>
+
+  <div class="card">
+    <h2>Source files</h2>
+    <div id="files"></div>
+  </div>
+
+  <div class="card">
+    <h2>Take it with you</h2>
+    <button class="btn" id="dl-json">Download vault (.json)</button>
+    <button class="btn ghost" id="dl-html">Download readable copy (.html)</button>
+    <p class="note">The JSON carries every file's fingerprint, the period it covers, how each date was established and which line each incident came from. The readable copy is the same record as a page you can open anywhere, or print for an attorney.</p>
+  </div>
+
+  <div class="card">
+    <h2>What is in the download</h2>
+    <pre id="peek"></pre>
+  </div>
+</div>
+
+<script>
+var VAULT = {
+  format: "herproof.vault",
+  format_version: 1,
+  app: "HerProof 1.0",
+  exported_at: new Date().toISOString(),
+  exported_from: "local browser, no server involved",
+  coverage: { first_record: "2025-03-14", last_record: "2026-09-20", months: 19, periods_with_no_records: [{ from: "2025-12-12", to: "2026-01-04", note: "No records for this period" }] },
+  sources: [
+    { name: "WhatsApp Chat with Sam.txt", kind: "messages", produced_by: "iOS WhatsApp export", bytes: 3762541, added: "2026-09-24", covers: ["2025-03-14", "2026-09-20"], items: 2184, incidents: 44, sha256: "4f9c2ae1d0b53c77a9e18f2c6b4470e1a3c8d95f7e2b16a0c4d83f9e5b7102ac", date_method: "export timestamp, dd/mm/yyyy confirmed from file" },
+    { name: "IMG_4472 to IMG_4478.heic", kind: "screenshots", produced_by: "camera roll", bytes: 14820113, added: "2026-09-24", covers: ["2026-08-03", "2026-09-02"], items: 7, incidents: 0, sha256: "b72d18c04ef5a91d3c6802be77f4195ad8c3e60b2f14975c8ea0d3b6197fc428", date_method: "capture date from file metadata, kept as recorded" },
+    { name: "Voice memo, in the car.m4a", kind: "audio", produced_by: "phone recorder", bytes: 2143880, added: "2026-09-24", covers: ["2026-05-28", "2026-05-28"], items: 1, incidents: 0, sha256: "0ac93f55b1e8427d6fa0c39e84517b2d0c6e93af5128d7b4e0a6c2f91d3b8047", date_method: "recording date from file metadata" },
+    { name: "Joint checking, Jun to Sep.pdf", kind: "document", produced_by: "bank issued statement", bytes: 884210, added: "2026-09-25", covers: ["2026-06-01", "2026-09-15"], items: 18, incidents: 2, sha256: "e5610d7bc3924f08a17de5b9206c84fa3d17e0b985c2461fa70d38e5c9b1204f", date_method: "statement period printed on the document" },
+    { name: "My notes", kind: "journal", produced_by: "written in the app", bytes: 18442, added: "2026-09-25", covers: ["2025-04-02", "2026-09-25"], items: 23, incidents: 1, sha256: "91b4c2060de7f83a5c14b9207fe6381da40c75b2e93f0184ca6d2b7e5093f14c", date_method: "date the entry was written, editable by the author" },
+    { name: "Saved web pages", kind: "web", produced_by: "browser extension, source URL kept", bytes: 402118, added: "2026-09-25", covers: ["2026-09-02", "2026-09-02"], items: 4, incidents: 0, sha256: "7d20fe4819a3c56be0724df1985ac3b6042e7f1d85c930ab6e24f70d15c8b392", date_method: "capture time recorded by the extension" }
+  ],
+  categories: [
+    { id: "monitoring", label: "Monitoring", count: 18, first: "2025-03-18", last: "2026-09-19" },
+    { id: "economic", label: "Money control", count: 9, first: "2025-06-11", last: "2026-08-14" },
+    { id: "blame_reality", label: "Blame and denial", count: 8, first: "2025-04-02", last: "2026-09-20" },
+    { id: "degradation", label: "Put-downs", count: 7, first: "2025-11-30", last: "2026-06-18" },
+    { id: "threats", label: "Threats", count: 3, first: "2026-02-02", last: "2026-08-22" },
+    { id: "isolation", label: "Isolation", count: 2, first: "2025-04-19", last: "2026-01-22" }
+  ],
+  incidents: [
+    { at: "2025-03-18T22:41:08", category: "monitoring", text: "where are you", source: "WhatsApp Chat with Sam.txt", line: 4, date_confidence: "high" },
+    { at: "2025-04-19T23:14:55", category: "isolation", text: "your sister is toxic and you know it", source: "WhatsApp Chat with Sam.txt", line: 12, date_confidence: "high" },
+    { at: "2025-06-11T09:12:41", category: "economic", text: "you don't need your own account, I pay for everything", source: "WhatsApp Chat with Sam.txt", line: 18, date_confidence: "high" },
+    { at: "2025-11-30T20:14:22", category: "degradation", text: "nobody else would put up with you", source: "WhatsApp Chat with Sam.txt", line: 32, date_confidence: "high" },
+    { at: "2026-02-02T23:58:41", category: "threats", text: "you'll regret this", source: "WhatsApp Chat with Sam.txt", line: 37, date_confidence: "high" },
+    { at: "2026-08-14T08:31:00", category: "economic", text: "I changed the login on the joint account. ask me if you need grocery money.", source: "WhatsApp Chat with Sam.txt", line: 52, date_confidence: "high", note: "joined from a message split across two lines" },
+    { at: "2026-08-22T23:51:09", category: "threats", text: "if you take this to court you'll regret it", source: "WhatsApp Chat with Sam.txt", line: 54, date_confidence: "high" },
+    { at: "2026-09-19T23:48:11", category: "monitoring", text: "where are you. I've asked you four times now. Answer me.", source: "WhatsApp Chat with Sam.txt", line: 61, date_confidence: "high" }
+  ],
+  automated_notes: { engine: "keyword pass with a Gemini pass behind it", confidence_floor: 0.7, status: "describes only, never a finding, never a score", excluded: "anything below the floor stays in the chronology and out of the counts" },
+  integrity: { note: "Each fingerprint is taken from the file as it was brought in. Re-export the vault after adding a file and the fingerprints change with it.", removed_by_user: 0 },
+  disclaimer: "HerProof is not a law firm and does not give legal advice. It gets your record ready for a lawyer and hands it over."
+};
+
+function bytes(n){ return n > 1048576 ? (n/1048576).toFixed(1) + " MB" : Math.round(n/1024) + " KB"; }
+
+var head = '<div class="frow"><span>File</span><span>Type</span><span>Covers</span><span>Items</span><span>Fingerprint</span></div>';
+document.getElementById("files").innerHTML = head + VAULT.sources.map(function(s){
+  return '<div class="frow"><span><b>' + s.name + '</b><small>Added ' + s.added + ' &middot; ' + bytes(s.bytes) + ' &middot; ' + s.produced_by + '</small></span>' +
+    '<span><span class="pill">' + s.kind + '</span></span>' +
+    '<span>' + s.covers[0] + ' to ' + s.covers[1] + '</span>' +
+    '<span>' + s.items + '</span>' +
+    '<span class="hash">sha256 ' + s.sha256.slice(0,8) + '&hellip;</span></div>';
+}).join("");
+
+document.getElementById("peek").textContent = JSON.stringify(VAULT, null, 2).slice(0, 1400) + "\n...";
+
+function save(name, text, type){
+  var b = new Blob([text], {type: type});
+  var a = document.createElement("a");
+  a.href = URL.createObjectURL(b);
+  a.download = name;
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(function(){ URL.revokeObjectURL(a.href); }, 2000);
+}
+
+document.getElementById("dl-json").onclick = function(){
+  VAULT.exported_at = new Date().toISOString();
+  save("herproof-vault.json", JSON.stringify(VAULT, null, 2), "application/json");
+};
+
+document.getElementById("dl-html").onclick = function(){
+  var rows = VAULT.incidents.map(function(i){
+    return "<tr><td>" + i.at.replace("T", " ") + "</td><td>" + i.category + "</td><td>" + i.text.replace(/</g,"&lt;") + "</td><td>" + i.source + ", line " + i.line + "</td></tr>";
+  }).join("");
+  var files = VAULT.sources.map(function(s){
+    return "<tr><td>" + s.name + "</td><td>" + s.kind + "</td><td>" + s.covers[0] + " to " + s.covers[1] + "</td><td>" + s.items + "</td><td style='font-family:monospace;font-size:11px'>" + s.sha256 + "</td></tr>";
+  }).join("");
+  var doc = "<!doctype html><meta charset='utf-8'><title>HerProof vault</title>" +
+    "<style>body{font-family:system-ui,sans-serif;max-width:860px;margin:40px auto;padding:0 20px;color:#0F172A;line-height:1.5}" +
+    "table{border-collapse:collapse;width:100%;margin:14px 0 30px;font-size:13px}th,td{border:1px solid #F3DCD0;padding:7px 9px;text-align:left;vertical-align:top}" +
+    "th{background:#FFE3D5;font-size:11px;text-transform:uppercase;letter-spacing:.4px}h1{font-size:24px}h2{font-size:16px;margin-top:28px}</style>" +
+    "<h1>HerProof vault</h1><p>Exported " + new Date().toLocaleString() + ". " + VAULT.coverage.months + " months, " +
+    VAULT.coverage.first_record + " to " + VAULT.coverage.last_record + ".</p>" +
+    "<h2>Source files</h2><table><tr><th>File</th><th>Type</th><th>Covers</th><th>Items</th><th>SHA-256</th></tr>" + files + "</table>" +
+    "<h2>Dated incidents</h2><table><tr><th>When</th><th>Kind</th><th>What was said</th><th>Where it came from</th></tr>" + rows + "</table>" +
+    "<h2>No records for this period</h2><p>" + VAULT.coverage.periods_with_no_records[0].from + " to " + VAULT.coverage.periods_with_no_records[0].to +
+    ". No messages were found in this period. That is not the same as nothing happening.</p>" +
+    "<p style='margin-top:30px;color:#475569;font-size:13px'>" + VAULT.disclaimer + "</p>";
+  save("herproof-vault.html", doc, "text/html");
+};
+</script>
+<script src="brand.js"></script>
+</body>
+</html>

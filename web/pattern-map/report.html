@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HerProof report</title>
+<style>
+:root{--ink:#3A3434;--muted:#625B5B;--line:#EBD8D8;--blush:#FEF0F0;--coral:#E87D7D;--btn:#CC5157;--btn2:#B4444A;--lilac:#F5F0FA;--lilac-ink:#5E5470}
+*{box-sizing:border-box}
+body{margin:0;background:#FFF7F5;color:#4A4A4A;font-family:"Plus Jakarta Sans",system-ui,-apple-system,sans-serif;line-height:1.6}
+.bar{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--line);padding:12px 24px;display:flex;gap:10px;align-items:center;z-index:5}
+.bar b{font-size:14px;color:var(--ink);margin-right:auto}
+.btn{border:none;border-radius:999px;background:var(--btn);color:#fff;font-size:14px;font-weight:700;padding:10px 20px;cursor:pointer;font-family:inherit}
+.btn:hover{background:var(--btn2)}
+.btn.ghost{background:#fff;color:var(--ink);border:1px solid #F9B4B4}
+.page{max-width:860px;margin:30px auto 80px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:52px 56px}
+h1{font-size:27px;letter-spacing:-.8px;color:var(--ink);margin:0 0 4px;font-weight:800}
+.meta{font-size:13.5px;color:var(--muted);margin:0 0 4px}
+.rule{height:1px;background:var(--line);margin:26px 0}
+h2{font-size:19px;color:var(--ink);margin:34px 0 4px;font-weight:800;letter-spacing:-.3px}
+h2 .n{font-size:13px;color:var(--muted);font-weight:700;margin-left:8px}
+.range{font-size:13px;color:var(--muted);margin:0 0 14px}
+.q{border-left:3px solid var(--coral);background:#FFFAFA;border-radius:0 10px 10px 0;padding:11px 16px;margin:0 0 10px}
+.q .w{font-size:15px;color:var(--ink)}
+.q .s{display:block;font-size:11.5px;color:var(--muted);margin-top:5px;font-weight:600}
+.note{background:var(--lilac);border-radius:12px;padding:14px 16px;font-size:13.5px;color:var(--lilac-ink);margin:14px 0}
+.flagbox{border:1px solid #F0C4C4;background:#FFF4F4;border-radius:12px;padding:16px 18px;margin:18px 0}
+.flagbox b{display:block;color:#A8403F;font-size:14px;margin-bottom:6px}
+.flagbox p{margin:0 0 8px;font-size:13.5px}
+table{border-collapse:collapse;width:100%;font-size:13px;margin-top:10px}
+th,td{border:1px solid var(--line);padding:7px 9px;text-align:left;vertical-align:top}
+th{background:var(--blush);font-size:11px;text-transform:uppercase;letter-spacing:.4px;color:var(--muted)}
+.foot{font-size:12.5px;color:var(--muted);margin-top:34px}
+@media print{.bar{display:none}.page{border:none;margin:0;padding:0;border-radius:0}body{background:#fff}}
+@media(max-width:700px){.page{padding:30px 22px;margin:14px}}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <b>HerProof &middot; document for an attorney</b>
+  <button class="btn ghost" onclick="window.print()">Print or save as PDF</button>
+  <button class="btn" id="dl">Download</button>
+</div>
+
+<div class="page" id="doc">
+  <h1>Pattern record</h1>
+  <p class="meta">Prepared for an attorney &middot; generated 25 September 2026</p>
+  <p class="meta">Source: WhatsApp Chat with Sam.txt &middot; 2,184 messages &middot; sha256 4f9c2ae1&hellip;</p>
+  <p class="meta">Period covered: 14 March 2025 to 20 September 2026 &middot; 47 dated incidents across 6 kinds of behavior</p>
+
+  <div class="note">Assembled by software from a file the petitioner supplied, with Gemini reading and grouping the messages. Quotes are verbatim and carry the line they came from. Nothing here is a legal conclusion, a score, or a finding that abuse occurred. That call belongs to the attorney and the court.</div>
+
+  <div class="rule"></div>
+
+  <h2>Most recent, first</h2>
+  <p class="range">What DV-100 asks for at item 5, in the order a judge reads it.</p>
+  <div class="q"><span class="w">&ldquo;where are you. I've asked you four times now. Answer me.&rdquo;</span><span class="s">Saturday 19 September 2026, 11:48 PM &middot; line 61 &middot; after three unanswered messages in seven minutes</span></div>
+  <div class="q"><span class="w">&ldquo;I went through your phone again&rdquo; &middot; &ldquo;that never happened, you're remembering it wrong&rdquo;</span><span class="s">Wednesday 2 September 2026, 1:03 AM and 1:05 AM &middot; lines 56 and 57</span></div>
+  <div class="q"><span class="w">&ldquo;if you take this to court you'll regret it&rdquo;</span><span class="s">Saturday 22 August 2026, 11:51 PM &middot; line 54</span></div>
+
+  <h2>Monitoring<span class="n">18 messages</span></h2>
+  <p class="range">First 18 March 2025, last 19 September 2026. Present in every month with records.</p>
+  <div class="q"><span class="w">&ldquo;share your location&rdquo; &middot; &ldquo;I'm not asking again&rdquo;</span><span class="s">3 August 2025, 10:51 PM and 10:52 PM</span></div>
+  <div class="q"><span class="w">&ldquo;send me a photo of where you are right now&rdquo;</span><span class="s">19 August 2025, 11:44 PM, and again 14 September 2026, 7:12 PM</span></div>
+  <div class="q"><span class="w">&ldquo;I went through your phone. who is he&rdquo;</span><span class="s">8 November 2025, 11:50 PM &middot; answered &ldquo;that's my brother&rdquo;, followed by &ldquo;you're imagining things&rdquo;</span></div>
+  <div class="q"><span class="w">&ldquo;I know where you work&rdquo;</span><span class="s">21 April 2026, 8:02 PM</span></div>
+
+  <h2>Escalation, 9 July 2026<span class="n">4 messages in 3 minutes</span></h2>
+  <p class="range">Between 1:14 AM and 1:17 AM, with no reply in between.</p>
+  <div class="q"><span class="w">&ldquo;answer me&rdquo; &middot; &ldquo;answer me&rdquo; &middot; &ldquo;answer me&rdquo; &middot; &ldquo;I'll come there myself&rdquo;</span><span class="s">9 July 2026, 1:14 to 1:17 AM &middot; lines 47 to 50</span></div>
+
+  <h2>Money control<span class="n">9 messages</span></h2>
+  <p class="range">First 11 June 2025, last 14 August 2026.</p>
+  <div class="q"><span class="w">&ldquo;you don't need your own account, I pay for everything&rdquo;</span><span class="s">11 June 2025, 9:12 AM</span></div>
+  <div class="q"><span class="w">&ldquo;give me the card&rdquo; &middot; &ldquo;I'm cutting you off until you talk to me properly&rdquo;</span><span class="s">19 March 2026, 7:31 AM and 7:33 AM</span></div>
+  <div class="q"><span class="w">&ldquo;I kept the keys. you don't need the car today&rdquo;</span><span class="s">3 August 2026, 6:58 AM</span></div>
+  <div class="q"><span class="w">&ldquo;I changed the login on the joint account. ask me if you need grocery money.&rdquo;</span><span class="s">14 August 2026, 8:31 AM &middot; sent as one message across two lines, rejoined</span></div>
+
+  <h2>Threats<span class="n">3 messages</span></h2>
+  <p class="range">First 2 February 2026, last 22 August 2026.</p>
+  <div class="q"><span class="w">&ldquo;you'll regret this&rdquo;</span><span class="s">2 February 2026, 11:58 PM</span></div>
+  <div class="q"><span class="w">&ldquo;if you leave I'll end it and that's on you&rdquo;</span><span class="s">14 May 2026, 10:41 PM</span></div>
+  <div class="q"><span class="w">&ldquo;if you take this to court you'll regret it&rdquo;</span><span class="s">22 August 2026, 11:51 PM</span></div>
+
+  <h2>Blame and denial<span class="n">8 messages</span></h2>
+  <p class="range">First 2 April 2025, last 20 September 2026.</p>
+  <div class="q"><span class="w">&ldquo;I never said that. that never happened&rdquo;</span><span class="s">2 April 2025, 6:22 PM</span></div>
+  <div class="q"><span class="w">&ldquo;you made me shout, you know that&rdquo;</span><span class="s">27 September 2025, 9:11 PM</span></div>
+  <div class="q"><span class="w">&ldquo;you're imagining things&rdquo;</span><span class="s">8 November 2025, 11:53 PM</span></div>
+
+  <h2>Put-downs<span class="n">7 messages</span></h2>
+  <p class="range">First 30 November 2025, last 18 June 2026.</p>
+  <div class="q"><span class="w">&ldquo;nobody else would put up with you&rdquo;</span><span class="s">30 November 2025, 8:14 PM</span></div>
+  <div class="q"><span class="w">&ldquo;you're pathetic when you cry&rdquo;</span><span class="s">28 February 2026, 9:44 PM</span></div>
+  <div class="q"><span class="w">&ldquo;you're worthless without me&rdquo;</span><span class="s">18 June 2026, 11:22 PM</span></div>
+
+  <h2>Isolation<span class="n">2 messages</span></h2>
+  <p class="range">First 19 April 2025, last 22 January 2026.</p>
+  <div class="q"><span class="w">&ldquo;it's me or them. choose&rdquo;</span><span class="s">15 October 2025, 8:02 AM</span></div>
+  <div class="q"><span class="w">&ldquo;don't talk to your mother about us again&rdquo;</span><span class="s">22 January 2026, 10:30 PM</span></div>
+
+  <div class="rule"></div>
+
+  <h2>What was not counted</h2>
+  <p class="range">So the record cannot be read as flagging everything.</p>
+  <div class="q"><span class="w">&ldquo;where are you? dinner's ready&rdquo;</span><span class="s">14 July 2025, 6:02 PM &middot; same words as the monitoring messages, no demand, no follow-up. Left out.</span></div>
+  <div class="q"><span class="w">&ldquo;running late, traffic on the bridge&rdquo; &middot; &ldquo;happy valentines&rdquo;</span><span class="s">Ordinary messages, 2,131 of them across the period. Left out.</span></div>
+
+  <h2>No records for this period</h2>
+  <p class="range">12 December 2025 to 4 January 2026. No messages were found in this period. That is not the same as nothing happening, and it is not presented as calm.</p>
+
+  <div class="flagbox">
+    <b>For the attorney to decide</b>
+    <p>14 May 2026 reads as a threat of self-harm used to prevent leaving. It is quoted above and not softened. It may bear on the risk assessment for a temporary order.</p>
+    <p>CLETS-001 identifiers are not in this record. No date of birth, vehicle or description appears in the file, so those fields are left blank rather than guessed.</p>
+    <p>Nothing in this record was removed by the petitioner. If anything is removed later, it is shown as removed rather than deleted quietly.</p>
+  </div>
+
+  <h2>How the dates were established</h2>
+  <table>
+    <tr><th>Method</th><th>Messages</th><th>Confidence</th></tr>
+    <tr><td>Export timestamp, day/month/year confirmed from the file</td><td>2,184</td><td>High</td></tr>
+    <tr><td>Inferred from surrounding messages</td><td>0</td><td>Not used</td></tr>
+  </table>
+  <p class="range" style="margin-top:10px">Date order was read from the file, never from the reader's locale. The full conversation, both sides, is attached unedited with the fingerprint in the footer of every page.</p>
+
+  <p class="foot">HerProof is not a law firm and does not give legal advice. It gets your record ready for a lawyer and hands it over.</p>
+  <p class="foot">You can delete any of it, or all of it, whenever you want. Quick Exit is always one tap away, and leaving takes nothing more than closing the app.</p>
+</div>
+
+<script>
+document.getElementById("dl").onclick = function(){
+  var css = document.querySelector("style").textContent;
+  var html = "<!doctype html><meta charset='utf-8'><title>HerProof report</title><style>" + css + "</style>" + document.getElementById("doc").outerHTML;
+  var b = new Blob([html], {type:"text/html"});
+  var a = document.createElement("a");
+  a.href = URL.createObjectURL(b); a.download = "herproof-pattern-record.html";
+  document.body.appendChild(a); a.click(); a.remove();
+};
+</script>
+</body>
+</html>

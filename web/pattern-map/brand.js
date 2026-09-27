@@ -1,0 +1,48 @@
+/* HerProof brand bar: the axolotl plus the handwritten logo, injected on any page.
+   Add <script src="brand.js"></script> just before </body>. */
+(function () {
+  var MASCOT = "data:image/png;base64,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";
+
+  var font = document.createElement("link");
+  font.rel = "stylesheet";
+  font.href = "https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap";
+  document.head.appendChild(font);
+
+  var css = document.createElement("style");
+  css.textContent =
+    ".hp-bar{display:flex;align-items:center;gap:10px;padding:10px 26px;background:#fff;border-bottom:1px solid #FFD8C6;font-family:'Plus Jakarta Sans',system-ui,sans-serif;position:sticky;top:0;z-index:50}" +
+    ".hp-bar a.hp-mark{display:flex;align-items:center;gap:9px;text-decoration:none;margin-right:auto}" +
+    ".hp-bar .hp-axo{width:30px;height:30px;background-repeat:no-repeat;background-position:center;background-size:contain;flex-shrink:0}" +
+    ".hp-bar svg.hp-script{width:112px;height:34px;display:block}" +
+    ".hp-bar svg.hp-script text{font-family:'Caveat',cursive}" +
+    ".hp-bar .hp-btn{border:1px solid #FFC4AC;background:#fff;color:#0F172A;border-radius:999px;font-size:12.5px;font-weight:700;padding:7px 14px;text-decoration:none}" +
+    ".hp-bar .hp-btn.hp-exit{background:#FFE4E4;border-color:#F6C0C0;color:#9F1239}" +
+    "@media(max-width:700px){.hp-bar{padding:9px 16px}.hp-bar svg.hp-script{width:92px;height:29px}}";
+  document.head.appendChild(css);
+
+  function build() {
+    if (document.querySelector(".hp-bar")) return;
+    var bar = document.createElement("div");
+    bar.className = "hp-bar";
+    bar.innerHTML =
+      '<a class="hp-mark" href="app.html">' +
+        '<span class="hp-axo" style="background-image:url(' + MASCOT + ')" role="img" aria-label="Proof, the HerProof axolotl"></span>' +
+        '<svg class="hp-script" viewBox="0 0 470 118" role="img" aria-label="HerProof">' +
+          '<defs><linearGradient id="hpInkBar" x1="0%" y1="20%" x2="100%" y2="80%">' +
+            '<stop offset="0%" stop-color="#FF9E1B"/><stop offset="22%" stop-color="#FF7A00"/><stop offset="44%" stop-color="#FF5722"/>' +
+            '<stop offset="66%" stop-color="#F43F5E"/><stop offset="84%" stop-color="#E11D48"/><stop offset="100%" stop-color="#9F1239"/>' +
+          '</linearGradient></defs>' +
+          '<text x="6" y="82" font-size="92" font-weight="700" fill="url(#hpInkBar)">HerProof.</text>' +
+        '</svg>' +
+      '</a>' +
+      '<a class="hp-btn" href="app.html">Back to the app</a>' +
+      '<a class="hp-btn hp-exit" href="https://www.linkedin.com/in/irawatiputeri/">Quick Exit</a>';
+    document.body.insertBefore(bar, document.body.firstChild);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", build);
+  } else {
+    build();
+  }
+})();

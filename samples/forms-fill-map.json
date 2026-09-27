@@ -1,0 +1,52 @@
+{
+  "note": "Every field the demo paints, with where its value comes from. Two sources only: read means it came off a file on her phone, answered means she typed it. Nothing is inferred, and a field with neither stays blank on screen.",
+  "DV-100": [
+    { "field": "1. petitioner name", "value": "Ira P.", "source": "answered" },
+    { "field": "1. age", "value": "34", "source": "answered" },
+    { "field": "1. address", "value": "Withheld, see CLETS-001", "source": "answered" },
+    { "field": "2. restrained person name", "value": "Sam R.", "source": "read, message export header" },
+    { "field": "2. date of birth", "value": "1989-07-30", "source": "answered" },
+    { "field": "2. address", "value": "1847 Bryant Street, Apt 4", "source": "answered" },
+    { "field": "3. relationship, married", "value": "checked", "source": "answered, corroborated by 18 bank pages" },
+    { "field": "3. relationship, live together", "value": "checked", "source": "answered, corroborated by shared rent" },
+    { "field": "4. other court cases", "value": "none", "source": "answered" },
+    { "field": "5a. date of most recent abuse", "value": "2026-09-19", "source": "read, line 61" },
+    { "field": "5b. who was there", "value": "no one else present", "source": "answered" },
+    { "field": "5c. what happened", "value": "quoted from lines 61, 56, 57", "source": "read" },
+    { "field": "5c. attachment box", "value": "checked, 47 incidents attached", "source": "read" },
+    { "field": "6. other recent abuse", "value": "quoted from lines 54, 44 to 50, exhibits F, G, H, I", "source": "read" },
+    { "field": "7. personal conduct orders", "value": "no harassment, no locating her", "source": "answered" },
+    { "field": "8. stay away, yards", "value": "100", "source": "answered" },
+    { "field": "8. stay away, places", "value": "home, workplace, school, vehicle", "source": "answered" },
+    { "field": "9. firearms", "value": "checked, one shotgun in the hall closet", "source": "answered" },
+    { "field": "10. move out order", "value": "checked", "source": "answered" }
+  ],
+  "CLETS-001": [
+    { "field": "name", "value": "Sam R.", "source": "read" },
+    { "field": "date of birth", "value": "1989-07-30", "source": "answered" },
+    { "field": "height", "value": "6'1\"", "source": "answered" },
+    { "field": "weight", "value": "195 lb", "source": "answered" },
+    { "field": "hair and eyes", "value": "brown, brown", "source": "answered" },
+    { "field": "drivers license", "value": "D4482915, CA", "source": "answered" },
+    { "field": "vehicle", "value": "2019 Toyota Tacoma, grey, 8XKR412", "source": "answered" },
+    { "field": "employer", "value": "Corwin Mechanical, 2200 Cesar Chavez Street", "source": "answered" }
+  ],
+  "DV-109": [
+    { "field": "party names", "value": "Ira P. and Sam R.", "source": "answered" },
+    { "field": "hearing date", "value": "2026-10-09", "source": "clerk at filing" },
+    { "field": "time and department", "value": "8:30 AM, Dept. 402", "source": "clerk at filing" }
+  ],
+  "DV-110": [
+    { "field": "orders requested", "value": "carried from DV-100 items 7, 8, 9 and 10", "source": "answered" },
+    { "field": "judge's orders", "value": "blank", "source": "the judge fills this" }
+  ],
+  "DV-105": [
+    { "field": "children", "value": "M.R. age 7, J.R. age 4", "source": "answered" },
+    { "field": "custody asked for", "value": "sole physical, joint legal", "source": "answered, to be confirmed with counsel" }
+  ],
+  "still_blank_on_purpose": [
+    "anything she did not answer and no file proves",
+    "the judge's own orders on DV-110",
+    "exhibit J, the photograph with a child in it, unless she asks for it"
+  ]
+}

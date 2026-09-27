@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="web_standard" name="shell-type"/>
+<title>HerProof — hello</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-bright": "#fff9f6",
+            "background": "#fff2eb",
+            "primary": "#000000",
+            "on-surface": "#0f172a",
+            "on-surface-variant": "#475569"
+          },
+          fontFamily: {
+            "sans": ["Plus Jakarta Sans", "sans-serif"],
+            "script": ["Caveat", "cursive"]
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    @layer base {
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        overscroll-behavior: none;
+      }
+    }
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Radiant peach ambient backdrop gentle pulse */
+    @keyframes peachAura {
+      0%, 100% { opacity: 0.85; transform: scale(1) translate(0, 0); }
+      50% { opacity: 0.98; transform: scale(1.05) translate(8px, -8px); }
+    }
+    .ambient-glow {
+      animation: peachAura 12s ease-in-out infinite alternate;
+    }
+
+    /* Ambient floating effect for the central hero block */
+    @keyframes subtleBreathe {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-4px); }
+    }
+    .ambient-float {
+      animation: subtleBreathe 7s ease-in-out infinite;
+    }
+
+    /* Multi-stop ombre gradient on the stroke */
+    .ombre-gradient-text {
+      background: linear-gradient(135deg, #FF9E1B 0%, #FF7A00 20%, #FF5722 40%, #F43F5E 62%, #E11D48 82%, #9F1239 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 14px 28px rgba(244, 63, 94, 0.22));
+    }
+
+    /* SVG Stroke Drawing & Mask Clip */
+    .script-mask-path {
+      stroke-dasharray: 2800;
+      stroke-dashoffset: 0;
+    }
+
+    .is-animating .script-mask-path {
+      stroke-dashoffset: 2800;
+      animation: writeScript 2.4s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    }
+
+    @keyframes writeScript {
+      0% {
+        stroke-dashoffset: 2800;
+      }
+      100% {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    /* Underline flourish drawing animation */
+    .flourish-path {
+      stroke-dasharray: 700;
+      stroke-dashoffset: 0;
+    }
+
+    .is-animating .flourish-path {
+      stroke-dashoffset: 700;
+      animation: drawFlourish 0.9s cubic-bezier(0.22, 1, 0.36, 1) 1.6s forwards;
+    }
+
+    @keyframes drawFlourish {
+      0% {
+        stroke-dashoffset: 700;
+      }
+      100% {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    /* Pen Nib Tracker */
+    .pen-glow {
+      filter: drop-shadow(0 0 8px rgba(244, 63, 94, 0.9)) drop-shadow(0 0 16px rgba(255, 122, 0, 0.7));
+    }
+
+    /* Phase 2: Tagline Heading (2.2s - 3.2s) */
+    .headline-reveal {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .is-animating .headline-reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      animation: revealHeadline 0.9s cubic-bezier(0.16, 1, 0.3, 1) 2.2s forwards;
+    }
+
+    @keyframes revealHeadline {
+      0% {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Phase 3: Tagline Subtitle (2.8s - 3.8s) */
+    .subline-reveal {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .is-animating .subline-reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      animation: revealSubline 0.9s cubic-bezier(0.16, 1, 0.3, 1) 2.8s forwards;
+    }
+
+    @keyframes revealSubline {
+      0% {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body class="bg-[#FFF2EB] font-['Plus_Jakarta_Sans',sans-serif] text-[#0F172A] antialiased selection:bg-[#FFE5D9] selection:text-[#FF6B4A] min-h-screen h-screen w-full relative overflow-hidden flex flex-col justify-center items-center select-none">
+<!-- Warm Peach & Apricot Radiant Ambient Glow (#FFF2EB, #FFE3D5, #FFD1BE, #FBE8DE) -->
+<div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+<div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[1100px] sm:w-[1400px] h-[720px] bg-gradient-to-tr from-[#FFD1BE]/85 via-[#FFE3D5]/80 to-[#FBE8DE]/90 blur-[130px] rounded-full ambient-glow"></div>
+<div class="absolute top-1/4 -right-28 w-[680px] h-[600px] bg-gradient-to-bl from-[#FF7A00]/25 via-[#F43F5E]/20 to-[#FFE3D5]/50 blur-[130px] rounded-full ambient-glow" style="animation-delay: -3.5s;"></div>
+<div class="absolute -bottom-32 -left-28 w-[720px] h-[580px] bg-gradient-to-tr from-[#FFE3D5]/80 via-[#FFD1BE]/65 to-[#F43F5E]/20 blur-[125px] rounded-full ambient-glow" style="animation-delay: -7s;"></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[480px] bg-gradient-to-b from-[#FFE3D5]/50 to-transparent blur-[110px] rounded-full pointer-events-none"></div>
+</div>
+<!-- Replay Button (Top Right Subtle Floating Pill) -->
+<button class="absolute top-7 right-7 z-30 flex items-center gap-1.5 px-4 py-2 text-xs font-semibold text-slate-600 hover:text-[#E11D48] bg-white/80 hover:bg-white backdrop-blur-md rounded-full shadow-sm hover:shadow-md border border-[#FFE5D9] transition-all duration-300 group cursor-pointer" id="replayBtn" onclick="triggerReplay()" title="Replay handwriting animation">
+<span class="material-symbols-outlined text-[17px] transition-transform duration-500 group-hover:rotate-180 text-slate-500 group-hover:text-[#E11D48]">refresh</span>
+<span>Replay</span>
+</button>
+<!-- Main Viewport Centered Composition -->
+<main class="w-full h-full relative z-10 flex flex-col justify-center items-center px-4 sm:px-6 md:px-12 py-8 overflow-visible" id="compositionContainer">
+<div class="w-full max-w-5xl mx-auto flex flex-col items-center justify-center text-center my-auto ambient-float overflow-visible">
+<!-- Apple "hello"-style Flowing Cursive Calligraphy -->
+<div class="relative w-full max-w-[760px] sm:max-w-[880px] md:max-w-[1020px] flex flex-col items-center justify-center overflow-visible">
+<!-- Cursive Signature Wrapper -->
+<div class="relative inline-flex items-center justify-center pt-2 pb-0 px-6 overflow-visible" id="scriptWrapper">
+<!-- Visible Ombre Gradient Calligraphy Script (Golden Amber -> Deep Ruby) -->
+<div class="relative overflow-visible" id="calligraphyWrapper">
+<svg class="w-[420px] sm:w-[560px] md:w-[700px] h-[160px] sm:h-[210px] md:h-[260px] overflow-visible" fill="none" viewbox="-50 -50 780 320" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<!-- Multi-Stop Ombre Linear Gradient -->
+<lineargradient id="appleHelloGradient" x1="0%" x2="100%" y1="30%" y2="70%">
+<stop offset="0%" stop-color="#FF9E1B"></stop>
+<stop offset="20%" stop-color="#FF7A00"></stop>
+<stop offset="40%" stop-color="#FF5722"></stop>
+<stop offset="62%" stop-color="#F43F5E"></stop>
+<stop offset="82%" stop-color="#E11D48"></stop>
+<stop offset="100%" stop-color="#9F1239"></stop>
+</lineargradient>
+<!-- Generous Mask with ample boundaries so no strokes or ascenders/descenders clip -->
+<mask height="400" id="strokeRevealMask" maskunits="userSpaceOnUse" width="860" x="-60" y="-60">
+<!-- Revealed strokes: thick, soft round caps covering full font geometry -->
+<path class="script-mask-path" d="M 68,30 C 65,85 58,150 55,175 M 50,105 C 80,103 110,100 135,98 M 130,28 C 126,75 120,145 116,175 M 155,124 C 185,110 205,125 192,152 C 180,168 155,166 154,140 C 152,112 185,108 200,124 M 224,115 C 218,136 216,158 214,172 M 218,126 C 238,110 252,118 260,128 M 286,70 C 282,120 274,195 266,225 M 278,92 C 305,74 346,84 340,124 C 335,158 296,168 270,154 M 356,115 C 350,136 346,158 344,172 M 348,126 C 365,112 382,116 388,126 M 404,140 C 402,112 426,104 442,116 C 458,128 456,160 436,170 C 414,178 402,158 404,140 M 470,140 C 468,112 492,104 508,116 C 524,128 522,160 502,170 C 480,178 468,158 470,140 M 548,55 C 544,105 538,168 532,205 M 520,124 C 545,122 570,122 582,122 M 602,156 C 602,166 612,166 612,156 C 612,146 602,146 602,156" fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="68"></path>
+</mask>
+</defs>
+<!-- Rendered Ombre Handwritten Text -->
+<g mask="url(#strokeRevealMask)">
+<text fill="url(#appleHelloGradient)" font-family="'Caveat', cursive" font-size="160" font-weight="700" letter-spacing="1.5" x="35" y="160">HerProof.</text>
+</g>
+</svg>
+</div>
+<!-- Glowing Pen Nib tracking point -->
+<div class="absolute pointer-events-none z-20 flex items-center justify-center opacity-0 -translate-x-1/2 -translate-y-1/2 transition-opacity duration-300" id="glowingPen">
+<div class="w-5 h-5 rounded-full bg-gradient-to-tr from-[#FF7A00] to-[#E11D48] pen-glow scale-125 animate-ping opacity-60 absolute"></div>
+<div class="w-3 h-3 rounded-full bg-[#E11D48] border-2 border-white shadow-lg relative z-10"></div>
+</div>
+</div>
+<!-- Smooth Looping Underline Flourish with extra bounds & overflow visible -->
+<div class="w-[360px] sm:w-[500px] md:w-[640px] h-[48px] -mt-1 sm:-mt-2 md:-mt-3 relative pointer-events-none overflow-visible">
+<svg class="w-full h-full overflow-visible" fill="none" viewbox="-20 -10 600 60">
+<defs>
+<lineargradient id="flourishGradient" x1="0%" x2="100%" y1="0%" y2="0%">
+<stop offset="0%" stop-color="#FF9E1B" stop-opacity="0.3"></stop>
+<stop offset="25%" stop-color="#FF7A00" stop-opacity="0.9"></stop>
+<stop offset="65%" stop-color="#F43F5E" stop-opacity="0.95"></stop>
+<stop offset="100%" stop-color="#9F1239" stop-opacity="1"></stop>
+</lineargradient>
+</defs>
+<path class="flourish-path" d="M 28,16 C 145,34 340,35 482,14 C 496,11 508,7 502,18 C 495,29 470,27 455,23" id="flourishLine" stroke="url(#flourishGradient)" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.5"></path>
+</svg>
+</div>
+</div>
+<!-- Phase 2 & Phase 3: Crisp Apple Typography Taglines -->
+<div class="mt-6 sm:mt-8 md:mt-10 space-y-3 sm:space-y-3.5 w-full">
+<!-- Headline: "Your story. Your proof." (2.2s - 3.2s) -->
+<h1 class="headline-reveal text-[30px] sm:text-[38px] md:text-[44px] text-[#0F172A] font-bold tracking-tight leading-snug" id="headline">
+        Your story. Your proof.
+      </h1>
+<!-- Supporting Tagline: Balanced wide single line (~22-24px, slate color) (2.8s - 3.8s) -->
+<p class="subline-reveal text-[18px] sm:text-[21px] md:text-[23px] text-[#475569] font-[450] tracking-tight leading-relaxed max-w-4xl mx-auto px-4" id="subline">
+        For when it’s too much to relive, but too important to lose.
+      </p>
+</div>
+</div>
+</main>
+<!-- Unified Choreography Script Engine -->
+<script>
+  let activeAnimationTimer = null;
+  let penRaf = null;
+
+  function runChoreography() {
+    const container = document.getElementById('compositionContainer');
+    const pen = document.getElementById('glowingPen');
+    const wrapper = document.getElementById('scriptWrapper');
+
+    if (!container || !wrapper || !pen) return;
+
+    // Reset current state
+    container.classList.remove('is-animating');
+    if (penRaf) cancelAnimationFrame(penRaf);
+    clearTimeout(activeAnimationTimer);
+    pen.style.opacity = '0';
+
+    // Force DOM reflow to retrigger CSS keyframes cleanly
+    void container.offsetWidth;
+
+    // Trigger animation state
+    container.classList.add('is-animating');
+
+    // Pen head tracking along the cursive calligraphy timeline
+    const startTime = performance.now();
+    const duration = 2400; // 2.4s write duration
+    pen.style.opacity = '1';
+
+    function trackPen(now) {
+      const elapsed = now - startTime;
+      const progress = Math.min(Math.max(elapsed / duration, 0), 1);
+
+      // Smooth deceleration curve matching stroke easing: cubic-bezier(0.25, 1, 0.5, 1)
+      const ease = 1 - Math.pow(1 - progress, 3.2);
+
+      // Interpolate approximate pen coordinate across the expanded cursive script bounds
+      // viewBox: -50, -50 to 730, 270 (total viewBox width = 780, height = 320)
+      const startX = 65;
+      const endX = 612;
+      const currentSvgX = startX + (endX - startX) * ease;
+      const currentSvgY = 145 + Math.sin(ease * Math.PI * 7) * 16;
+
+      // Coordinate mapped to wrapper width & height accounting for (-50, -50) offset
+      const svgRenderedWidth = wrapper.querySelector('svg').clientWidth || wrapper.clientWidth;
+      const scale = svgRenderedWidth / 780;
+      
+      const offsetX = (currentSvgX - (-50)) * scale;
+      const offsetY = (currentSvgY - (-50)) * scale;
+
+      pen.style.left = offsetX + 'px';
+      pen.style.top = offsetY + 'px';
+
+      if (progress < 1) {
+        penRaf = requestAnimationFrame(trackPen);
+      } else {
+        // Fade out pen nib as script completes
+        pen.style.opacity = '0';
+      }
+    }
+
+    penRaf = requestAnimationFrame(trackPen);
+
+    // Keep resting state intact once all phases finish (3.8s)
+    activeAnimationTimer = setTimeout(() => {
+      pen.style.opacity = '0';
+    }, 4000);
+  }
+
+  function triggerReplay() {
+    runChoreography();
+  }
+
+  // Smooth initialization on load
+  window.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+      runChoreography();
+    }, 150);
+  });
+</script>
+</body></html>

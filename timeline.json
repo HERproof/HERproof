@@ -1,0 +1,342 @@
+{
+  "timeline": [
+    {
+      "sender": "self",
+      "timestamp": null,
+      "text": "Thats sooo earlyyy",
+      "confidence": 0.85,
+      "source_file": "IMG_1323.PNG"
+    },
+    {
+      "sender": "self",
+      "timestamp": null,
+      "text": "Btw did u see the pinterest board?",
+      "confidence": 1.0,
+      "source_file": "IMG_1323.PNG"
+    },
+    {
+      "sender": "self",
+      "timestamp": null,
+      "text": "It's all suits\ud83e\udee0",
+      "confidence": 1.0,
+      "source_file": "IMG_1323.PNG"
+    },
+    {
+      "sender": "other",
+      "timestamp": null,
+      "text": "Bruh I don\u2019t have that",
+      "confidence": 1.0,
+      "source_file": "IMG_1323.PNG"
+    },
+    {
+      "sender": "other",
+      "timestamp": null,
+      "text": "I'm js gonna wear what I wore today",
+      "confidence": 1.0,
+      "source_file": "IMG_1323.PNG"
+    },
+    {
+      "sender": "other",
+      "timestamp": null,
+      "text": "\ud83d\ude02\ud83d\ude02\ud83d\ude02\ud83d\ude02\ud83d\ude02\ud83d\ude02\ud83d\ude02\ud83d\ude02\ud83d\ude02\ud83d\ude02\ud83d\ude02\ud83d\ude02",
+      "confidence": 1.0,
+      "source_file": "IMG_1323.PNG"
+    },
+    {
+      "sender": "self",
+      "timestamp": null,
+      "text": "\ud83d\ude02\ud83d\ude02\ud83d\ude02",
+      "confidence": 1.0,
+      "source_file": "IMG_1323.PNG"
+    },
+    {
+      "sender": "self",
+      "timestamp": null,
+      "text": "Lowky idk",
+      "confidence": 1.0,
+      "source_file": "IMG_1323.PNG"
+    },
+    {
+      "sender": "self",
+      "timestamp": null,
+      "text": "I think ill do a suit\ud83d\ude2d",
+      "confidence": 1.0,
+      "source_file": "IMG_1323.PNG"
+    },
+    {
+      "sender": "other",
+      "timestamp": null,
+      "text": "Ya u should",
+      "confidence": 1.0,
+      "source_file": "IMG_1323.PNG"
+    },
+    {
+      "sender": "self",
+      "timestamp": null,
+      "text": "Lol ive never used half of the google things to build sth",
+      "confidence": 1.0,
+      "source_file": "IMG_1323.PNG"
+    },
+    {
+      "sender": "other",
+      "timestamp": null,
+      "text": "You should stop spending too much money, you useless",
+      "confidence": 1.0,
+      "source_file": "IMG_1324.PNG"
+    },
+    {
+      "sender": "other",
+      "timestamp": null,
+      "text": "You dont even work",
+      "confidence": 1.0,
+      "source_file": "IMG_1324.PNG"
+    },
+    {
+      "sender": "self",
+      "timestamp": null,
+      "text": "I feel like I do",
+      "confidence": 1.0,
+      "source_file": "IMG_1324.PNG"
+    },
+    {
+      "sender": "self",
+      "timestamp": null,
+      "text": "I don't feel safe",
+      "confidence": 1.0,
+      "source_file": "IMG_1324.PNG"
+    },
+    {
+      "sender": "other",
+      "timestamp": null,
+      "text": "You should stop taking the kids",
+      "confidence": 1.0,
+      "source_file": "IMG_1324.PNG"
+    },
+    {
+      "sender": "other",
+      "timestamp": null,
+      "text": "You are so dramatic",
+      "confidence": 1.0,
+      "source_file": "IMG_1324.PNG"
+    },
+    {
+      "sender": "self",
+      "timestamp": null,
+      "text": "Okay",
+      "confidence": 1.0,
+      "source_file": "IMG_1324.PNG"
+    },
+    {
+      "sender": "other",
+      "timestamp": null,
+      "text": "You have been a stay at home Mom for over than a decade now",
+      "confidence": 1.0,
+      "source_file": "IMG_1324.PNG"
+    },
+    {
+      "sender": "other",
+      "timestamp": null,
+      "text": "Our cats are more useful than you",
+      "confidence": 1.0,
+      "source_file": "IMG_1324.PNG"
+    },
+    {
+      "sender": "self",
+      "timestamp": null,
+      "text": "I won't hesitate if I have any",
+      "confidence": 1.0,
+      "source_file": "IMG_1325.JPG"
+    },
+    {
+      "sender": "other",
+      "timestamp": null,
+      "text": "Good. Could I ask you a question?",
+      "confidence": 1.0,
+      "source_file": "IMG_1325.JPG"
+    },
+    {
+      "sender": "self",
+      "timestamp": null,
+      "text": "Sure",
+      "confidence": 1.0,
+      "source_file": "IMG_1325.JPG"
+    },
+    {
+      "sender": "other",
+      "timestamp": null,
+      "text": "So on your Facebook page I think, there is a picture of you in a bikini.",
+      "confidence": 1.0,
+      "source_file": "IMG_1325.JPG"
+    },
+    {
+      "sender": "self",
+      "timestamp": null,
+      "text": "Yeah I was in Italy. That's right after I quit staff",
+      "confidence": 1.0,
+      "source_file": "IMG_1325.JPG"
+    },
+    {
+      "sender": "other",
+      "timestamp": null,
+      "text": "Wow!",
+      "confidence": 1.0,
+      "source_file": "IMG_1325.JPG"
+    },
+    {
+      "sender": "other",
+      "timestamp": null,
+      "text": "Do you have any idea what I am going to say?",
+      "confidence": 1.0,
+      "source_file": "IMG_1325.JPG"
+    },
+    {
+      "sender": "self",
+      "timestamp": null,
+      "text": "I really don't",
+      "confidence": 1.0,
+      "source_file": "IMG_1325.JPG"
+    },
+    {
+      "sender": "other",
+      "timestamp": null,
+      "text": "You are smoking hot!",
+      "confidence": 1.0,
+      "source_file": "IMG_1325.JPG"
+    },
+    {
+      "sender": "self",
+      "timestamp": null,
+      "text": "Lol thank you",
+      "confidence": 1.0,
+      "source_file": "IMG_1325.JPG"
+    },
+    {
+      "sender": "other",
+      "timestamp": null,
+      "text": "Ok. Should I withdraw my request?",
+      "confidence": 1.0,
+      "source_file": "IMG_1326.JPG"
+    },
+    {
+      "sender": "self",
+      "timestamp": null,
+      "text": "What are you talking about?",
+      "confidence": 1.0,
+      "source_file": "IMG_1326.JPG"
+    },
+    {
+      "sender": "other",
+      "timestamp": null,
+      "text": "To take you out for a drink. It's not going to happen. Right?",
+      "confidence": 1.0,
+      "source_file": "IMG_1326.JPG"
+    },
+    {
+      "sender": "self",
+      "timestamp": null,
+      "text": "Correct",
+      "confidence": 1.0,
+      "source_file": "IMG_1326.JPG"
+    },
+    {
+      "sender": "other",
+      "timestamp": null,
+      "text": "And would be different if I was not affiliated with the 13 ward",
+      "confidence": 1.0,
+      "source_file": "IMG_1326.JPG"
+    },
+    {
+      "sender": "other",
+      "timestamp": null,
+      "text": "Said differently, if I didn't know you and you didn't know me and I bumped into you at a Starbucks and began to talk and I asked you out. You would say no?",
+      "confidence": 1.0,
+      "source_file": "IMG_1326.JPG"
+    },
+    {
+      "sender": "other",
+      "timestamp": null,
+      "text": "Sorry to once again bother you",
+      "confidence": 0.8,
+      "source_file": "IMG_1326.JPG"
+    },
+    {
+      "sender": "other",
+      "timestamp": null,
+      "text": "So Alaina, do you still have an interest in me taking you out?\n\nIf not, I completely understand.",
+      "confidence": 1.0,
+      "source_file": "IMG_1327.JPG"
+    },
+    {
+      "sender": "self",
+      "timestamp": null,
+      "text": "I think we should maintain a professional relationship",
+      "confidence": 1.0,
+      "source_file": "IMG_1327.JPG"
+    },
+    {
+      "sender": "other",
+      "timestamp": null,
+      "text": "Will do. Can I ask why?",
+      "confidence": 1.0,
+      "source_file": "IMG_1327.JPG"
+    },
+    {
+      "sender": "other",
+      "timestamp": null,
+      "text": "Can you please give a response",
+      "confidence": 1.0,
+      "source_file": "IMG_1327.JPG"
+    },
+    {
+      "sender": "other",
+      "timestamp": null,
+      "text": "Hey",
+      "confidence": 1.0,
+      "source_file": "IMG_1328.PNG"
+    },
+    {
+      "sender": "other",
+      "timestamp": null,
+      "text": "I don't think this works anymore",
+      "confidence": 1.0,
+      "source_file": "IMG_1328.PNG"
+    },
+    {
+      "sender": "other",
+      "timestamp": null,
+      "text": "Either you come to the meeting or not",
+      "confidence": 1.0,
+      "source_file": "IMG_1328.PNG"
+    },
+    {
+      "sender": "other",
+      "timestamp": null,
+      "text": "You'll regret this",
+      "confidence": 1.0,
+      "source_file": "IMG_1328.PNG"
+    },
+    {
+      "sender": "self",
+      "timestamp": null,
+      "text": "I just don't think that's reasonable",
+      "confidence": 1.0,
+      "source_file": "IMG_1328.PNG"
+    },
+    {
+      "sender": "other",
+      "timestamp": null,
+      "text": "This will ruin your career",
+      "confidence": 1.0,
+      "source_file": "IMG_1328.PNG"
+    }
+  ],
+  "incidents": [
+    {
+      "start": null,
+      "end": null,
+      "summary": "The records omit dates for the messages between self and other. Other criticized self regarding money and family roles, commented on an image of self, asked self for drinks, and stated that nonattendance at a meeting would ruin self's career. Self stated a lack of safety, declined the invitations for drinks, asked to limit communication to work, and refused the demand to attend the meeting.",
+      "message_count": 47
+    }
+  ],
+  "flags": []
+}

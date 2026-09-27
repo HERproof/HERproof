@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DV-100, filled</title>
+<style>
+:root{--ink:#111;--rule:#222;--fill:#1A47B8;--hl:#FFF8DC}
+*{box-sizing:border-box}
+body{margin:0;background:#E9E7E4;color:var(--ink);font-family:Arial,Helvetica,sans-serif;font-size:13px;line-height:1.45}
+.bar{background:#fff;border-bottom:1px solid #D6D2CE;padding:12px 20px;display:flex;gap:10px;align-items:center;position:sticky;top:0;z-index:5}
+.bar b{margin-right:auto;font-family:"Plus Jakarta Sans",system-ui,sans-serif;font-size:14px}
+.bar button,.bar a{border:1px solid #F9B4B4;background:#fff;border-radius:999px;font-size:12.5px;font-weight:700;padding:7px 14px;cursor:pointer;font-family:"Plus Jakarta Sans",system-ui,sans-serif;text-decoration:none;color:#3A3434}
+.page{width:816px;max-width:100%;margin:22px auto;background:#fff;padding:44px 52px 54px;box-shadow:0 1px 6px rgba(0,0,0,.18)}
+.hdr{display:flex;border:1.5px solid var(--rule)}
+.hdr .l{flex:1;padding:7px 9px;border-right:1.5px solid var(--rule)}
+.hdr .r{width:190px;padding:7px 9px;font-size:11px}
+.code{font-weight:700;font-size:15px}
+.small{font-size:10.5px;color:#333}
+h1.t{font-size:15px;text-align:center;margin:14px 0 4px;text-transform:uppercase;letter-spacing:.3px}
+.sub{text-align:center;font-size:11px;margin-bottom:14px}
+.item{border-top:1px solid #999;padding:10px 0 12px;display:flex;gap:10px}
+.num{width:22px;font-weight:700;flex-shrink:0}
+.body{flex:1}
+.q{font-weight:700;margin-bottom:5px}
+.line{border-bottom:1px solid #333;min-height:19px;padding:1px 3px;margin-bottom:5px}
+.f{color:var(--fill);background:var(--hl);font-family:"Courier New",monospace;font-size:12.5px}
+.cbrow{display:flex;gap:7px;align-items:flex-start;margin-bottom:4px}
+.cb{width:12px;height:12px;border:1.3px solid #333;flex-shrink:0;margin-top:3px;text-align:center;line-height:10px;font-size:11px;font-weight:700}
+.cb.x{color:var(--fill);background:var(--hl)}
+.box{border:1px solid #333;padding:9px 11px;min-height:60px;margin-bottom:6px}
+.empty{color:#777;font-style:italic}
+.sig{display:flex;gap:30px;margin-top:8px}
+.sig div{flex:1}
+.sig .line{margin-bottom:2px}
+.cap{font-size:10.5px;color:#444}
+.foot{display:flex;justify-content:space-between;border-top:1.5px solid var(--rule);margin-top:26px;padding-top:6px;font-size:10px;color:#333}
+.stamp{font-family:"Plus Jakarta Sans",system-ui,sans-serif;font-size:11.5px;color:#5E5470;background:#F5F0FA;border:1px solid #E4D9F0;border-radius:8px;padding:8px 11px;margin:16px 0 0}
+@media print{.bar{display:none}body{background:#fff}.page{box-shadow:none;margin:0;width:auto;padding:30px}.f{background:none}}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <b>DV-100, filled from the record</b>
+  <a href="app.html">Back to the app</a>
+  <button onclick="window.print()">Print or save as PDF</button>
+</div>
+
+<div class="page">
+  <div class="hdr">
+    <div class="l">
+      <div class="small">Your name: <span class="f">Maya Reyes</span></div>
+      <div class="small">Your address (skip if you have a lawyer): <span class="f">Confidential, kept with the court</span></div>
+      <div class="small">City: <span class="f">Oakland</span> &nbsp; State: <span class="f">CA</span> &nbsp; Zip: <span class="f">94612</span></div>
+      <div class="small">Superior Court of California, County of <span class="f">Alameda</span></div>
+    </div>
+    <div class="r">
+      <div class="code">DV-100</div>
+      <div class="small">Case Number:</div>
+      <div class="line empty">left for the clerk</div>
+    </div>
+  </div>
+
+  <h1 class="t">Request for Domestic Violence Restraining Order</h1>
+  <p class="sub">Judicial Council of California &middot; Read <i>Can a Restraining Order Help Me?</i> (DV-500-INFO) before filling this out</p>
+
+  <div class="item">
+    <div class="num">1</div>
+    <div class="body">
+      <div class="q">Person asking for protection</div>
+      <div class="line f">Maya Reyes</div>
+      <div class="small">Age: <span class="f">34</span></div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="num">2</div>
+    <div class="body">
+      <div class="q">Person you want protection from</div>
+      <div class="line f">Samuel T. Mercer</div>
+      <div class="small">Description: <span class="empty">not completed. None of this appears in the record, and it is not guessed at.</span></div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="num">3</div>
+    <div class="body">
+      <div class="q">Your relationship to this person</div>
+      <div class="cbrow"><span class="cb x">X</span><span>We live together or used to live together <span class="f">(March 2024 to September 2026)</span></span></div>
+      <div class="cbrow"><span class="cb x">X</span><span>We are or were dating or engaged</span></div>
+      <div class="cbrow"><span class="cb"></span><span>We are married or registered domestic partners</span></div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="num">4</div>
+    <div class="body">
+      <div class="q">Other protected people</div>
+      <div class="cbrow"><span class="cb x">X</span><span>None requested at this time</span></div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="num">5</div>
+    <div class="body">
+      <div class="q">Describe the most recent abuse</div>
+      <div class="small">Date of most recent abuse: <span class="f">September 19, 2026</span> &nbsp; Who was there: <span class="f">Just the two of us, by message</span></div>
+      <div class="box f" style="margin-top:6px">On September 19, 2026 at 11:48 PM he sent me, &ldquo;where are you. I've asked you four times now. Answer me.&rdquo; Three messages had already gone unanswered in the seven minutes before it.<br><br>On September 2, 2026 at 1:03 AM he sent me, &ldquo;I went through your phone again.&rdquo; Two minutes later he sent, &ldquo;that never happened, you're remembering it wrong.&rdquo;<br><br>On August 22, 2026 at 11:51 PM he sent me, &ldquo;if you take this to court you'll regret it.&rdquo;</div>
+      <div class="cbrow"><span class="cb x">X</span><span>Attachment: message record, September 19, September 2 and August 22, 2026, quoted in full</span></div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="num">6</div>
+    <div class="body">
+      <div class="q">Describe any past abuse</div>
+      <div class="box f">47 dated incidents between March 14, 2025 and September 20, 2026, set out in order in the attached declaration, with the messages quoted in full. They fall into six repeating kinds: checking where I was (18), control over money (9), blaming and denying (8), put-downs (7), threats (3), and keeping me from people (2).<br><br>On July 9, 2026, four messages came between 1:14 and 1:17 AM: &ldquo;answer me&rdquo; three times, then &ldquo;I'll come there myself.&rdquo; Photographs I took that morning are timed 1:42 to 1:45 AM and are attached as Exhibits A, B and C.<br><br>There are no records at all between December 12, 2025 and January 4, 2026.</div>
+      <div class="cbrow"><span class="cb x">X</span><span>Continued on Attached Declaration (form MC-025), 24 pages, with Exhibits A to J</span></div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="num">11</div>
+    <div class="body">
+      <div class="q">Stay-away order</div>
+      <div class="cbrow"><span class="cb"></span><span>Yards: <span class="empty">for your attorney. The record does not decide what to ask the judge for.</span></span></div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="num">23</div>
+    <div class="body">
+      <div class="q">Guns, firearms and ammunition</div>
+      <div class="cbrow"><span class="cb"></span><span><span class="empty">Not completed.</span> The record contains no mention of a firearm. Whether to request this order is a legal decision.</span></div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="num">27</div>
+    <div class="body">
+      <div class="q">Number of pages attached to this form</div>
+      <div class="line f">24</div>
+      <p class="cap">I declare under penalty of perjury under the laws of the State of California that the information above is true and correct.</p>
+      <div class="sig">
+        <div><div class="line f">September 25, 2026</div><div class="cap">Date</div></div>
+        <div><div class="line empty">sign here</div><div class="cap">Sign your name</div></div>
+      </div>
+      <div class="sig">
+        <div><div class="line f">Maya Reyes</div><div class="cap">Type or print your name</div></div>
+        <div><div class="line empty">&nbsp;</div><div class="cap">Lawyer's signature, if any</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot"><span>DV-100, Request for Domestic Violence Restraining Order</span><span>Page 1 of 6</span></div>
+
+  <div class="stamp">Blue, highlighted text was filled from the record. Everything left empty was left empty on purpose: it is either a legal decision or a fact that is not in the record. A lawyer or a court self-help center reviews this before anything is filed, and Maya signs it herself.</div>
+</div>
+
+<div class="page">
+  <div class="hdr">
+    <div class="l"><div class="small">Petitioner: <span class="f">Maya Reyes</span></div><div class="small">Respondent: <span class="f">Samuel T. Mercer</span></div></div>
+    <div class="r"><div class="code">CLETS-001</div><div class="small">Case Number:</div><div class="line empty">left for the clerk</div></div>
+  </div>
+  <h1 class="t">Confidential CLETS Information</h1>
+  <p class="sub">Police read this to enforce the order. The restrained person never receives a copy.</p>
+
+  <div class="item"><div class="num">1</div><div class="body"><div class="q">Restrained person's date of birth</div><div class="line empty">not in the record</div></div></div>
+  <div class="item"><div class="num">2</div><div class="body"><div class="q">Height, weight, hair, eyes, race</div><div class="line empty">not in the record</div></div></div>
+  <div class="item"><div class="num">3</div><div class="body"><div class="q">Driver's license number and state</div><div class="line empty">not in the record</div></div></div>
+  <div class="item"><div class="num">4</div><div class="body"><div class="q">Vehicle make, model, color, plate</div><div class="line empty">not in the record</div></div></div>
+  <div class="item"><div class="num">5</div><div class="body"><div class="q">Employer and work address</div><div class="line empty">not in the record</div></div></div>
+
+  <div class="foot"><span>CLETS-001, Confidential CLETS Information</span><span>Page 1 of 2</span></div>
+
+  <div class="stamp">Every line on this form is blank. None of it appears anywhere in the messages, photos or notes, and a guess on the form police enforce from is worse than an empty box. Maya or her lawyer fills this in.</div>
+</div>
+
+<div class="page" style="font-family:'Plus Jakarta Sans',system-ui,sans-serif">
+  <p style="font-size:12.5px;color:#625B5B">HerProof is not a law firm and does not give legal advice. It gets you ready for a lawyer and a therapist, and hands them the record.</p>
+  <p style="font-size:12.5px;color:#625B5B">You can delete any of it, or all of it, whenever you want. You can talk to her without saving a word. Quick Exit is always one tap away, and leaving takes nothing more than closing the app.</p>
+</div>
+
+</body>
+</html>

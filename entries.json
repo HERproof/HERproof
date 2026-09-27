@@ -1,0 +1,391 @@
+[
+  {
+    "source_file": "IMG_1323.PNG",
+    "imported_at": "2026-09-25T19:19:26.763666+00:00",
+    "file_hash": "3c5b87fb9caa656c69de2ae9c32f0cdf529c41c4fb66b49c8fd1f66ac12020e3",
+    "source_type": "screenshot",
+    "exif_timestamp": "2026-09-25T11:26:27",
+    "raw_text": "[\n  {\n    \"sender\": \"self\",\n    \"timestamp\": null,\n    \"text\": \"Thats sooo earlyyy\",\n    \"confidence\": 0.85\n  },\n  {\n    \"sender\": \"self\",\n    \"timestamp\": null,\n    \"text\": \"Btw did u see the pinterest board?\",\n    \"confidence\": 1.0\n  },\n  {\n    \"sender\": \"self\",\n    \"timestamp\": null,\n    \"text\": \"It's all suits\ud83e\udee0\",\n    \"confidence\": 1.0\n  },\n  {\n    \"sender\": \"other\",\n    \"timestamp\": null,\n    \"text\": \"Bruh I don\u2019t have that\",\n    \"confidence\": 1.0\n  },\n  {\n    \"sender\": \"other\",\n    \"timestamp\": null,\n    \"text\": \"I'm js gonna wear what I wore today\",\n    \"confidence\": 1.0\n  },\n  {\n    \"sender\": \"other\",\n    \"timestamp\": null,\n    \"text\": \"\ud83d\ude02\ud83d\ude02\ud83d\ude02\ud83d\ude02\ud83d\ude02\ud83d\ude02\ud83d\ude02\ud83d\ude02\ud83d\ude02\ud83d\ude02\ud83d\ude02\ud83d\ude02\",\n    \"confidence\": 1.0\n  },\n  {\n    \"sender\": \"self\",\n    \"timestamp\": null,\n    \"text\": \"\ud83d\ude02\ud83d\ude02\ud83d\ude02\",\n    \"confidence\": 1.0\n  },\n  {\n    \"sender\": \"self\",\n    \"timestamp\": null,\n    \"text\": \"Lowky idk\",\n    \"confidence\": 1.0\n  },\n  {\n    \"sender\": \"self\",\n    \"timestamp\": null,\n    \"text\": \"I think ill do a suit\ud83d\ude2d\",\n    \"confidence\": 1.0\n  },\n  {\n    \"sender\": \"other\",\n    \"timestamp\": null,\n    \"text\": \"Ya u should\",\n    \"confidence\": 1.0\n  },\n  {\n    \"sender\": \"self\",\n    \"timestamp\": null,\n    \"text\": \"Lol ive never used half of the google things to build sth\",\n    \"confidence\": 1.0\n  }\n]",
+    "messages": [
+      {
+        "sender": "self",
+        "timestamp": null,
+        "text": "Thats sooo earlyyy",
+        "confidence": 0.85,
+        "source_file": "IMG_1323.PNG"
+      },
+      {
+        "sender": "self",
+        "timestamp": null,
+        "text": "Btw did u see the pinterest board?",
+        "confidence": 1.0,
+        "source_file": "IMG_1323.PNG"
+      },
+      {
+        "sender": "self",
+        "timestamp": null,
+        "text": "It's all suits\ud83e\udee0",
+        "confidence": 1.0,
+        "source_file": "IMG_1323.PNG"
+      },
+      {
+        "sender": "other",
+        "timestamp": null,
+        "text": "Bruh I don\u2019t have that",
+        "confidence": 1.0,
+        "source_file": "IMG_1323.PNG"
+      },
+      {
+        "sender": "other",
+        "timestamp": null,
+        "text": "I'm js gonna wear what I wore today",
+        "confidence": 1.0,
+        "source_file": "IMG_1323.PNG"
+      },
+      {
+        "sender": "other",
+        "timestamp": null,
+        "text": "\ud83d\ude02\ud83d\ude02\ud83d\ude02\ud83d\ude02\ud83d\ude02\ud83d\ude02\ud83d\ude02\ud83d\ude02\ud83d\ude02\ud83d\ude02\ud83d\ude02\ud83d\ude02",
+        "confidence": 1.0,
+        "source_file": "IMG_1323.PNG"
+      },
+      {
+        "sender": "self",
+        "timestamp": null,
+        "text": "\ud83d\ude02\ud83d\ude02\ud83d\ude02",
+        "confidence": 1.0,
+        "source_file": "IMG_1323.PNG"
+      },
+      {
+        "sender": "self",
+        "timestamp": null,
+        "text": "Lowky idk",
+        "confidence": 1.0,
+        "source_file": "IMG_1323.PNG"
+      },
+      {
+        "sender": "self",
+        "timestamp": null,
+        "text": "I think ill do a suit\ud83d\ude2d",
+        "confidence": 1.0,
+        "source_file": "IMG_1323.PNG"
+      },
+      {
+        "sender": "other",
+        "timestamp": null,
+        "text": "Ya u should",
+        "confidence": 1.0,
+        "source_file": "IMG_1323.PNG"
+      },
+      {
+        "sender": "self",
+        "timestamp": null,
+        "text": "Lol ive never used half of the google things to build sth",
+        "confidence": 1.0,
+        "source_file": "IMG_1323.PNG"
+      }
+    ]
+  },
+  {
+    "source_file": "IMG_1324.PNG",
+    "imported_at": "2026-09-25T19:19:34.977957+00:00",
+    "file_hash": "f8146ce6b5b9276707a05744f03c99e10cd5c81f1f7d3dc97a4cb85287231c21",
+    "source_type": "screenshot",
+    "exif_timestamp": "2026-09-25T11:28:10",
+    "raw_text": "```json\n[\n  {\n    \"sender\": \"other\",\n    \"timestamp\": null,\n    \"text\": \"You should stop spending too much money, you useless\",\n    \"confidence\": 1.0\n  },\n  {\n    \"sender\": \"other\",\n    \"timestamp\": null,\n    \"text\": \"You dont even work\",\n    \"confidence\": 1.0\n  },\n  {\n    \"sender\": \"self\",\n    \"timestamp\": null,\n    \"text\": \"I feel like I do\",\n    \"confidence\": 1.0\n  },\n  {\n    \"sender\": \"self\",\n    \"timestamp\": null,\n    \"text\": \"I don't feel safe\",\n    \"confidence\": 1.0\n  },\n  {\n    \"sender\": \"other\",\n    \"timestamp\": null,\n    \"text\": \"You should stop taking the kids\",\n    \"confidence\": 1.0\n  },\n  {\n    \"sender\": \"other\",\n    \"timestamp\": null,\n    \"text\": \"You are so dramatic\",\n    \"confidence\": 1.0\n  },\n  {\n    \"sender\": \"self\",\n    \"timestamp\": null,\n    \"text\": \"Okay\",\n    \"confidence\": 1.0\n  },\n  {\n    \"sender\": \"other\",\n    \"timestamp\": null,\n    \"text\": \"You have been a stay at home Mom for over than a decade now\",\n    \"confidence\": 1.0\n  },\n  {\n    \"sender\": \"other\",\n    \"timestamp\": null,\n    \"text\": \"Our cats are more useful than you\",\n    \"confidence\": 1.0\n  }\n]\n```",
+    "messages": [
+      {
+        "sender": "other",
+        "timestamp": null,
+        "text": "You should stop spending too much money, you useless",
+        "confidence": 1.0,
+        "source_file": "IMG_1324.PNG"
+      },
+      {
+        "sender": "other",
+        "timestamp": null,
+        "text": "You dont even work",
+        "confidence": 1.0,
+        "source_file": "IMG_1324.PNG"
+      },
+      {
+        "sender": "self",
+        "timestamp": null,
+        "text": "I feel like I do",
+        "confidence": 1.0,
+        "source_file": "IMG_1324.PNG"
+      },
+      {
+        "sender": "self",
+        "timestamp": null,
+        "text": "I don't feel safe",
+        "confidence": 1.0,
+        "source_file": "IMG_1324.PNG"
+      },
+      {
+        "sender": "other",
+        "timestamp": null,
+        "text": "You should stop taking the kids",
+        "confidence": 1.0,
+        "source_file": "IMG_1324.PNG"
+      },
+      {
+        "sender": "other",
+        "timestamp": null,
+        "text": "You are so dramatic",
+        "confidence": 1.0,
+        "source_file": "IMG_1324.PNG"
+      },
+      {
+        "sender": "self",
+        "timestamp": null,
+        "text": "Okay",
+        "confidence": 1.0,
+        "source_file": "IMG_1324.PNG"
+      },
+      {
+        "sender": "other",
+        "timestamp": null,
+        "text": "You have been a stay at home Mom for over than a decade now",
+        "confidence": 1.0,
+        "source_file": "IMG_1324.PNG"
+      },
+      {
+        "sender": "other",
+        "timestamp": null,
+        "text": "Our cats are more useful than you",
+        "confidence": 1.0,
+        "source_file": "IMG_1324.PNG"
+      }
+    ]
+  },
+  {
+    "source_file": "IMG_1325.JPG",
+    "imported_at": "2026-09-25T19:19:38.005516+00:00",
+    "file_hash": "8b5b0ef277973be5189d1d3fe68212a1ec6acf0343d15d04cc5fe50bcf74b6fd",
+    "source_type": "screenshot",
+    "exif_timestamp": null,
+    "raw_text": "```json\n[\n  {\n    \"sender\": \"self\",\n    \"timestamp\": null,\n    \"text\": \"I won't hesitate if I have any\",\n    \"confidence\": 1.0\n  },\n  {\n    \"sender\": \"other\",\n    \"timestamp\": null,\n    \"text\": \"Good. Could I ask you a question?\",\n    \"confidence\": 1.0\n  },\n  {\n    \"sender\": \"self\",\n    \"timestamp\": null,\n    \"text\": \"Sure\",\n    \"confidence\": 1.0\n  },\n  {\n    \"sender\": \"other\",\n    \"timestamp\": null,\n    \"text\": \"So on your Facebook page I think, there is a picture of you in a bikini.\",\n    \"confidence\": 1.0\n  },\n  {\n    \"sender\": \"self\",\n    \"timestamp\": null,\n    \"text\": \"Yeah I was in Italy. That's right after I quit staff\",\n    \"confidence\": 1.0\n  },\n  {\n    \"sender\": \"other\",\n    \"timestamp\": null,\n    \"text\": \"Wow!\",\n    \"confidence\": 1.0\n  },\n  {\n    \"sender\": \"other\",\n    \"timestamp\": null,\n    \"text\": \"Do you have any idea what I am going to say?\",\n    \"confidence\": 1.0\n  },\n  {\n    \"sender\": \"self\",\n    \"timestamp\": null,\n    \"text\": \"I really don't\",\n    \"confidence\": 1.0\n  },\n  {\n    \"sender\": \"other\",\n    \"timestamp\": null,\n    \"text\": \"You are smoking hot!\",\n    \"confidence\": 1.0\n  },\n  {\n    \"sender\": \"self\",\n    \"timestamp\": null,\n    \"text\": \"Lol thank you\",\n    \"confidence\": 1.0\n  }\n]\n```",
+    "messages": [
+      {
+        "sender": "self",
+        "timestamp": null,
+        "text": "I won't hesitate if I have any",
+        "confidence": 1.0,
+        "source_file": "IMG_1325.JPG"
+      },
+      {
+        "sender": "other",
+        "timestamp": null,
+        "text": "Good. Could I ask you a question?",
+        "confidence": 1.0,
+        "source_file": "IMG_1325.JPG"
+      },
+      {
+        "sender": "self",
+        "timestamp": null,
+        "text": "Sure",
+        "confidence": 1.0,
+        "source_file": "IMG_1325.JPG"
+      },
+      {
+        "sender": "other",
+        "timestamp": null,
+        "text": "So on your Facebook page I think, there is a picture of you in a bikini.",
+        "confidence": 1.0,
+        "source_file": "IMG_1325.JPG"
+      },
+      {
+        "sender": "self",
+        "timestamp": null,
+        "text": "Yeah I was in Italy. That's right after I quit staff",
+        "confidence": 1.0,
+        "source_file": "IMG_1325.JPG"
+      },
+      {
+        "sender": "other",
+        "timestamp": null,
+        "text": "Wow!",
+        "confidence": 1.0,
+        "source_file": "IMG_1325.JPG"
+      },
+      {
+        "sender": "other",
+        "timestamp": null,
+        "text": "Do you have any idea what I am going to say?",
+        "confidence": 1.0,
+        "source_file": "IMG_1325.JPG"
+      },
+      {
+        "sender": "self",
+        "timestamp": null,
+        "text": "I really don't",
+        "confidence": 1.0,
+        "source_file": "IMG_1325.JPG"
+      },
+      {
+        "sender": "other",
+        "timestamp": null,
+        "text": "You are smoking hot!",
+        "confidence": 1.0,
+        "source_file": "IMG_1325.JPG"
+      },
+      {
+        "sender": "self",
+        "timestamp": null,
+        "text": "Lol thank you",
+        "confidence": 1.0,
+        "source_file": "IMG_1325.JPG"
+      }
+    ]
+  },
+  {
+    "source_file": "IMG_1326.JPG",
+    "imported_at": "2026-09-25T19:19:41.252051+00:00",
+    "file_hash": "c093305d41af12b3d937f644d54aa56eb337a46cb8f5966315461a8e3649c4cf",
+    "source_type": "screenshot",
+    "exif_timestamp": null,
+    "raw_text": "```json\n[\n  {\n    \"sender\": \"other\",\n    \"timestamp\": null,\n    \"text\": \"Ok. Should I withdraw my request?\",\n    \"confidence\": 1.0\n  },\n  {\n    \"sender\": \"self\",\n    \"timestamp\": null,\n    \"text\": \"What are you talking about?\",\n    \"confidence\": 1.0\n  },\n  {\n    \"sender\": \"other\",\n    \"timestamp\": null,\n    \"text\": \"To take you out for a drink. It's not going to happen. Right?\",\n    \"confidence\": 1.0\n  },\n  {\n    \"sender\": \"self\",\n    \"timestamp\": null,\n    \"text\": \"Correct\",\n    \"confidence\": 1.0\n  },\n  {\n    \"sender\": \"other\",\n    \"timestamp\": null,\n    \"text\": \"And would be different if I was not affiliated with the 13 ward\",\n    \"confidence\": 1.0\n  },\n  {\n    \"sender\": \"other\",\n    \"timestamp\": null,\n    \"text\": \"Said differently, if I didn't know you and you didn't know me and I bumped into you at a Starbucks and began to talk and I asked you out. You would say no?\",\n    \"confidence\": 1.0\n  },\n  {\n    \"sender\": \"other\",\n    \"timestamp\": null,\n    \"text\": \"Sorry to once again bother you\",\n    \"confidence\": 0.8\n  }\n]\n```",
+    "messages": [
+      {
+        "sender": "other",
+        "timestamp": null,
+        "text": "Ok. Should I withdraw my request?",
+        "confidence": 1.0,
+        "source_file": "IMG_1326.JPG"
+      },
+      {
+        "sender": "self",
+        "timestamp": null,
+        "text": "What are you talking about?",
+        "confidence": 1.0,
+        "source_file": "IMG_1326.JPG"
+      },
+      {
+        "sender": "other",
+        "timestamp": null,
+        "text": "To take you out for a drink. It's not going to happen. Right?",
+        "confidence": 1.0,
+        "source_file": "IMG_1326.JPG"
+      },
+      {
+        "sender": "self",
+        "timestamp": null,
+        "text": "Correct",
+        "confidence": 1.0,
+        "source_file": "IMG_1326.JPG"
+      },
+      {
+        "sender": "other",
+        "timestamp": null,
+        "text": "And would be different if I was not affiliated with the 13 ward",
+        "confidence": 1.0,
+        "source_file": "IMG_1326.JPG"
+      },
+      {
+        "sender": "other",
+        "timestamp": null,
+        "text": "Said differently, if I didn't know you and you didn't know me and I bumped into you at a Starbucks and began to talk and I asked you out. You would say no?",
+        "confidence": 1.0,
+        "source_file": "IMG_1326.JPG"
+      },
+      {
+        "sender": "other",
+        "timestamp": null,
+        "text": "Sorry to once again bother you",
+        "confidence": 0.8,
+        "source_file": "IMG_1326.JPG"
+      }
+    ]
+  },
+  {
+    "source_file": "IMG_1327.JPG",
+    "imported_at": "2026-09-25T19:19:43.876818+00:00",
+    "file_hash": "4e0f52ab85f02c76e85faec58a5a63d1c004bdf0fdec83ae4ec4af2d6f4d25f0",
+    "source_type": "screenshot",
+    "exif_timestamp": null,
+    "raw_text": "[\n  {\n    \"sender\": \"other\",\n    \"timestamp\": null,\n    \"text\": \"So Alaina, do you still have an interest in me taking you out?\\n\\nIf not, I completely understand.\",\n    \"confidence\": 1.0\n  },\n  {\n    \"sender\": \"self\",\n    \"timestamp\": null,\n    \"text\": \"I think we should maintain a professional relationship\",\n    \"confidence\": 1.0\n  },\n  {\n    \"sender\": \"other\",\n    \"timestamp\": null,\n    \"text\": \"Will do. Can I ask why?\",\n    \"confidence\": 1.0\n  },\n  {\n    \"sender\": \"other\",\n    \"timestamp\": null,\n    \"text\": \"Can you please give a response\",\n    \"confidence\": 1.0\n  }\n]",
+    "messages": [
+      {
+        "sender": "other",
+        "timestamp": null,
+        "text": "So Alaina, do you still have an interest in me taking you out?\n\nIf not, I completely understand.",
+        "confidence": 1.0,
+        "source_file": "IMG_1327.JPG"
+      },
+      {
+        "sender": "self",
+        "timestamp": null,
+        "text": "I think we should maintain a professional relationship",
+        "confidence": 1.0,
+        "source_file": "IMG_1327.JPG"
+      },
+      {
+        "sender": "other",
+        "timestamp": null,
+        "text": "Will do. Can I ask why?",
+        "confidence": 1.0,
+        "source_file": "IMG_1327.JPG"
+      },
+      {
+        "sender": "other",
+        "timestamp": null,
+        "text": "Can you please give a response",
+        "confidence": 1.0,
+        "source_file": "IMG_1327.JPG"
+      }
+    ]
+  },
+  {
+    "source_file": "IMG_1328.PNG",
+    "imported_at": "2026-09-25T19:19:47.277934+00:00",
+    "file_hash": "2fbedc2721c91048560aaa060093f2daeeacda405b602586389f4e30a1b1a37a",
+    "source_type": "screenshot",
+    "exif_timestamp": "2026-09-25T11:34:45",
+    "raw_text": "```json\n[\n  {\n    \"sender\": \"other\",\n    \"timestamp\": null,\n    \"text\": \"Hey\",\n    \"confidence\": 1.0\n  },\n  {\n    \"sender\": \"other\",\n    \"timestamp\": null,\n    \"text\": \"I don't think this works anymore\",\n    \"confidence\": 1.0\n  },\n  {\n    \"sender\": \"other\",\n    \"timestamp\": null,\n    \"text\": \"Either you come to the meeting or not\",\n    \"confidence\": 1.0\n  },\n  {\n    \"sender\": \"other\",\n    \"timestamp\": null,\n    \"text\": \"You'll regret this\",\n    \"confidence\": 1.0\n  },\n  {\n    \"sender\": \"self\",\n    \"timestamp\": null,\n    \"text\": \"I just don't think that's reasonable\",\n    \"confidence\": 1.0\n  },\n  {\n    \"sender\": \"other\",\n    \"timestamp\": null,\n    \"text\": \"This will ruin your career\",\n    \"confidence\": 1.0\n  }\n]\n```",
+    "messages": [
+      {
+        "sender": "other",
+        "timestamp": null,
+        "text": "Hey",
+        "confidence": 1.0,
+        "source_file": "IMG_1328.PNG"
+      },
+      {
+        "sender": "other",
+        "timestamp": null,
+        "text": "I don't think this works anymore",
+        "confidence": 1.0,
+        "source_file": "IMG_1328.PNG"
+      },
+      {
+        "sender": "other",
+        "timestamp": null,
+        "text": "Either you come to the meeting or not",
+        "confidence": 1.0,
+        "source_file": "IMG_1328.PNG"
+      },
+      {
+        "sender": "other",
+        "timestamp": null,
+        "text": "You'll regret this",
+        "confidence": 1.0,
+        "source_file": "IMG_1328.PNG"
+      },
+      {
+        "sender": "self",
+        "timestamp": null,
+        "text": "I just don't think that's reasonable",
+        "confidence": 1.0,
+        "source_file": "IMG_1328.PNG"
+      },
+      {
+        "sender": "other",
+        "timestamp": null,
+        "text": "This will ruin your career",
+        "confidence": 1.0,
+        "source_file": "IMG_1328.PNG"
+      }
+    ]
+  }
+]

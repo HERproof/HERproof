@@ -1,0 +1,783 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HerProof · Pattern Map</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#3A3434;--body:#4A4A4A;--muted:#625B5B;--ground:#FFF7F5;--blush:#FEF0F0;--line:#FCD1D1;--soft:#F9B4B4;--coral:#E87D7D;--deep:#A8403F;--btn:#CC5157;--btn2:#B4444A;--lilac:#F5F0FA;--lilac-line:#E4D9F0;--lilac-ink:#5E5470;--white:#fff;--hatch:#EFE4E2}
+*{box-sizing:border-box}
+body{margin:0;background:#EFE7E5;color:var(--body);font-family:"Plus Jakarta Sans",system-ui,-apple-system,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+button{font:inherit;cursor:pointer}:focus-visible{outline:3px solid var(--deep);outline-offset:2px}
+.phone{max-width:430px;margin:0 auto;min-height:100vh;background:var(--ground);display:flex;flex-direction:column;box-shadow:0 0 60px rgba(120,60,60,.14)}
+.bar{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:10px;padding:14px 16px;background:var(--ground);border-bottom:1px solid var(--line)}
+.bar h1{margin:0;font-size:16px;font-weight:800;color:var(--ink);flex-grow:1}
+.back,.exit{border-radius:999px;border:1px solid var(--line);background:var(--white);color:var(--ink);flex-shrink:0}
+.back{width:38px;height:38px;display:flex;align-items:center;justify-content:center}
+.exit{min-height:38px;padding:0 13px;border-color:var(--soft);color:var(--deep);font-size:13px;font-weight:700}
+main{flex-grow:1;padding:18px 16px 40px}
+section[hidden]{display:none}
+h2{font-size:19px;font-weight:800;color:var(--ink);margin:0 0 6px}
+h3{font-size:14px;font-weight:800;color:var(--ink);margin:26px 0 10px}
+p{margin:0 0 12px}.lede{color:#5E5757;font-size:14.5px}.muted{color:var(--muted);font-size:12.5px}
+.card{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:16px;margin-bottom:12px}
+.btn{display:block;width:100%;min-height:50px;border:none;border-radius:999px;background:var(--btn);color:var(--white);font-size:15px;font-weight:700;margin-top:14px}
+.btn:hover{background:var(--btn2)}.btn[disabled]{opacity:.45;cursor:not-allowed}
+.btn.ghost{background:var(--white);color:var(--ink);border:1px solid var(--soft)}
+.btn.quiet{background:none;color:var(--muted);border:none;min-height:44px;font-weight:600;font-size:14px}
+.pm-card{background:linear-gradient(180deg,#fff,#FEF6F5);border:1px solid var(--line);border-radius:22px;padding:18px;box-shadow:0 14px 34px rgba(120,60,60,.09)}
+.pm-card .tag{display:inline-block;padding:4px 11px;border-radius:999px;background:var(--lilac);color:var(--lilac-ink);font-size:11.5px;font-weight:700;margin-bottom:9px}
+textarea{width:100%;min-height:150px;padding:12px;border-radius:14px;border:1px solid var(--soft);background:var(--white);color:var(--ink);font:inherit;font-size:13.5px;resize:vertical}
+.field{margin-bottom:15px}
+.field label{display:block;font-size:13px;font-weight:700;color:var(--ink);margin-bottom:6px}
+.field select,.field input[type=text]{width:100%;min-height:46px;padding:0 13px;border-radius:12px;border:1px solid var(--soft);background:var(--white);color:var(--ink);font:inherit;font-size:14.5px}
+.check{display:flex;gap:11px;align-items:flex-start;padding:14px;border-radius:14px;background:var(--lilac);border:1px solid var(--lilac-line);font-size:13.5px;color:var(--lilac-ink)}
+.check input{width:20px;height:20px;accent-color:var(--deep);margin-top:1px;flex-shrink:0}
+.ambig{background:#FFFCF2;border:1px solid #F0E0B8;border-radius:14px;padding:14px;margin-bottom:12px}
+.choice{display:flex;gap:8px;margin-top:10px}
+.choice button{flex:1;min-height:44px;border-radius:12px;border:1px solid var(--soft);background:var(--white);color:var(--ink);font-size:13.5px;font-weight:600}
+.choice button[aria-pressed=true]{background:var(--deep);border-color:var(--deep);color:var(--white)}
+.step{display:flex;gap:12px;align-items:center;padding:13px 0}
+.pip{width:24px;height:24px;border-radius:999px;border:2px solid var(--line);flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.step.done .pip{background:var(--deep);border-color:var(--deep);color:#fff}
+.step.active .pip{border-color:var(--coral);border-style:dashed}
+.step b{font-size:14px;color:var(--ink);font-weight:600}
+.step.pending b{color:var(--muted);font-weight:500}
+.safety{display:flex;gap:11px;padding:14px;border-radius:15px;background:#FDF0EE;border:1px solid var(--soft);margin-bottom:14px}
+.safety b{color:var(--deep);font-size:14px}
+.safety button{background:none;border:none;color:var(--deep);font-weight:700;padding:0;font-size:13.5px;text-decoration:underline}
+.summary{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:16px;margin-bottom:12px;font-size:14.5px;color:var(--ink)}
+.chart{display:flex;align-items:flex-end;gap:3px;height:96px;padding-top:8px}
+.chart i{flex:1;border-radius:3px 3px 0 0;background:var(--coral);display:block;min-height:2px}
+.chart i.none{background:repeating-linear-gradient(45deg,var(--hatch),var(--hatch) 3px,#F8EFED 3px,#F8EFED 6px);height:14px!important}
+.axis{display:flex;justify-content:space-between;font-size:11px;font-weight:600;color:var(--muted);margin-top:7px}
+.cat{display:flex;align-items:center;gap:11px;width:100%;text-align:left;padding:14px;border-radius:15px;border:1px solid var(--line);background:var(--white);margin-bottom:9px;color:var(--ink)}
+.swatch{width:11px;height:32px;border-radius:4px;flex-shrink:0}
+.cat b{display:block;font-size:14.5px;font-weight:700}.cat small{color:var(--muted);font-size:12px}
+.cat .n{margin-left:auto;font-size:21px;font-weight:800;color:var(--ink)}
+.stat{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid #F3E8E6;font-size:14px}
+.stat:last-child{border-bottom:0}.stat b{color:var(--ink);font-weight:700;text-align:right}
+.def{background:var(--blush);border-radius:15px;padding:14px;font-size:14px;color:var(--ink);margin-bottom:16px}
+.msg{border:1px solid var(--line);border-radius:15px;padding:13px;margin-bottom:10px;background:var(--white)}
+.msg .top{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:8px}
+.msg .when{font-size:13px;font-weight:700;color:var(--ink)}
+.conf{font-size:10.5px;font-weight:700;padding:3px 8px;border-radius:999px;background:#EDF5F1;color:#2F6A5C}
+.conf.med{background:#FBF2E2;color:#8A6520}
+.hidden-body{border:1px dashed var(--soft);border-radius:11px;padding:12px;text-align:center;background:#FFFBFA}
+.hidden-body button{background:none;border:none;color:var(--deep);font-weight:700;font-size:13.5px}
+.hidden-body p{margin:0 0 6px;font-size:12.5px;color:var(--muted)}
+.body-text{background:#FBF3F1;border-radius:11px;padding:12px;font-size:14.5px;color:var(--ink);white-space:pre-wrap}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}
+.chip{font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:999px;background:var(--ground);border:1px solid var(--line);color:var(--ink)}
+.msg .acts{display:flex;gap:8px;margin-top:11px}
+.msg .acts button{flex:1;min-height:40px;border-radius:11px;border:1px solid var(--soft);background:var(--white);color:var(--ink);font-size:13px;font-weight:600}
+.removed{opacity:.5}
+.ctx{padding:10px 13px;border-radius:14px;margin-bottom:7px;font-size:14px;max-width:86%;white-space:pre-wrap}
+.ctx.them{background:#EFEDED;color:var(--ink);border-bottom-left-radius:5px}
+.ctx.me{background:var(--lilac);color:var(--lilac-ink);margin-left:auto;border-bottom-right-radius:5px}
+.ctx.flagged{border:2px solid var(--coral);background:#FDF0EE}
+.ctx small{display:block;font-size:11px;color:var(--muted);margin-top:4px}
+.detail-row{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid #F3E8E6;font-size:13.5px}
+.detail-row:last-child{border-bottom:0}
+.detail-row b{color:var(--ink);text-align:right;font-weight:600;word-break:break-all}
+.note{background:var(--lilac);border:1px solid var(--lilac-line);border-radius:15px;padding:14px;margin-top:14px}
+.note .hdr{font-size:11.5px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--lilac-ink);margin-bottom:6px}
+.scrim{position:fixed;inset:0;background:rgba(58,52,52,.5);z-index:40;display:flex;align-items:flex-end;justify-content:center}
+.scrim[hidden]{display:none}
+.sheet{width:100%;max-width:430px;background:var(--white);border-radius:24px 24px 0 0;padding:22px 18px 26px;max-height:88vh;overflow-y:auto}
+.hotline{display:flex;gap:12px;align-items:flex-start;padding:14px;border-radius:15px;border:1px solid var(--line);margin-bottom:9px}
+.hotline b{display:block;color:var(--ink);font-size:14.5px}.hotline span{font-size:13px;color:var(--muted)}
+.preset{display:flex;gap:8px;margin-bottom:16px}
+.preset button{flex:1;min-height:56px;border-radius:14px;border:1px solid var(--line);background:var(--white);color:var(--ink);font-size:13px;font-weight:700;padding:6px}
+.preset button[aria-pressed=true]{background:var(--deep);border-color:var(--deep);color:var(--white)}
+.opt{display:flex;gap:11px;align-items:flex-start;padding:13px 0;border-bottom:1px solid #F3E8E6}
+.opt:last-of-type{border-bottom:0}
+.opt input{width:20px;height:20px;accent-color:var(--deep);margin-top:2px;flex-shrink:0}
+.opt b{display:block;font-size:14px;color:var(--ink);font-weight:600}.opt small{font-size:12px;color:var(--muted)}
+.lock{font-size:10.5px;font-weight:700;color:var(--muted);background:var(--ground);border:1px solid var(--line);border-radius:999px;padding:2px 8px;margin-left:auto;flex-shrink:0}
+.limits{background:var(--ground);border:1px solid var(--line);border-radius:15px;padding:14px;font-size:12.5px;margin-top:16px}
+.pill{display:inline-block;font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;background:var(--lilac);color:var(--lilac-ink);margin-left:6px}
+</style>
+</head>
+<body>
+<div class="phone">
+  <header class="bar">
+    <button class="back" id="back" hidden aria-label="Back"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+    <h1 id="title">Your Vault</h1>
+    <button class="exit" id="quickexit" hidden>Quick exit</button>
+  </header>
+  <main>
+
+  <section id="s-home">
+    <h2>Your Vault</h2>
+    <p class="lede">Everything here is encrypted. Only you can open it.</p>
+    <div class="pm-card">
+      <span class="tag">New</span>
+      <h2 style="margin-bottom:4px">Pattern Map</h2>
+      <p class="lede" style="margin-bottom:0">Bring in a conversation and HerProof will put it in date order and show you what repeats. You never have to read it again unless you want to.</p>
+      <button class="btn" data-go="import">Import a conversation</button>
+    </div>
+    <div id="existing"></div>
+  </section>
+
+  <section id="s-import" hidden>
+    <h2>Import a conversation</h2>
+    <p class="lede">It stays on this device. Nothing is shared with anyone.</p>
+    <div class="field">
+      <label for="file">Your WhatsApp export (.txt)</label>
+      <input type="file" id="file" accept=".txt,.log,.csv">
+    </div>
+    <div class="field">
+      <label for="paste">Or paste the conversation</label>
+      <textarea id="paste" placeholder="[19/08/2026, 22:04:11] Sam: where are you&#10;[19/08/2026, 22:06:02] Me: at my sister's"></textarea>
+      <button class="btn ghost" id="sample" style="min-height:42px;font-size:13.5px">Use a sample conversation</button>
+    </div>
+    <div class="field">
+      <label for="capture-run">Or load a conversation captured from the iPhone</label>
+      <input type="text" id="capture-run" value="e2e" placeholder="run folder, e.g. alex">
+      <button class="btn ghost" id="capture-load" style="min-height:42px;font-size:13.5px">Load capture</button>
+      <p class="muted" style="margin:6px 0 0;font-size:12.5px">Reads <span class="mono">capture/evidence/&lt;run&gt;/messages.txt</span> written by <span class="mono">herproof.extract</span>. Serve the repo with <span class="mono">python3 -m http.server</span> for this to work.</p>
+    </div>
+    <div id="parsed" hidden>
+      <div class="card">
+        <div class="muted">Found</div>
+        <b id="p-count" style="color:var(--ink);font-size:14.5px"></b>
+        <p class="muted" id="p-join" style="margin:6px 0 0"></p>
+      </div>
+      <div class="ambig" id="ambig" hidden>
+        <b style="color:var(--ink);font-size:14px">One thing before HerProof starts</b>
+        <p style="margin:6px 0 0;font-size:13.5px" id="ambig-q"></p>
+        <div class="choice"><button aria-pressed="true" data-order="dmy">Day first</button><button aria-pressed="false" data-order="mdy">Month first</button></div>
+      </div>
+      <div class="field"><label for="me">Which one is you?</label><select id="me"></select></div>
+      <div class="field"><label for="them">What should HerProof call the other person?</label><input type="text" id="them"></div>
+      <div class="field"><label for="tz">Time zone these messages were sent in</label><select id="tz"></select></div>
+      <label class="check"><input type="checkbox" id="consent" checked><span>Let HerProof read these messages to find patterns. If you turn this off, HerProof still puts everything in date order and still checks for messages that mention harm.</span></label>
+      <button class="btn" id="start">Start</button>
+    </div>
+  </section>
+
+  <section id="s-organizing" hidden>
+    <h2>Organizing</h2>
+    <p class="lede">You can leave this screen. HerProof will keep going.</p>
+    <div class="card" id="steps"></div>
+    <p class="muted">When it's done you'll get a notification that says “Your Vault has an update”. It won't say anything else.</p>
+  </section>
+
+  <section id="s-map" hidden>
+    <h2 id="m-name"></h2>
+    <p class="lede" id="m-sub"></p>
+    <div class="safety" id="m-safety" hidden>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#A8403F" stroke-width="2" stroke-linecap="round" style="flex-shrink:0;margin-top:2px"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>
+      <div><b id="m-safety-t"></b><br><button id="open-sheet">See what your options are</button></div>
+    </div>
+    <div class="summary" id="m-summary"></div>
+    <h3>Tagged messages per week</h3>
+    <div class="card"><div class="chart" id="m-chart"></div><div class="axis" id="m-axis"></div>
+      <p class="muted" style="margin:10px 0 0">Hatched weeks are periods with no records in either direction. No records for a period is not a record of nothing happening.</p></div>
+    <h3>What repeats</h3>
+    <div id="m-cats"></div>
+    <h3>Timing</h3>
+    <div class="card" id="m-timing"></div>
+    <button class="btn" data-go="share">Share with my legal team</button>
+    <button class="btn quiet" id="delete-import">Delete this import</button>
+  </section>
+
+  <section id="s-detail" hidden>
+    <h2 id="d-name"></h2>
+    <p class="lede" id="d-count"></p>
+    <div class="def" id="d-def"></div>
+    <h3>Messages, newest first</h3>
+    <div id="d-list"></div>
+    <p class="muted">Messages are hidden until you choose to see them. HerProof won't make you read anything twice.</p>
+  </section>
+
+  <section id="s-context" hidden>
+    <h2>In context</h2>
+    <p class="lede" id="c-when"></p>
+    <div class="card" id="c-thread"></div>
+    <h3>What was recorded</h3>
+    <div class="card" id="c-detail"></div>
+    <div class="note" id="c-note"></div>
+    <p class="muted" style="margin-top:12px">Removing a tag never removes the message. The record stays exactly as it came out of the file.</p>
+  </section>
+
+  <section id="s-share" hidden>
+    <h2>Share with your legal team</h2>
+    <p class="lede">HerProof builds the document on this device and hands it straight to you.</p>
+    <div class="preset" role="group">
+      <button aria-pressed="true" data-p="lawyer">Lawyer or advocate</button>
+      <button aria-pressed="false" data-p="police">Police</button>
+      <button aria-pressed="false" data-p="me">Just me</button>
+    </div>
+    <div class="card" id="opts">
+      <label class="opt"><input type="checkbox" checked disabled><div><b>Page 1 summary and chart</b><small>Name, dates, count, source, time zone</small></div><span class="lock">Always</span></label>
+      <label class="opt" data-k="timeline"><input type="checkbox" checked><div><b>Behavior counts</b><small>What repeated and when</small></div></label>
+      <label class="opt" data-k="notes"><input type="checkbox" checked><div><b>HerProof's notes</b><small>In their own section, headed “not evidence”</small></div></label>
+      <label class="opt" data-k="private"><input type="checkbox"><div><b>Your private notes</b><small>Off unless you turn it on</small></div></label>
+      <label class="opt" data-k="full"><input type="checkbox" checked disabled><div><b>The whole conversation, both sides</b><small>So nobody can say it was cherry-picked</small></div><span class="lock">Always</span></label>
+      <label class="opt"><input type="checkbox" checked disabled><div><b>How the dates were established</b></div><span class="lock">Always</span></label>
+      <label class="opt"><input type="checkbox" checked disabled><div><b>What this record does not establish</b></div><span class="lock">Always</span></label>
+    </div>
+    <p class="muted" id="preset-note"></p>
+    <div class="limits"><b style="color:var(--ink)">The last page says, word for word:</b><br><br>“This record shows the dates and times that could be established for each message and where each came from. It does not establish who wrote any message, what any message means, or that any statement in it is true. Times recorded by WhatsApp are the platform's record rather than verified fact. HerProof's notes are automated descriptions, not findings. Nothing here is a legal conclusion or legal advice.”</div>
+    <button class="btn" id="make-doc">Download the document</button>
+    <button class="btn ghost" id="print-doc">Print or save as PDF</button>
+  </section>
+
+  </main>
+</div>
+
+<div class="scrim" id="scrim" hidden>
+  <div class="sheet" role="dialog" aria-modal="true">
+    <h2>Before you keep going</h2>
+    <p class="lede">Some of the messages in this conversation mention harm. HerProof won't show them to you here.</p>
+    <p class="lede">You don't have to do anything with this. It's here if you want it.</p>
+    <div class="hotline"><div><b>National Domestic Violence Hotline</b><span>1-800-799-7233. Free, 24/7, and you decide what happens next.</span></div></div>
+    <div class="hotline"><div><b>Text START to 88788</b><span>If a call isn't safe right now.</span></div></div>
+    <div class="hotline"><div><b>In an emergency, call 911</b></div></div>
+    <button class="btn" id="sheet-ok">Keep going</button>
+    <button class="btn quiet" id="sheet-no">Not now</button>
+  </div>
+</div>
+
+<script src="config.js" onerror="window.HERPROOF_CONFIG=window.HERPROOF_CONFIG||{}"></script>
+<script>
+/* ---------- taxonomy: the PRD's six. Swap wholesale for HerProof's abuse type
+   standard by replacing CATS; nothing below reads a category by name. -------- */
+const CATS = [
+  {id:"monitoring",name:"Monitoring & checking",color:"#D9646A",
+   def:"Asking where you are or who you're with, asking for proof like photos or location, or pushing hard after a slow reply.",
+   pats:[[/\bwhere are you\b/i,"location demand"],[/\bwho are you (with|talking to)\b/i,"checking contacts"],[/\bwhy (didn'?t|haven'?t) you (answer|reply|pick up|text back)\b/i,"reply time pressure"],[/\bsend me (a )?(pic|photo|selfie|screenshot|your location)\b/i,"proof request"],[/\bshare your location\b/i,"location demand"],[/\bi (went through|checked|looked at) your (phone|messages|texts)\b/i,"device access"],[/\banswer me\b/i,"reply time pressure"]]},
+  {id:"isolation",name:"Isolation from friends & family",color:"#9B7FC4",
+   def:"Discouraging, criticizing or blocking your contact with other people.",
+   pats:[[/\b(don'?t|stop|quit) (talk|talking|see|seeing|hanging)\b[^.!?]{0,40}\b(friend|mom|mother|dad|father|sister|brother|family)\b/i,"discourages contact"],[/\byour (friends|family)\b[^.!?]{0,30}\b(toxic|using you|bad for you|hate me)\b/i,"jealousy framing"],[/\bchoose between (me|us) and\b/i,"ultimatum people"],[/\bit'?s (me|us) or (them|him|her)\b/i,"ultimatum people"]]},
+  {id:"degradation",name:"Put-downs & degradation",color:"#5B8DB8",
+   def:"Insults, humiliation, name-calling, or comments meant to make you feel worthless.",
+   pats:[[/\byou'?re (worthless|nothing|pathetic|disgusting|useless|a joke|stupid|an idiot)\b/i,"insult"],[/\bnobody (else )?(will|would) (ever )?(want|love|believe) you\b/i,"humiliation"],[/\byou'?re lucky (i|anyone)\b/i,"competence attack"]]},
+  {id:"blame_reality",name:"Blame & reality-twisting",color:"#2F8A77",
+   def:"Denying things happened, blaming you for their behavior, or recasting themselves as the one harmed.",
+   pats:[[/\bthat never happened\b/i,"denial"],[/\bi never said that\b/i,"denial"],[/\byou'?re (imagining|making (it|that) up|remembering (it|that) wrong)\b/i,"memory questioning"],[/\byou'?re (being )?(so )?(dramatic|paranoid|too sensitive)\b/i,"reversal"],[/\byou made me\b/i,"blame shift"]]},
+  {id:"economic",name:"Money control",color:"#B7832E",
+   def:"Controlling, demanding or restricting money, spending, or work.",
+   pats:[[/\byou don'?t need (a |your own )?(job|money|card|account)\b/i,"work interference"],[/\bi pay for everything\b/i,"restricts spending"],[/\bgive me (your|the) (card|paycheck|password|pin)\b/i,"demands account"],[/\bi'?m cutting you off\b/i,"restricts spending"],[/\bsend me the receipts?\b/i,"demands receipts"]]},
+  {id:"threats",name:"Threats & intimidation",color:"#A8424A",
+   def:"Threats or intimidation of any kind, including threats of self-harm used as pressure.",
+   pats:[[/\bi'?(ll|m gonna|m going to) (hurt|kill|end|destroy|find) you\b/i,"threat harm"],[/\byou'?ll regret\b/i,"intimidation"],[/\bi know where you (live|work)\b/i,"intimidation"],[/\bi'?(ll|m gonna) (kill myself|end it)\b/i,"threat self harm pressure"],[/\bif you leave\b[^.!?]{0,30}\b(i'?ll|kill|end)\b/i,"threat self harm pressure"],[/\btake the (kids|children)\b/i,"threat children pets"]]}
+];
+
+/* lethality backstop. Runs even with AI consent off (FR-22). */
+const LETHAL = [
+  [/\b(kill|hurt) you\b|\byou'?re dead\b|\bmake you pay\b/i,"threat_to_kill_or_harm"],
+  [/\bchoke|strangle|hands around\b/i,"strangulation"],
+  [/\bgun\b|\bknife\b|\bshoot\b/i,"weapon"],
+  [/\bcan'?t have you\b|\bno one else will\b/i,"ownership_threat"],
+  [/\bkill myself if\b|\bi'?ll end it if\b/i,"suicide_threat_leverage"]
+];
+
+const LIMITS = "This record shows the dates and times that could be established for each message and where each came from. It does not establish who wrote any message, what any message means, or that any statement in it is true. Times recorded by WhatsApp are the platform's record rather than verified fact. HerProof's notes are automated descriptions, not findings. Nothing here is a legal conclusion or legal advice.";
+
+const CFG = window.HERPROOF_CONFIG || {};
+let DB = null, MSGS = [], TAGS = [], FLAGS = [], CUR = "home", CURCAT = null, CURMSG = null, SHEET_SHOWN = false, AUD = "lawyer";
+
+/* ---------- parsing ---------- */
+const PATS = [
+  {re:/^\[([^\]]+)\]\s*([^:]{1,40}):\s*([\s\S]*)$/, d:1, s:2, t:3},
+  {re:/^(\d{1,4}[\/.-]\d{1,2}[\/.-]\d{2,4},?\s+\d{1,2}:\d{2}(?::\d{2})?\s*(?:[APap]\.?[Mm]\.?)?)\s*[-\u2013]\s*([^:]{1,40}):\s*([\s\S]*)$/, d:1, s:2, t:3},
+  {re:/^([A-Za-z][\w .'\u2019-]{0,38}):\s*([\s\S]*)$/, d:null, s:1, t:2}
+];
+const SYSLINE = /end-to-end encrypted|changed their number|this message was deleted|<media omitted>|\(file attached\)/i;
+
+function parse(raw){
+  const out = []; let joined = 0, line = 0;
+  raw.split(/\r?\n/).forEach(l => {
+    line++;
+    const t = l.replace(/^\u200e/, "").trim();
+    if (!t) return;
+    for (const p of PATS){
+      const m = t.match(p.re);
+      if (m){
+        out.push({ line, rawDate: p.d ? m[p.d].trim() : null, sender: m[p.s].trim(),
+                   body: m[p.t].trim(), kind: SYSLINE.test(t) ? "system" : "text" });
+        return;
+      }
+    }
+    if (out.length){ out[out.length-1].body += "\n" + t; joined++; }
+  });
+  return { msgs: out.filter(m => m.body), joined };
+}
+
+// FR-4: never guess date order from locale. Scan for a field above 12.
+function detectOrder(msgs){
+  for (const m of msgs){
+    if (!m.rawDate) continue;
+    const n = m.rawDate.match(/(\d{1,4})[\/.-](\d{1,2})/);
+    if (!n) continue;
+    if (+n[1] > 12) return "dmy";
+    if (+n[2] > 12) return "mdy";
+  }
+  return null;
+}
+
+function toTs(rawDate, order){
+  if (!rawDate) return { ts:null, conf:"Low" };
+  const m = rawDate.match(/(\d{1,4})[\/.-](\d{1,2})[\/.-](\d{2,4})[, ]+(\d{1,2}):(\d{2})(?::(\d{2}))?\s*([APap]\.?[Mm]\.?)?/);
+  if (!m){ const d = Date.parse(rawDate); return { ts: isNaN(d) ? null : d, conf: isNaN(d) ? "Low" : "Medium" }; }
+  let [,a,b,y,hh,mm,ss,ap] = m;
+  let day = order === "mdy" ? +b : +a, mon = order === "mdy" ? +a : +b;
+  y = +y; if (y < 100) y += 2000;
+  hh = +hh; if (ap && /p/i.test(ap) && hh < 12) hh += 12; if (ap && /a/i.test(ap) && hh === 12) hh = 0;
+  const d = new Date(y, mon-1, day, hh, +mm, ss ? +ss : 0);
+  return { ts: d.getTime(), conf: ss ? "High" : "Medium" };
+}
+
+/* ---------- tagging ---------- */
+function keywordPass(msgs, otherName){
+  const tags = [], flags = [];
+  msgs.forEach(m => {
+    if (m.sender !== otherName || m.kind !== "text") return;   // only OTHER, never ME or system
+    CATS.forEach(c => {
+      const reasons = [];
+      c.pats.forEach(([re, why]) => { if (re.test(m.body) && !reasons.includes(why)) reasons.push(why); });
+      if (reasons.length) tags.push({ line:m.line, category:c.id, reasons, confidence:1, model:"keyword", status:"shown" });
+    });
+    LETHAL.forEach(([re, type]) => { if (re.test(m.body)) flags.push({ line:m.line, type, source:"keyword" }); });
+  });
+  return { tags, flags };
+}
+
+async function geminiPass(msgs, otherName){
+  const g = CFG.gemini;
+  if (!g || !g.enabled || !g.apiKey) return { tags: [], skipped: true };
+  const only = msgs.filter(m => m.sender === otherName && m.kind === "text");
+  const out = [];
+  for (let i = 0; i < only.length; i += 150){
+    const win = only.slice(i, i + 150);
+    const body = {
+      systemInstruction: { parts: [{ text:
+        "You label messages for a documentation tool used by abuse survivors. Label only the messages given. " +
+        "Use only these categories: " + CATS.map(c => c.id).join(", ") + ". " +
+        "A message can have zero, one or two. Do not infer intent beyond the text. Affectionate or neutral " +
+        "logistics get no tag. Never rewrite or quote message text back. Return JSON only." }] },
+      contents: [{ role:"user", parts: [{ text: JSON.stringify(win.map(m => ({ id:m.line, text:m.body }))) }] }],
+      generationConfig: {
+        temperature: 0,
+        responseMimeType: "application/json",
+        responseSchema: { type:"OBJECT", properties: { results: { type:"ARRAY", items: { type:"OBJECT",
+          properties: {
+            id: { type:"INTEGER" },
+            tags: { type:"ARRAY", items: { type:"OBJECT", properties: {
+              category: { type:"STRING", enum: CATS.map(c => c.id) },
+              confidence: { type:"NUMBER" },
+              reasons: { type:"ARRAY", items:{ type:"STRING" } }
+            }, required:["category","confidence"] } }
+          }, required:["id","tags"] } } }, required:["results"] }
+      }
+    };
+    try {
+      const r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${g.model||"gemini-2.0-flash"}:generateContent?key=${g.apiKey}`,
+        { method:"POST", headers:{ "Content-Type":"application/json" }, body: JSON.stringify(body) });
+      if (!r.ok) continue;
+      const j = await r.json();
+      const txt = j.candidates?.[0]?.content?.parts?.[0]?.text;
+      if (!txt) continue;
+      const ids = new Set(win.map(m => m.line));
+      (JSON.parse(txt).results || []).forEach(row => {
+        if (!ids.has(row.id)) return;                              // never a msg_id outside the window
+        (row.tags || []).forEach(t => {
+          if (!CATS.some(c => c.id === t.category)) return;        // never an unknown category
+          if (t.confidence < 0.70) return;                         // threshold from the PRD
+          out.push({ line:row.id, category:t.category, reasons:t.reasons||[], confidence:t.confidence,
+                     model:g.model||"gemini", status:"shown" });
+        });
+      });
+    } catch(e){ /* a failed window falls back to the keyword pass, never to nothing */ }
+  }
+  return { tags: out, skipped: false };
+}
+
+async function persist(){
+  const s = CFG.supabase;
+  if (!s || !s.enabled || !s.url || !s.anonKey) return;
+  // Bodies are never in this payload. See supabase/schema.sql.
+  const row = { source:"whatsapp", file_sha256:DB.sha, file_name:DB.fileName, other_name:DB.other,
+                tz:DB.tz, date_order:DB.order, ai_consent:DB.consent, message_count:MSGS.length,
+                first_ts:DB.first, last_ts:DB.last };
+  try {
+    await fetch(s.url.replace(/\/$/,"") + "/rest/v1/imports",
+      { method:"POST", headers:{ "Content-Type":"application/json", apikey:s.anonKey,
+        Authorization:"Bearer " + s.anonKey, Prefer:"return=minimal" }, body: JSON.stringify(row) });
+  } catch(e){ /* the record is already complete on the device; the server is a convenience */ }
+}
+
+async function sha256(text){
+  try {
+    const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(text));
+    return [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2,"0")).join("");
+  } catch(e){ return "unavailable"; }
+}
+
+/* ---------- screens ---------- */
+const SCR = { home:["s-home","Your Vault",0,0], import:["s-import","Import",1,1], organizing:["s-organizing","Organizing",1,1],
+              map:["s-map","Pattern Map",1,1], detail:["s-detail","Pattern Map",1,1], context:["s-context","Pattern Map",1,1], share:["s-share","Share",1,1] };
+const ORDER = ["home","import","organizing","map","detail","context"];
+
+function go(n){
+  const s = SCR[n]; if (!s) return;
+  Object.values(SCR).forEach(x => document.getElementById(x[0]).hidden = true);
+  document.getElementById(s[0]).hidden = false;
+  document.getElementById("title").textContent = s[1];
+  document.getElementById("back").hidden = !s[2];
+  document.getElementById("quickexit").hidden = !s[3];
+  window.scrollTo(0,0); CUR = n;
+  if (n === "map" && FLAGS.length && !SHEET_SHOWN){ SHEET_SHOWN = true; setTimeout(() => document.getElementById("scrim").hidden = false, 400); }
+}
+document.addEventListener("click", e => { const t = e.target.closest("[data-go]"); if (t) go(t.dataset.go); });
+document.getElementById("back").onclick = () => { const i = ORDER.indexOf(CUR); go(i > 0 ? ORDER[i-1] : "home"); };
+document.getElementById("quickexit").onclick = () => { document.body.innerHTML = ""; location.replace("https://weather.com"); };
+
+/* ---------- import ---------- */
+const SAMPLE = `[03/08/2026, 21:14:02] Sam: where are you
+[03/08/2026, 21:15:41] Sam: why havent you answered me
+[03/08/2026, 21:16:03] Sam: answer me
+[03/08/2026, 22:40:10] Me: I was at my sister's, phone was in my bag
+[03/08/2026, 22:41:55] Sam: your family is toxic and you know it
+[03/08/2026, 22:42:30] Sam: it's me or them
+[11/08/2026, 19:02:14] Sam: send me a photo of where you are right now
+[11/08/2026, 19:20:02] Me: I'm at work
+[14/08/2026, 08:31:00] Sam: you don't need your own account, I pay for everything
+[14/08/2026, 08:33:12] Sam: give me the card
+[22/08/2026, 23:51:09] Sam: if you take this to court you'll regret it
+[22/08/2026, 23:52:44] Sam: I know where you work
+[02/09/2026, 01:03:27] Sam: I went through your phone. who is he
+[02/09/2026, 01:04:02] Sam: you're imagining things, that never happened
+[19/09/2026, 23:48:11] Sam: where are you. I've asked you four times now. Answer me.`;
+
+let PARSED = null, ORDERSEL = "dmy";
+
+function showParsed(text, name){
+  const { msgs, joined } = parse(text);
+  if (!msgs.length){ alert("Nothing could be parsed from that. Check it's a chat export."); return; }
+  PARSED = { msgs, joined, text, name };
+  const senders = [...new Set(msgs.map(m => m.sender))];
+  document.getElementById("p-count").textContent = msgs.length.toLocaleString() + " messages found";
+  document.getElementById("p-join").textContent = joined ? joined + " multi-line messages were joined back together." : "";
+  const me = document.getElementById("me"), them = document.getElementById("them");
+  me.innerHTML = senders.map(s => `<option>${s}</option>`).join("");
+  const guess = senders.find(s => /^(me|you)$/i.test(s)) || senders[0];
+  me.value = guess;
+  them.value = senders.find(s => s !== guess) || "";
+  me.onchange = () => { them.value = senders.find(s => s !== me.value) || ""; };
+  const tz = document.getElementById("tz");
+  const zones = [Intl.DateTimeFormat().resolvedOptions().timeZone, "America/Los_Angeles", "America/New_York", "Europe/London", "Asia/Jakarta"];
+  tz.innerHTML = [...new Set(zones)].map(z => `<option>${z}</option>`).join("");
+  const det = detectOrder(msgs);
+  ORDERSEL = det || "dmy";
+  const amb = document.getElementById("ambig");
+  amb.hidden = !!det;
+  if (!det){
+    const ex = msgs.find(m => m.rawDate);
+    document.getElementById("ambig-q").textContent =
+      "Some dates could be read two ways. In " + (ex ? ex.rawDate.split(/[, ]/)[0] : "04/08") + ", which number is the day?";
+  }
+  document.getElementById("parsed").hidden = false;
+}
+
+let CAPTURE = null;   // { run, tags } from capture/evidence/<run>/capture-tags.json
+document.getElementById("capture-load").onclick = async () => {
+  const run = document.getElementById("capture-run").value.trim();
+  if (!run) return;
+  const base = `../../capture/evidence/${encodeURIComponent(run)}/`;
+  try {
+    const r = await fetch(base + "messages.txt", { cache: "no-store" });
+    if (!r.ok) throw new Error(r.status + " " + r.statusText);
+    const text = await r.text();
+    let tags = [];
+    try { const t = await fetch(base + "capture-tags.json", { cache: "no-store" }); if (t.ok) tags = (await t.json()).tags || []; } catch (e) {}
+    CAPTURE = { run, tags };
+    document.getElementById("paste").value = text;
+    showParsed(text, `iPhone capture: ${run}`);
+  } catch (e) {
+    alert(`Could not load capture "${run}": ${e.message}. Is the repo served over http and did herproof.extract write capture/evidence/${run}/messages.txt?`);
+  }
+};
+
+document.getElementById("sample").onclick = () => { document.getElementById("paste").value = SAMPLE; showParsed(SAMPLE, "Sample conversation.txt"); };
+document.getElementById("paste").onchange = e => { if (e.target.value.trim()) showParsed(e.target.value, "Pasted conversation"); };
+document.getElementById("file").onchange = e => {
+  const f = e.target.files[0]; if (!f) return;
+  const r = new FileReader(); r.onload = () => showParsed(r.result, f.name); r.readAsText(f);
+};
+document.querySelectorAll("[data-order]").forEach(b => b.onclick = () => {
+  ORDERSEL = b.dataset.order;
+  document.querySelectorAll("[data-order]").forEach(x => x.setAttribute("aria-pressed", x === b));
+});
+
+document.getElementById("start").onclick = async () => {
+  if (!PARSED) return;
+  const other = document.getElementById("them").value.trim() || "them";
+  DB = { other, me: document.getElementById("me").value, tz: document.getElementById("tz").value,
+         order: ORDERSEL, consent: document.getElementById("consent").checked,
+         fileName: PARSED.name, sha: await sha256(PARSED.text), raw: PARSED.text };
+  MSGS = PARSED.msgs.map(m => { const { ts, conf } = toTs(m.rawDate, ORDERSEL); return { ...m, ts, conf }; });
+  MSGS.sort((a,b) => (a.ts||0) - (b.ts||0) || a.line - b.line);   // line number breaks the tie
+  const dated = MSGS.filter(m => m.ts);
+  DB.first = dated.length ? new Date(dated[0].ts).toISOString() : null;
+  DB.last  = dated.length ? new Date(dated[dated.length-1].ts).toISOString() : null;
+
+  go("organizing");
+  const steps = ["Reading the file","Putting it in date order","Looking for what repeats","Building your Pattern Map"];
+  const draw = i => document.getElementById("steps").innerHTML = steps.map((s,n) =>
+    `<div class="step ${n<i?"done":n===i?"active":"pending"}"><span class="pip">${n<i?'<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"><path d="M5 12l5 5L20 7"/></svg>':""}</span><div><b>${s}</b></div></div>`).join("");
+  draw(1); await new Promise(r => setTimeout(r, 350)); draw(2);
+
+  const kw = keywordPass(MSGS, other);
+  TAGS = kw.tags; FLAGS = kw.flags;
+  if (CAPTURE && PARSED.name.startsWith("iPhone capture")){   // judgments made when the chat was captured from the phone
+    CAPTURE.tags.forEach(t => { if (!TAGS.some(x => x.line === t.line && x.category === t.category))
+      TAGS.push({ line:t.line, category:t.category, reasons:t.reasons, confidence: t.confidence === "high" ? 1 : t.confidence === "medium" ? 0.75 : 0.5, model:"capture", status:"shown" }); });
+  }
+  if (DB.consent){
+    const g = await geminiPass(MSGS, other);
+    g.tags.forEach(t => { if (!TAGS.some(x => x.line === t.line && x.category === t.category)) TAGS.push(t); });
+  }
+  draw(3); await new Promise(r => setTimeout(r, 250));
+  await persist();
+  renderMap(); go("map");
+};
+
+/* ---------- map ---------- */
+const fmt = ts => ts ? new Date(ts).toLocaleString(undefined,{day:"numeric",month:"short",year:"numeric",hour:"numeric",minute:"2-digit"}) : "no timestamp";
+const fmtD = ts => ts ? new Date(ts).toLocaleDateString(undefined,{day:"numeric",month:"short",year:"numeric"}) : "—";
+
+function renderMap(){
+  const live = TAGS.filter(t => t.status === "shown");
+  document.getElementById("m-name").textContent = DB.other;
+  document.getElementById("m-sub").textContent =
+    `${DB.fileName} · ${fmtD(DB.first && Date.parse(DB.first))} to ${fmtD(DB.last && Date.parse(DB.last))} · ${MSGS.length.toLocaleString()} messages`;
+
+  const sf = document.getElementById("m-safety");
+  sf.hidden = !FLAGS.length;
+  if (FLAGS.length) document.getElementById("m-safety-t").textContent =
+    DB.consent ? "Some of these messages mention harm." : "Some messages may mention harm.";
+
+  const weeks = bucket(live);
+  const first4 = weeks.slice(0,4).filter(w => w !== null), last4 = weeks.slice(-4).filter(w => w !== null);
+  const avg = a => a.length ? Math.round(a.reduce((x,y)=>x+y,0)/a.length) : 0;
+  const kinds = new Set(live.map(t => t.category)).size;
+  let sum = `Over <b>${weeks.length} weeks</b>, <b>${live.length} messages</b> from ${DB.other} were tagged across <b>${kinds} ${kinds===1?"kind":"kinds"}</b> of behavior. Tagged messages went from about <b>${avg(first4)} a week</b> at the start to about <b>${avg(last4)} a week</b> by the end.`;
+  gaps().forEach(g => sum += `<p class="muted" style="margin:10px 0 0">There are no records between ${fmtD(g[0])} and ${fmtD(g[1])}.</p>`);
+  document.getElementById("m-summary").innerHTML = sum;
+
+  const max = Math.max(1, ...weeks.map(w => w || 0));
+  document.getElementById("m-chart").innerHTML = weeks.map(w =>
+    w === null ? '<i class="none"></i>' : `<i style="height:${Math.max(4, Math.round(w/max*100))}%"></i>`).join("");
+  document.getElementById("m-axis").innerHTML = `<span>${fmtD(DB.first && Date.parse(DB.first))}</span><span>${fmtD(DB.last && Date.parse(DB.last))}</span>`;
+
+  document.getElementById("m-cats").innerHTML = CATS.map(c => {
+    const rows = live.filter(t => t.category === c.id);
+    if (!rows.length) return "";
+    const ts = rows.map(t => MSGS.find(m => m.line === t.line)?.ts).filter(Boolean).sort();
+    return `<button class="cat" data-cat="${c.id}"><span class="swatch" style="background:${c.color}"></span><div><b>${c.name}</b><small>First ${fmtD(ts[0])} · last ${fmtD(ts[ts.length-1])}</small></div><span class="n">${rows.length}</span></button>`;
+  }).join("") || '<p class="muted">Nothing repeated often enough to tag. That is a limit of what HerProof can spot, not a finding about the conversation.</p>';
+  document.querySelectorAll("[data-cat]").forEach(b => b.onclick = () => { CURCAT = b.dataset.cat; renderDetail(); go("detail"); });
+
+  const fromOther = MSGS.filter(m => m.sender === DB.other).length;
+  const dated = MSGS.filter(m => m.ts);
+  const night = dated.filter(m => { const h = new Date(m.ts).getHours(); return h >= 23 || h < 3; }).length;
+  document.getElementById("m-timing").innerHTML =
+    `<div class="stat"><span>Messages sent by ${DB.other}</span><b>${Math.round(fromOther/MSGS.length*100)}%</b></div>` +
+    `<div class="stat"><span>Sent between 11pm and 3am</span><b>${dated.length?Math.round(night/dated.length*100):0}%</b></div>` +
+    `<div class="stat"><span>Longest run with no reply</span><b>${burst()} messages</b></div>` +
+    `<p class="muted" style="margin:11px 0 0">Counted from the timestamps in the file. No AI was used for this part.</p>`;
+}
+
+function bucket(live){
+  const dated = MSGS.filter(m => m.ts); if (!dated.length) return [];
+  const wk = 6048e5, start = dated[0].ts, end = dated[dated.length-1].ts;
+  const n = Math.max(1, Math.ceil((end-start)/wk));
+  const any = new Array(n).fill(0), tag = new Array(n).fill(0);
+  dated.forEach(m => { const i = Math.min(n-1, Math.floor((m.ts-start)/wk)); any[i]++; });
+  live.forEach(t => { const m = MSGS.find(x => x.line === t.line); if (m?.ts){ const i = Math.min(n-1, Math.floor((m.ts-start)/wk)); tag[i]++; } });
+  return tag.map((v,i) => any[i] === 0 ? null : v);   // null renders hatched: no records
+}
+
+function gaps(){
+  const dated = MSGS.filter(m => m.ts), out = [];
+  for (let i = 1; i < dated.length; i++){
+    if (dated[i].ts - dated[i-1].ts > 7*864e5) out.push([dated[i-1].ts, dated[i].ts]);
+  }
+  return out.slice(0,3);
+}
+
+function burst(){
+  let run = 0, worst = 0;
+  MSGS.forEach((m,i) => {
+    const p = MSGS[i-1];
+    if (m.sender === DB.other && p && p.sender === DB.other && (!m.ts || !p.ts || m.ts - p.ts <= 6e5)) run++;
+    else run = m.sender === DB.other ? 1 : 0;
+    if (run > worst) worst = run;
+  });
+  return worst;
+}
+
+/* ---------- detail ---------- */
+function renderDetail(){
+  const c = CATS.find(x => x.id === CURCAT);
+  const rows = TAGS.filter(t => t.category === CURCAT && t.status === "shown");
+  document.getElementById("d-name").textContent = c.name;
+  document.getElementById("d-count").textContent = `${rows.length} messages from ${DB.other}`;
+  document.getElementById("d-def").innerHTML = c.def + "<br><br>This can be part of a pattern experts call coercive control. Only you can say what it was.";
+  const list = rows.map(t => ({ t, m: MSGS.find(m => m.line === t.line) })).filter(x => x.m)
+                   .sort((a,b) => (b.m.ts||0) - (a.m.ts||0));
+  document.getElementById("d-list").innerHTML = list.map(({t,m}) => `
+    <article class="msg" data-line="${m.line}">
+      <div class="top"><span class="when">${fmt(m.ts)}</span><span class="conf ${m.conf==="Medium"?"med":""}">Date: ${m.conf.toLowerCase()}</span></div>
+      <div class="hidden-body"><p>Line ${m.line} in your file</p><button data-reveal>Show message</button></div>
+      <div class="chips">${t.reasons.map(r => `<span class="chip">${r}</span>`).join("")}</div>
+      <div class="acts"><button data-ctx>See it in context</button><button data-reject>Not accurate</button></div>
+    </article>`).join("") || '<p class="muted">No messages left in this category.</p>';
+
+  document.querySelectorAll("#d-list [data-reveal]").forEach(b => b.onclick = () => {
+    const art = b.closest(".msg"), m = MSGS.find(x => x.line === +art.dataset.line);
+    const div = document.createElement("div"); div.className = "body-text"; div.textContent = m.body;
+    art.querySelector(".hidden-body").replaceWith(div);
+  });
+  document.querySelectorAll("#d-list [data-reject]").forEach(b => b.onclick = () => {
+    const art = b.closest(".msg");
+    const t = TAGS.find(x => x.line === +art.dataset.line && x.category === CURCAT);
+    if (t) t.status = "rejected";
+    art.classList.add("removed");
+    art.querySelector(".acts").innerHTML = '<div class="muted" style="padding:8px 0">Tag removed. The message is still in your record.</div>';
+    renderMap();
+  });
+  document.querySelectorAll("#d-list [data-ctx]").forEach(b => b.onclick = () => {
+    CURMSG = +b.closest(".msg").dataset.line; renderContext(); go("context");
+  });
+}
+
+/* ---------- context ---------- */
+function renderContext(){
+  const i = MSGS.findIndex(m => m.line === CURMSG), m = MSGS[i];
+  const around = MSGS.slice(Math.max(0,i-3), i+4);
+  document.getElementById("c-when").textContent = fmt(m.ts);
+  document.getElementById("c-thread").innerHTML = around.map(x => {
+    const mine = x.sender !== DB.other;
+    const tag = x.line === m.line ? TAGS.find(t => t.line === x.line && t.status === "shown") : null;
+    return `<div class="ctx ${mine?"me":"them"} ${x.line===m.line?"flagged":""}">${x.body.replace(/[<>&]/g,c=>({"<":"&lt;",">":"&gt;","&":"&amp;"}[c]))}<small>${x.sender} · ${fmt(x.ts)}${tag?" · tagged "+CATS.find(c=>c.id===tag.category).name:""}</small></div>`;
+  }).join("");
+  document.getElementById("c-detail").innerHTML =
+    `<div class="detail-row"><span>Sender</span><b>${m.sender}</b></div>` +
+    `<div class="detail-row"><span>Timestamp</span><b>${fmt(m.ts)}<br>${DB.tz}</b></div>` +
+    `<div class="detail-row"><span>Line in source file</span><b>${m.line}</b></div>` +
+    `<div class="detail-row"><span>Date confidence</span><b>${m.conf}</b></div>` +
+    `<div class="detail-row"><span>Source file SHA-256</span><b>${DB.sha.slice(0,4)} … ${DB.sha.slice(-4)}</b></div>`;
+  const t = TAGS.find(x => x.line === m.line && x.status === "shown");
+  document.getElementById("c-note").innerHTML =
+    `<div class="hdr">HerProof's note, not part of the evidence</div>` +
+    (t ? `Tagged as ${CATS.find(c=>c.id===t.category).name}${t.reasons.length?", for "+t.reasons.join(" and "):""}. Found by ${t.model === "keyword" ? "a word match" : "the model"}.`
+       : "No tag on this message.");
+}
+
+/* ---------- share ---------- */
+const PRESETS = {
+  lawyer:{ timeline:[1,0], notes:[1,0], private:[0,0], note:"HerProof's notes are on for a lawyer, and they sit in their own section so they are never mistaken for evidence." },
+  police:{ timeline:[0,0], notes:[0,1], private:[0,0], note:"HerProof's notes are off and locked for the police. This record establishes what was said and when, and nothing beyond it." },
+  me:    { timeline:[1,0], notes:[1,0], private:[1,0], note:"This copy is yours. Your private notes are in it, and they are in no other copy." }
+};
+document.querySelectorAll("[data-p]").forEach(b => b.onclick = () => {
+  AUD = b.dataset.p;
+  document.querySelectorAll("[data-p]").forEach(x => x.setAttribute("aria-pressed", x === b));
+  const p = PRESETS[AUD];
+  ["timeline","notes","private"].forEach(k => {
+    const row = document.querySelector(`.opt[data-k="${k}"]`), box = row.querySelector("input");
+    box.checked = !!p[k][0]; box.disabled = !!p[k][1];
+    const old = row.querySelector(".lock"); if (old) old.remove();
+    if (p[k][1]){ const s = document.createElement("span"); s.className = "lock"; s.textContent = p[k][0] ? "Always" : "Locked off"; row.appendChild(s); }
+  });
+  document.getElementById("preset-note").textContent = p.note;
+});
+
+function buildDoc(){
+  const on = k => { const r = document.querySelector(`.opt[data-k="${k}"]`); return r ? r.querySelector("input").checked : true; };
+  const live = TAGS.filter(t => t.status === "shown");
+  const L = [];
+  L.push("# Record of messages\n");
+  L.push(`**Other person as named by the client:** ${DB.other}`);
+  L.push(`**Period** ${fmtD(DB.first && Date.parse(DB.first))} to ${fmtD(DB.last && Date.parse(DB.last))} · **Messages** ${MSGS.length}`);
+  L.push(`**Source** ${DB.fileName} · **Time zone applied** ${DB.tz}`);
+  L.push(`**Source file SHA-256** ${DB.sha}\n`);
+
+  if (AUD !== "police"){
+    const kinds = new Set(live.map(t => t.category)).size;
+    L.push("## What the record shows\n");
+    L.push(`${live.length} messages from ${DB.other} were tagged across ${kinds} kinds of behavior.`);
+    gaps().forEach(g => L.push(`\nThere are no records between ${fmtD(g[0])} and ${fmtD(g[1])}.`));
+    L.push("");
+  }
+
+  if (on("timeline")){
+    L.push("## Categories\n\n| Category | Messages | First seen | Most recent |\n|---|---|---|---|");
+    CATS.forEach(c => {
+      const rows = live.filter(t => t.category === c.id); if (!rows.length) return;
+      const ts = rows.map(t => MSGS.find(m => m.line === t.line)?.ts).filter(Boolean).sort();
+      L.push(`| ${c.name} | ${rows.length} | ${fmtD(ts[0])} | ${fmtD(ts[ts.length-1])} |`);
+    });
+    L.push("");
+  }
+
+  if (on("notes")){
+    L.push("## HerProof's notes, not evidence\n");
+    L.push("Automated descriptions of the tagged messages. They are not findings and not part of the evidence. Every tag the client marked as not accurate has been removed.\n");
+    L.push("| Line | Date | Category | Why it was tagged |\n|---|---|---|---|");
+    live.forEach(t => { const m = MSGS.find(x => x.line === t.line); if (m)
+      L.push(`| ${m.line} | ${fmt(m.ts)} | ${CATS.find(c=>c.id===t.category).name} | ${t.reasons.join(", ")||"—"} |`); });
+    L.push("");
+  }
+
+  L.push("## Full conversation\n");
+  L.push("Both senders, in date order, with line numbers and date confidence. The whole conversation is included rather than excerpts.\n");
+  L.push("| Line | Date and time | Sender | Message | Conf. |\n|---|---|---|---|---|");
+  MSGS.forEach(m => L.push(`| ${m.line} | ${fmt(m.ts)} | ${m.sender} | ${m.body.replace(/\n/g," ").replace(/\|/g,"\\|")} | ${m.conf} |`));
+
+  const h = MSGS.filter(m=>m.conf==="High").length, md = MSGS.filter(m=>m.conf==="Medium").length, lo = MSGS.filter(m=>m.conf==="Low").length;
+  L.push("\n## How the dates were established\n");
+  L.push(`${h} messages carry an export timestamp with seconds (High). ${md} carry a timestamp to the minute (Medium). ${lo} could not be established from the export itself (Low).\n`);
+  L.push("Low confidence means the date could not be established well, not that the item is doubtful.\n");
+  L.push(`Date order was read as ${DB.order === "dmy" ? "day first" : "month first"}. Times are shown in ${DB.tz}, which the client selected on import; WhatsApp exports carry no offset of their own.\n`);
+  L.push("## What this record does not establish\n");
+  L.push(LIMITS + "\n");
+  return L.join("\n");
+}
+
+document.getElementById("make-doc").onclick = () => {
+  const blob = new Blob([buildDoc()], { type:"text/markdown" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = `record-${AUD}.md`; a.click(); URL.revokeObjectURL(a.href);
+};
+document.getElementById("print-doc").onclick = () => {
+  const w = window.open("", "_blank");
+  w.document.write("<pre style='font:13px/1.5 ui-monospace,monospace;white-space:pre-wrap;padding:32px'>" +
+    buildDoc().replace(/[<>&]/g,c=>({"<":"&lt;",">":"&gt;","&":"&amp;"}[c])) + "</pre>");
+  w.document.close(); w.print();
+};
+
+document.getElementById("delete-import").onclick = () => {
+  if (!confirm("Delete this import? Every message, tag and flag from it goes with it.")) return;
+  DB = null; MSGS = []; TAGS = []; FLAGS = []; PARSED = null; CAPTURE = null; SHEET_SHOWN = false;
+  document.getElementById("paste").value = ""; document.getElementById("parsed").hidden = true;
+  go("home");
+};
+document.getElementById("sheet-ok").onclick = document.getElementById("sheet-no").onclick = () => document.getElementById("scrim").hidden = true;
+document.getElementById("open-sheet").onclick = () => document.getElementById("scrim").hidden = false;
+document.getElementById("scrim").onclick = e => { if (e.target.id === "scrim") document.getElementById("scrim").hidden = true; };
+
+document.querySelector("[data-p]").click();
+go("home");
+</script>
+</body>
+</html>
