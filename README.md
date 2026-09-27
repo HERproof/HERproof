@@ -17,15 +17,11 @@ lawyer and hands it over.
 
 ---
 
-## Quick start
+## Try it
 
-From the repo root. Nothing to install:
+**[herproof.github.io/HERproof](https://herproof.github.io/HERproof/)**
 
-```
-python3 capture/server.py
-```
-
-Then open a new browser tab and go to **http://localhost:8000**. It takes you to the app (`web/pattern-map/app.html`).
+Opens the app in your browser. Nothing to install.
 
 | Key | Does |
 |---|---|
@@ -33,31 +29,39 @@ Then open a new browser tab and go to **http://localhost:8000**. It takes you to
 | F | Full screen |
 | D | Disguise the screen as a recipes app |
 
-**Two rules so nothing breaks**
-
-1. Always open pages through the server, never by double-clicking the file.
-2. Always start the server from the repo root, not from inside `web/`.
-
-### What works on a fresh clone
-
-| Part | Status |
-|---|---|
-| Cora and the account steps | Works |
-| Connect step onward | Needs a saved phone capture in `capture/evidence/<name>/`. It is not in the repo because it holds phone data. Make one (see [Capture from an iPhone](#capture-from-an-iphone)) or copy a teammate's `capture/evidence/alex/`. Without it the app says *"Could not read the capture for alex"*. |
-| Cora's Gemini voice | Optional. Copy `web/pattern-map/config.example.js` to `config.js` and add a Gemini key. Without it Cora uses the browser's voice. |
-| Every page in the table below | Works |
-
 ### Pages you can open directly
 
 | Page | What it shows |
 |---|---|
-| [`web/pattern-map/packet.html`](web/pattern-map/packet.html) | The designed DVRO packet: DV-100 filled, CLETS-001 left blank on purpose, flagged forms, 47 dated incidents, exhibit list |
-| [`web/pattern-map/pattern.html`](web/pattern-map/pattern.html) | The pattern: month heat grid, timeline with the gap, clusters |
-| [`web/pattern-map/vault.html`](web/pattern-map/vault.html) | The vault export: sources, fingerprints, dated incidents |
-| [`web/pattern-map/exhibits.html`](web/pattern-map/exhibits.html) | Photo exhibits with dates and fingerprints |
-| [`web/pattern-map/jurisdictions.html`](web/pattern-map/jurisdictions.html) | Restraining order forms by state, leading into the California forms |
-| [`packet.html`](packet.html) | The record the pipeline last generated from the sample screenshots |
-| [`web/index.html`](web/index.html) | The app with the landing page on top, for live presentations ([script](web/SCRIPT.md)) |
+| [The app](https://herproof.github.io/HERproof/web/pattern-map/app.html) | Cora walks through the whole flow: account, connect, what came across, the pattern map, the DVRO packet, send to an attorney |
+| [DVRO packet](https://herproof.github.io/HERproof/web/pattern-map/packet.html) | DV-100 filled, CLETS-001 left blank on purpose, flagged forms, 47 dated incidents, exhibit list |
+| [The pattern](https://herproof.github.io/HERproof/web/pattern-map/pattern.html) | Month heat grid, timeline with the gap, clusters |
+| [Vault](https://herproof.github.io/HERproof/web/pattern-map/vault.html) | Sources, fingerprints, dated incidents |
+| [Photo exhibits](https://herproof.github.io/HERproof/web/pattern-map/exhibits.html) | Photos with dates and fingerprints |
+| [Forms by state](https://herproof.github.io/HERproof/web/pattern-map/jurisdictions.html) | Restraining order forms by state, leading into the California forms |
+| [Generated record](https://herproof.github.io/HERproof/packet.html) | The record the pipeline last generated from the sample screenshots |
+| [Presentation view](https://herproof.github.io/HERproof/web/index.html) | The app with the landing page on top, for live demos ([script](web/SCRIPT.md)) |
+
+### Run it on your computer
+
+The online version stops at the **Connect** step, because reading a phone needs a computer
+running HerProof. For the full demo:
+
+```
+git clone https://github.com/HERproof/HERproof.git
+cd HERproof
+python3 capture/server.py
+```
+
+Leave that running, then open http://localhost:8000 in a new browser tab.
+
+| Part | What it needs |
+|---|---|
+| Connect step onward | A saved phone capture in `capture/evidence/<name>/`, which is not in the repo because it holds phone data. Make one (see [Capture from an iPhone](#capture-from-an-iphone)). Without it the app says *"Could not read the capture for alex"*. |
+| Cora's Gemini voice | Optional. Copy `web/pattern-map/config.example.js` to `config.js` and add a Gemini key. Without it Cora uses the browser's voice. |
+
+Always start the server from the `HERproof` folder, and open pages through it rather than
+double-clicking the files.
 
 ---
 
