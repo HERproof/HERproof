@@ -81,6 +81,30 @@ double-clicking the files.
 3. **Export.** `export_packet.py` builds `packet.html`, ready to save as a PDF.
 4. **Show.** `web/` is the app the survivor uses.
 
+### How HerProof reads the phone
+
+HerProof reads the phone the way a person would: a Mac, connected by USB, opens the
+Messages app and scrolls through one conversation. No hacking, no backup, and it only
+reads.
+
+1. **One-time setup.** The owner taps *Trust This Computer* and turns on *Developer Mode*.
+   The installer adds Apple's WebDriverAgent to the phone so the Mac can control the screen.
+2. **Open the chat.** `extract.py --chat "Alex"` opens that conversation and scrolls from
+   newest to oldest.
+3. **Read each message.** The words, sender and time come from the phone's accessibility
+   data (what screen readers use), not from reading pixels, so nothing is misread.
+4. **Screenshot every screen**, once normally and once with each message's time showing.
+   Every screenshot gets a SHA-256 fingerprint.
+5. **Flag the abuse** with Claude or Gemini, or a keyword list if there's no API key.
+6. **Hand off** to `organize.py` and `export_packet.py` for the timeline and the packet.
+
+It never types, sends or deletes. It needs the phone unlocked and in Developer Mode, so it
+can't run without the owner's cooperation. Captures stay on the Mac and are never committed.
+
+**Limits:** Mac only (it needs Xcode). The capture reads Messages only; the photo-library
+scan in the app is a demo. With an API key set, message text is sent to Claude or Gemini
+for flagging.
+
 ## Project layout
 
 | Folder | What's in it |
